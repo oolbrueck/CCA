@@ -23,5 +23,5 @@ from CodeCompletion import CodeCompletion
 print("initiating CodeCompletion")
 
 codeCompletion = CodeCompletion(r"C:\Users\oligo\OneDrive\Bachelor Arbeit\repos\elasticsearch-java-main")
-codeCompletion.complete(r"C:\Users\oligo\OneDrive\Bachelor Arbeit\repos\elasticsearch-java-main\java-client\src\main\java\co\elastic\clients\json\SimpleJsonpMapper.java", 70)
+codeCompletion.complete(r"C:\Users\oligo\OneDrive\Bachelor Arbeit\repos\elasticsearch-java-main\java-client\src\main\java\co\elastic\clients\json\SimpleJsonpMapper.java", 107)
 

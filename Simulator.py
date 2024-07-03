@@ -76,9 +76,31 @@ class Simulator:
         classesFromNeighboringFiles = self.__getClassesFromNeighboringFiles(file)
 
         neighboringFiles['fileRelatedToParentClass'] = [self.getPathToClass(parentClass)]
-        neighboringFiles['filesRelatedToSiblingsClasses'] = [self.getPathToClass(cls) for cls in siblingsClasses]
-        neighboringFiles['fileRelatedToImportedClasses'] = [self.getPathToClass(cls) for cls in importedClasses]
-        neighboringFiles['fileRelatedToClassesFromNeighboringFiles'] = [self.getPathToClass(cls) for cls in classesFromNeighboringFiles]
+
+        # dient dazu, dass keine doppelten Files in den Kontext einbezogen werden
+        unique_files = set(neighboringFiles['fileRelatedToParentClass'])
+
+        neighboringFiles['filesRelatedToSiblingsClasses'] = []
+        for cls in siblingsClasses:
+            path = self.getPathToClass(cls)
+            if path not in unique_files:
+                neighboringFiles['filesRelatedToSiblingsClasses'].append(path)
+                unique_files.add(path)
+
+        neighboringFiles['fileRelatedToImportedClasses'] = []
+        for cls in importedClasses:
+            path = self.getPathToClass(cls)
+            if path not in unique_files:
+                neighboringFiles['fileRelatedToImportedClasses'].append(path)
+                unique_files.add(path)
+
+        neighboringFiles['fileRelatedToClassesFromNeighboringFiles'] = []
+        for cls in classesFromNeighboringFiles:
+            path = self.getPathToClass(cls)
+            if path not in unique_files:
+                neighboringFiles['fileRelatedToClassesFromNeighboringFiles'].append(path)
+                unique_files.add(path)
+
 
         unionOfAllLists = (neighboringFiles['fileRelatedToParentClass'] + neighboringFiles['filesRelatedToSiblingsClasses']
                            + neighboringFiles['fileRelatedToImportedClasses'] + neighboringFiles['fileRelatedToClassesFromNeighboringFiles'])

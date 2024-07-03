@@ -1,5 +1,5 @@
 from Simulator import Simulator
-from SnippetGenerator import SnippetGenerator
+from JaccardSnippetGenerator import JaccardSnippetGenerator
 
 
 class CodeCompletion:
@@ -10,10 +10,8 @@ class CodeCompletion:
     def complete(self, file, cursorPosition):
         simulator = Simulator(self.pathToRepo)
         neighboringFiles = simulator.getNeighboringFiles(file)
-        snippetGenerator = SnippetGenerator(neighboringFiles, 20, 60, file, cursorPosition)
-        values = snippetGenerator.withJaccard()
+        snippetGenerator = JaccardSnippetGenerator(neighboringFiles, 20, 60, file, cursorPosition)
+        values = snippetGenerator.getSnippets()
 
-        values.sort()
-        print(values)
 
 
