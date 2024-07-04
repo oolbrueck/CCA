@@ -49,7 +49,7 @@ class TestJaccardSnippetGenerator(unittest.TestCase):
         }
     }
     public void createParagraph() {
-<insert Code here>
+
     }
     public void createPdfFile(String text, int fontSize) {
         // Create a new document

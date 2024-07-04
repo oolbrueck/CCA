@@ -39,7 +39,7 @@ class JaccardSnippetGenerator:
                 window['fileCategory'] = self.__getFileCategory(filePath)
                 window['range'] = slidingWindow.get('range')
                 window['jaccardValue'] = jaccardValue
-                window['code'] = slidingWindow
+                window['code'] = slidingWindow.get('code')
 
                 windowsOfSpecificFile.append(window)
 
@@ -71,14 +71,15 @@ class JaccardSnippetGenerator:
         with open(self.currentFile, 'r') as f:
             code = f.read()
         lines = code.split("\n")
-        line = lines[self.cursorPosition - 1] + "<insert Code here>"
+        line = lines[self.cursorPosition - 1] + "<curser>"
         lines[self.cursorPosition - 1] = line
         lines = [line for line in lines if line.strip()]  # Remove empty lines
         #get the line that contains the substring "<insert Code here>"
-        cursorPositionAfterRemovingEmptyLines = [i for i, line in enumerate(lines) if "<insert Code here>" in line][0]
+        cursorPositionAfterRemovingEmptyLines = [i for i, line in enumerate(lines) if "<curser>" in line][0]
 
         modified_lines = [line + "\n" for line in lines]
         domainWindow = "".join(modified_lines[cursorPositionAfterRemovingEmptyLines - int(self.domainWindowSize / 2):cursorPositionAfterRemovingEmptyLines + 1 + int(self.domainWindowSize / 2)])
+        domainWindow = domainWindow.replace("<curser>", "")
 
         return domainWindow
 
@@ -90,7 +91,8 @@ class JaccardSnippetGenerator:
         slidingWindows = []
         for i in range(0, len(lines) - self.coDomainWindowSize):
             window = {}
-            window['code'] = ''.join(lines[i:i + self.coDomainWindowSize])
+            #join all lines in the window to a single string and append after each line a newline character
+            window['code'] = "".join([line + "\n" for line in lines[i:i + self.coDomainWindowSize]])
             window['range'] = [i, i + self.coDomainWindowSize]
             slidingWindows.append(window)
         return slidingWindows
