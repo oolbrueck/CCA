@@ -24,7 +24,7 @@ class ContextGenerator:
 
 
     def __alignSnippets(self):
-        self.windows.sort(key=lambda x: x['jaccardValue'], reverse=True)
+        self.windows.sort(key=lambda x: x['value'], reverse=True)
 
     def __toComment(self, window):
         languageSpecificComment = "//"

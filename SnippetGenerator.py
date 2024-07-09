@@ -1,19 +1,23 @@
 import re
 import matplotlib.pyplot as plt
 import numpy as np
+from pydantic import warnings
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.metrics.pairwise import cosine_similarity
 
 
-class JaccardSnippetGenerator:
+class SnippetGenerator:
 
-    def __init__(self, neighboringFiles, domainWindowSize, coDomainWindowSize, currentFile, cursorPosition):
+    def __init__(self, neighboringFiles, domainWindowSize, coDomainWindowSize, currentFile, cursorPosition, compareMethod):
         self.neighboringFiles = neighboringFiles
         self.domainWindowSize = domainWindowSize
         self.coDomainWindowSize = coDomainWindowSize
         self.currentFile = currentFile
         self.cursorPosition = cursorPosition
+        self.compareMethod = compareMethod
 
     def getSnippets(self):
-        domainWindowTokenized = self.__tokenizeCode(self.__getCodeFromDomainWindow())
+        domainWindowCode = self.__getCodeFromDomainWindow()
 
         unionOfAllLists = (self.neighboringFiles['fileRelatedToParentClass'] +
                            self.neighboringFiles['filesRelatedToSiblingsClasses'] +
@@ -29,16 +33,21 @@ class JaccardSnippetGenerator:
             windowsOfSpecificFile = []
 
             for slidingWindow in slidingWindows:
-                slidingWindowTokenized = self.__tokenizeCode(slidingWindow.get('code'))
-                intersection = len(set(domainWindowTokenized).intersection(slidingWindowTokenized))
-                union = len(set(domainWindowTokenized).union(slidingWindowTokenized))
-                jaccardValue = intersection / union
-
+                #switch case for compareMethod
+                if self.compareMethod == "jaccard":
+                    value = self.__calculateJaccardValue(domainWindowCode, slidingWindow.get('code'))
+                elif self.compareMethod == "cosine":
+                    value = self.__calculateCosineValue(domainWindowCode, slidingWindow.get('code'))
+                elif self.compareMethod == "levenshtein":
+                    value = self.__calculateLevenshteinValue(domainWindowCode, slidingWindow.get('code'))
+                else:
+                    warnings.warn("No valid compareMethod selected")
+                    return
                 window = {}
                 window['filePath'] = filePath
                 window['fileCategory'] = self.__getFileCategory(filePath)
                 window['range'] = slidingWindow.get('range')
-                window['jaccardValue'] = jaccardValue
+                window['value'] = value
                 window['code'] = slidingWindow.get('code')
 
                 windowsOfSpecificFile.append(window)
@@ -48,17 +57,11 @@ class JaccardSnippetGenerator:
             filteredWindowsOfAllFiles.extend(filteredWindowsOfSpecificFile)
 
         for window in filteredWindowsOfAllFiles:
-            print(f"filePath: {window['filePath']}, fileCategory: {window['fileCategory']}, range: {window['range']}, jaccardValue: {window['jaccardValue']}")
+            print(f"filePath: {window['filePath']}, fileCategory: {window['fileCategory']}, range: {window['range']}, value: {window['value']}")
 
         self.__printPlot(filteredWindowsOfAllFiles, '')
 
         return filteredWindowsOfAllFiles
-
-    # def withCosine(self, file):
-    #         return "snippet"
-    #
-    # def withLevenshtein(self, file):
-    #     return "snippet"
 
     def __tokenizeCode(self, code):
         # Regex zum Trennen von Tokens basierend auf Leerzeichen und speziellen Zeichen
@@ -113,11 +116,11 @@ class JaccardSnippetGenerator:
     # gleichzeitig sich nicht zu stark überlappen
     def __filterWindowsOfSpecificFile(self, windowsOfSpecificFile):
         intersectionThreshold = 0.2
-        jaccardValueThreshold = 0.2
+        valueThreshold = 0.2
 
         thresholdFulfillingWindows = [window for window in windowsOfSpecificFile if
-                                      window['jaccardValue'] > jaccardValueThreshold]
-        thresholdFulfillingWindows.sort(key=lambda x: x['jaccardValue'], reverse=True)
+                                      window['value'] > valueThreshold]
+        thresholdFulfillingWindows.sort(key=lambda x: x['value'], reverse=True)
 
         for window in thresholdFulfillingWindows:  # Die beiden Zahlwerte in range werden zu einer Sequenz umgewandelt um später die Überschneidung zu berechnen
             window['range'] = list(range(window['range'][0], window['range'][1]))
@@ -126,10 +129,10 @@ class JaccardSnippetGenerator:
 
         if len(thresholdFulfillingWindows) > 0:
             disjunctWindows.append(thresholdFulfillingWindows[
-                                       0])  # Füge das erste Fenster hinzu, da es das Fenster mit dem höchsten Jaccard-Wert ist
+                                       0])  # Füge das erste Fenster hinzu, da es das Fenster mit dem höchsten value ist
 
         for window in thresholdFulfillingWindows[
-                      1:]:  # Iteriere absteigend (bezogen auf den Jaccard-Wert) über alle Fenster und füge sie hinzu
+                      1:]:  # Iteriere absteigend (bezogen auf value) über alle Fenster und füge sie hinzu
             rangeSequenceOfWindow = set(window['range'])  # wenn die Überschneidung nicht zu groß ist
             notAddDueToIntersection = False
             for filteredWindow in disjunctWindows:
@@ -147,11 +150,65 @@ class JaccardSnippetGenerator:
 
         return disjunctWindows
 
+    def __calculateJaccardValue(self, domainWindow, slidingWindow):
+        domainWindowTokenized = self.__tokenizeCode(domainWindow)
+        slidingWindowTokenized = self.__tokenizeCode(slidingWindow)
+        intersection = len(set(domainWindowTokenized).intersection(slidingWindowTokenized))
+        union = len(set(domainWindowTokenized).union(slidingWindowTokenized))
+        jaccardValue = intersection / union
+        return jaccardValue
+
+    def __calculateCosineValue(self, domainWindow, slidingWindow):
+        # Tokenisierung des Codes in Wörter
+        domainWindowTokenized = self.__tokenizeCode(domainWindow)
+        slidingWindowTokenized = self.__tokenizeCode(slidingWindow)
+
+        # Zusammenfügen der Tokens zu Sätzen für TF-IDF
+        sentence1 = ' '.join(domainWindowTokenized)
+        sentence2 = ' '.join(slidingWindowTokenized)
+
+        # TF-IDF Vektorisierung
+        vectorizer = TfidfVectorizer()
+        vectors = vectorizer.fit_transform([sentence1, sentence2])
+
+        # Berechnung der Kosinusähnlichkeit
+        similarity = cosine_similarity(vectors)
+
+        return similarity[0, 1]
+
+    def __calculateLevenshteinValue(self, domainWindowCode, slidingWindow):
+        # Split code into lines
+        lines1 = domainWindowCode.splitlines()
+        lines2 = slidingWindow.splitlines()
+        m = len(lines1)
+        n = len(lines2)
+
+        # Initialize dp matrix
+        dp = [[0] * (n + 1) for _ in range(m + 1)]
+
+        # Base cases
+        for i in range(m + 1):
+            dp[i][0] = i
+        for j in range(n + 1):
+            dp[0][j] = j
+
+        # Fill dp matrix
+        for i in range(1, m + 1):
+            for j in range(1, n + 1):
+                if lines1[i - 1] == lines2[j - 1]:
+                    dp[i][j] = dp[i - 1][j - 1]
+                else:
+                    dp[i][j] = min(dp[i - 1][j] + 1,      # Delete operation
+                                   dp[i][j - 1] + 1,      # Insert operation
+                                   dp[i - 1][j - 1] + 1)  # Replace operation
+
+        return dp[m][n]
+
     def __printPlot(self, windowsOfSpecificFile, filePath):
         print("plo")
-        # Extracting ranges, jaccard values, and file paths
+        # Extracting ranges, values, and file paths
         x_ranges = [window['range'] for window in windowsOfSpecificFile]
-        y_jaccard_values = [window['jaccardValue'] for window in windowsOfSpecificFile]
+        y_values = [window['value'] for window in windowsOfSpecificFile]
         file_names = [re.search(r'[^/\\]+$', window['filePath']).group() for window in windowsOfSpecificFile]
 
         repo_title_index = filePath.find("repos")
@@ -165,12 +222,12 @@ class JaccardSnippetGenerator:
 
         # Plotting the diagram with horizontal lines for ranges
         plt.figure(figsize=(10, 6))
-        for i, (x_range, y_value, file_path) in enumerate(zip(x_ranges, y_jaccard_values, file_names)):
+        for i, (x_range, y_value, file_path) in enumerate(zip(x_ranges, y_values, file_names)):
             plt.hlines(y=y_value, xmin=x_range[0], xmax=x_range[1], color=colors[i], linewidth=2)
             plt.annotate(file_path, xy=(x_range[0], y_value), xytext=(5, 2), textcoords='offset points', fontsize=8, color=colors[i])
 
         plt.xlabel('Range')
-        plt.ylabel('Jaccard Value')
+        plt.ylabel('Value')
         plt.title(f'{plot_title}')
         plt.grid(True)
         plt.xticks(rotation=45)

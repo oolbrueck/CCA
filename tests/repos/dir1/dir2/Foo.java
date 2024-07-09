@@ -53,4 +53,25 @@ public class Foo {
             System.err.println("Error creating PDF file: " + e.getMessage());
         }
     }
+
+import java.io.*;
+import java.lang.*;
+import java.util.*;
+import java.math.*;
+
+class MinCost {
+    /** * * Write a function to find the minimum cost path to reach (m, n) from (0, 0) for
+     * the given cost matrix cost[][] and a position (m, n) in
+     * cost[][]. * * > minCost([[1, 2, 3], [4, 8, 2], [1, 5, 3]], 2, 2) * 8 * >
+     * minCost([[2, 3, 4], [5, 9, 3], [2, 6, 4]], 2, 2) * 12 * >
+     * minCost([[3, 4, 5], [6, 10, 4], [3, 7, 5]], 2, 2) * 16 */
+    public static int minCost(List<List<Integer>> cost, int m, int n) {
+
+
+
+
+
+
+
+
 }
