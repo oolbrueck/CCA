@@ -3,7 +3,7 @@ import openai
 from openai import OpenAI
 
 # Setzen der Umgebungsvariable im Skript (nur für das Beispiel)
-os.environ["OPENAI_API_KEY"] = "sk-proj-MzvNgAHh1QSA1e9R0OELT3BlbkFJhzvvRnZegqPx3jscg2ea"
+os.environ["OPENAI_API_KEY"] = "KEY"
 
 # Initialisierung des Clients
 openai.api_key = os.environ.get("OPENAI_API_KEY")
