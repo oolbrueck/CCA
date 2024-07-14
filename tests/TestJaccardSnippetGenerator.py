@@ -10,8 +10,8 @@ class TestSnippetGenerator(unittest.TestCase):
             'fileRelatedToImportedClasses': ['imported_class_file.py'],
             'fileRelatedToClassesFromNeighboringFiles': ['neighboring_class_file.py']
         }
-        focussedFile = "./repos/dir1/dir2/Foo.java"
-        self.generator = SnippetGenerator(self.neighboringFiles, 10, 10, focussedFile, 29, 'jaccard')
+        focussed_file = "./repos/dir1/dir2/Foo.java"
+        self.generator = SnippetGenerator(self.neighboringFiles, 10, 10, focussed_file, 29, 'jaccard')
 
     def test_tokenize_code(self):
         code = """
@@ -25,11 +25,11 @@ class TestSnippetGenerator(unittest.TestCase):
         expected_tokens = ['public', 'class', 'MainClass', '{', 'public', 'static', 'void', 'main', '(', 'String', '[',
                            ']', 'args', ')', '{', 'System', '.', 'out', '.', 'println', '(', 'Hello', 'World', ')', ';', '}', '}']
 
-        self.assertEqual(self.generator._SnippetGenerator__tokenizeCode(code), expected_tokens)
+        self.assertEqual(self.generator._SnippetGenerator__tokenize_code(code), expected_tokens)
 
 
     def test_filter_windows_of_specific_file(self):
-        windowsOfSpecificFile = [
+        windows_of_specific_file = [
             {'value': 0.6, 'range': [0, 10]},
             {'value': 0.8, 'range': [5, 15]},
             {'value': 0.4, 'range': [10, 20]},
@@ -39,7 +39,7 @@ class TestSnippetGenerator(unittest.TestCase):
         expected_filtered_windows = [{'value': 0.9, 'range': [25, 34]},
                                      {'value': 0.8, 'range': [5, 14]}]
 
-        filtered_windows = self.generator._SnippetGenerator__filterWindowsOfSpecificFile(windowsOfSpecificFile)
+        filtered_windows = self.generator._SnippetGenerator__filter_windows_of_specific_file(windows_of_specific_file)
         self.assertEqual(filtered_windows, expected_filtered_windows)
 
     def test_get_code_from_domain_window(self):
@@ -57,7 +57,7 @@ class TestSnippetGenerator(unittest.TestCase):
         // Create a paragraph
         """
 
-        self.assertEqual(self.generator._SnippetGenerator__getCodeFromDomainWindow(), self.generator._JaccardSnippetGenerator__getCodeFromDomainWindow()) #TODO
+        self.assertEqual(self.generator._SnippetGenerator__get_code_from_domain_window(), self.generator._JaccardSnippetGenerator__get_code_from_domain_window()) #TODO
 
 if __name__ == '__main__':
     unittest.main()
