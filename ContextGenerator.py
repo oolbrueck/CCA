@@ -1,72 +1,60 @@
 import tiktoken
-from pydantic import warnings
+import warnings
 
 
 class ContextGenerator:
 
-    def __init__(self, windows, path, cursorPosition, contextTokenLimit):
+    def __init__(self, windows, path, cursor_position, context_token_limit):
         self.path = path
         self.windows = windows
-        self.cursorPosition = cursorPosition
+        self.cursor_position = cursor_position
         self.encoding_name = "cl100k_base"
-        self.contextTokenLimit = contextTokenLimit
+        self.context_token_limit = context_token_limit
 
+    def generate_context(self):
+        self.__align_snippets()
 
-    def generateContext(self):
-        self.__alignSnippets()
-
-        contextFromOtherFiles = ""
-        contextOfCurrentFile = self.__getContextFromCurrentFile()
+        context_from_other_files = ""
+        context_of_current_file = self.__get_context_from_current_file()
         for window in self.windows:
-            contextFromOtherFiles += self.__toComment(window) + "\n\n"
+            context_from_other_files += self.__to_comment(window) + "\n\n"
 
-        return self.reduceContextIfNeccessary(contextFromOtherFiles, contextOfCurrentFile)
+        return self.reduce_context_if_necessary(context_from_other_files, context_of_current_file)
 
-
-    def __alignSnippets(self):
+    def __align_snippets(self):
         self.windows.sort(key=lambda x: x['value'], reverse=True)
 
-    def __toComment(self, window):
-        languageSpecificComment = "//"
-        firstLine = languageSpecificComment + "compare this snippet from " + window['filePath'] + ":\n"
-        #window['code'] is a multiline string, add languageSpecificComment to each line at the beginning
+    def __to_comment(self, window):
+        language_specific_comment = "//"
+        first_line = language_specific_comment + "compare this snippet from " + window['file_path'] + ":\n"
         code = window['code'].split("\n")
-        code = [languageSpecificComment + line for line in code]
-        #join all lines to a single string and add the firstLine to the beginning of the
-        code = firstLine + "\n".join(code)
+        code = [language_specific_comment + line for line in code]
+        code = first_line + "\n".join(code)
         return code
 
-    #creates a multiline-String from the content in the file and adds the String <insert Code here> at the cursorPosition
-    def __getContextFromCurrentFile(self):
+    def __get_context_from_current_file(self):
         with open(self.path, 'r') as f:
             code = f.read()
         lines = code.split("\n")
-        line = lines[self.cursorPosition - 1] + "<insert Code here>"
-        lines[self.cursorPosition - 1] = line
+        lines[self.cursor_position - 1] += "<insert Code here>"
         lines = [line for line in lines if line.strip()]
-        #concatenate all lines to a single multiline-string
         context = "\n".join(lines)
         return context
 
-    def reduceContextIfNeccessary(self, contextFromOtherFiles, contextOfCurrentFile):
-        tokensOfCurrentFile = self.num_tokens_from_string(contextOfCurrentFile)
-        tokensOfOtherFiles = self.num_tokens_from_string(contextFromOtherFiles)
-        if(tokensOfCurrentFile > self.contextTokenLimit):
+    def reduce_context_if_necessary(self, context_from_other_files, context_of_current_file):
+        tokens_of_current_file = self.num_tokens_from_string(context_of_current_file)
+        tokens_of_other_files = self.num_tokens_from_string(context_from_other_files)
+        if tokens_of_current_file > self.context_token_limit:
             warnings.warn("Das aktuelle File enthält zu viele Tokens")
-        if(tokensOfOtherFiles + tokensOfCurrentFile > self.contextTokenLimit):
-            #reduce 10 characters from contextOfOtherFiles until the limit is reached
-            while(tokensOfOtherFiles + tokensOfCurrentFile > self.contextTokenLimit):
-                contextFromOtherFiles = contextFromOtherFiles[:-10]
-                tokensOfOtherFiles = self.num_tokens_from_string(contextFromOtherFiles)
+        if tokens_of_other_files + tokens_of_current_file > self.context_token_limit:
+            while tokens_of_other_files + tokens_of_current_file > self.context_token_limit:
+                context_from_other_files = context_from_other_files[:-10]
+                tokens_of_other_files = self.num_tokens_from_string(context_from_other_files)
 
-        return contextFromOtherFiles + "\n" + contextOfCurrentFile
-
-
+        return context_from_other_files + "\n" + context_of_current_file
 
     def num_tokens_from_string(self, code):
         """Returns the number of tokens in a text string."""
         encoding = tiktoken.get_encoding(self.encoding_name)
         num_tokens = len(encoding.encode(code))
         return num_tokens
-
-

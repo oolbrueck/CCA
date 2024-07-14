@@ -1,230 +1,212 @@
 import re
 import matplotlib.pyplot as plt
 import numpy as np
-from pydantic import warnings
+import warnings
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 
 
 class SnippetGenerator:
 
-    def __init__(self, neighboringFiles, domainWindowSize, coDomainWindowSize, currentFile, cursorPosition, compareMethod):
-        self.neighboringFiles = neighboringFiles
-        self.domainWindowSize = domainWindowSize
-        self.coDomainWindowSize = coDomainWindowSize
-        self.currentFile = currentFile
-        self.cursorPosition = cursorPosition
-        self.compareMethod = compareMethod
+    def __init__(self, neighboring_files, domain_window_size, co_domain_window_size, current_file, cursor_position, compare_method):
+        self.neighboring_files = neighboring_files
+        self.domain_window_size = domain_window_size
+        self.co_domain_window_size = co_domain_window_size
+        self.current_file = current_file
+        self.cursor_position = cursor_position
+        self.compare_method = compare_method
 
-    def getSnippets(self):
-        domainWindowCode = self.__getCodeFromDomainWindow()
+    def get_snippets(self):
+        domain_window_code = self.__get_code_from_domain_window()
 
-        unionOfAllLists = (self.neighboringFiles['fileRelatedToParentClass'] +
-                           self.neighboringFiles['filesRelatedToSiblingsClasses'] +
-                           self.neighboringFiles['fileRelatedToImportedClasses'] +
-                           self.neighboringFiles['fileRelatedToClassesFromNeighboringFiles'])
+        union_of_all_files = (self.neighboring_files['file_related_to_parent_class'] +
+                              self.neighboring_files['files_related_to_siblings_classes'] +
+                              self.neighboring_files['file_related_to_imported_classes'] +
+                              self.neighboring_files['file_related_to_classes_from_neighboring_files'])
 
-        filteredWindowsOfAllFiles = []
+        filtered_windows_of_all_files = []
 
-        print("unionOfAllLists: ", len(unionOfAllLists))
+        print("union_of_all_files: ", len(union_of_all_files))
 
-        for filePath in unionOfAllLists:
-            slidingWindows = self.__getSlidingWindows(filePath)
-            windowsOfSpecificFile = []
+        if len(union_of_all_files) < 20:
+            warnings.warn("Es konnten nicht genügend Dateien gefunden werden, um den Kontext zu simulieren.")
 
-            for slidingWindow in slidingWindows:
-                #switch case for compareMethod
-                if self.compareMethod == "jaccard":
-                    value = self.__calculateJaccardValue(domainWindowCode, slidingWindow.get('code'))
-                elif self.compareMethod == "cosine":
-                    value = self.__calculateCosineValue(domainWindowCode, slidingWindow.get('code'))
-                elif self.compareMethod == "levenshtein":
-                    value = self.__calculateLevenshteinValue(domainWindowCode, slidingWindow.get('code'))
+        for file_path in union_of_all_files:
+            sliding_windows = self.__get_sliding_windows(file_path)
+            windows_of_specific_file = []
+
+            for sliding_window in sliding_windows:
+                if self.compare_method == "jaccard":
+                    value = self.__calculate_jaccard_value(domain_window_code, sliding_window.get('code'))
+                elif self.compare_method == "cosine":
+                    value = self.__calculate_cosine_value(domain_window_code, sliding_window.get('code'))
+                elif self.compare_method == "levenshtein":
+                    value = self.__calculate_levenshtein_value(domain_window_code, sliding_window.get('code'))
                 else:
-                    warnings.warn("No valid compareMethod selected")
+                    warnings.warn("No valid compare_method selected")
                     return
-                window = {}
-                window['filePath'] = filePath
-                window['fileCategory'] = self.__getFileCategory(filePath)
-                window['range'] = slidingWindow.get('range')
-                window['value'] = value
-                window['code'] = slidingWindow.get('code')
 
-                windowsOfSpecificFile.append(window)
+                window = {
+                    'file_path': file_path,
+                    'file_category': self.__get_file_category(file_path),
+                    'range': sliding_window.get('range'),
+                    'value': value,
+                    'code': sliding_window.get('code')
+                }
 
-            filteredWindowsOfSpecificFile = self.__filterWindowsOfSpecificFile(windowsOfSpecificFile)
+                windows_of_specific_file.append(window)
 
-            filteredWindowsOfAllFiles.extend(filteredWindowsOfSpecificFile)
+            filtered_windows_of_specific_file = self.__filter_windows_of_specific_file(windows_of_specific_file)
+            filtered_windows_of_all_files.extend(filtered_windows_of_specific_file)
 
-        for window in filteredWindowsOfAllFiles:
-            print(f"filePath: {window['filePath']}, fileCategory: {window['fileCategory']}, range: {window['range']}, value: {window['value']}")
+        for window in filtered_windows_of_all_files:
+            print(f"file_path: {window['file_path']}, file_category: {window['file_category']}, range: {window['range']}, value: {window['value']}")
 
-        self.__printPlot(filteredWindowsOfAllFiles, '')
+        self.__print_plot(filtered_windows_of_all_files, '')
 
-        return filteredWindowsOfAllFiles
+        return filtered_windows_of_all_files
 
-    def __tokenizeCode(self, code):
-        # Regex zum Trennen von Tokens basierend auf Leerzeichen und speziellen Zeichen
+    def __tokenize_code(self, code):
         tokens = re.findall(r"[\w']+|[(){}[\],.;]", code)
         return tokens
 
-    # Funktion liefert ein Code-Fenster um die aktuelle Cursor-Position
-    # Das Fenster ist domainWindowSize + 1 groß, wobei Leerzeilen ignoriert werden
-    def __getCodeFromDomainWindow(self):
-        with open(self.currentFile, 'r') as f:
+    def __get_code_from_domain_window(self):
+        with open(self.current_file, 'r') as f:
             code = f.read()
         lines = code.split("\n")
-        line = lines[self.cursorPosition - 1] + "<curser>"
-        lines[self.cursorPosition - 1] = line
-        lines = [line for line in lines if line.strip()]  # Remove empty lines
-        #get the line that contains the substring "<insert Code here>"
-        cursorPositionAfterRemovingEmptyLines = [i for i, line in enumerate(lines) if "<curser>" in line][0]
+        lines[self.cursor_position - 1] += "<curser>"
+        lines = [line for line in lines if line.strip()]
 
+        cursor_position_after_removing_empty_lines = [i for i, line in enumerate(lines) if "<curser>" in line][0]
         modified_lines = [line + "\n" for line in lines]
-        domainWindow = "".join(modified_lines[cursorPositionAfterRemovingEmptyLines - int(self.domainWindowSize / 2):cursorPositionAfterRemovingEmptyLines + 1 + int(self.domainWindowSize / 2)])
-        domainWindow = domainWindow.replace("<curser>", "")
+        domain_window = "".join(modified_lines[cursor_position_after_removing_empty_lines - int(self.domain_window_size / 2):
+                                               cursor_position_after_removing_empty_lines + 1 + int(self.domain_window_size / 2)])
+        domain_window = domain_window.replace("<curser>", "")
 
-        return domainWindow
+        return domain_window
 
-
-    def __getSlidingWindows(self, filePath):
-        with open(filePath, 'r') as f:
+    def __get_sliding_windows(self, file_path):
+        with open(file_path, 'r') as f:
             code = f.read()
         lines = code.split("\n")
-        slidingWindows = []
-        for i in range(0, len(lines) - self.coDomainWindowSize):
-            window = {}
-            #join all lines in the window to a single string and append after each line a newline character
-            window['code'] = "".join([line + "\n" for line in lines[i:i + self.coDomainWindowSize]])
-            window['range'] = [i, i + self.coDomainWindowSize]
-            slidingWindows.append(window)
-        return slidingWindows
+        sliding_windows = []
+        for i in range(0, len(lines) - self.co_domain_window_size):
+            window = {
+                'code': "".join([line + "\n" for line in lines[i:i + self.co_domain_window_size]]),
+                'range': [i, i + self.co_domain_window_size]
+            }
+            sliding_windows.append(window)
+        return sliding_windows
 
-    def __getFileCategory(self, filePath):
-        if filePath in self.neighboringFiles['fileRelatedToParentClass']:
-            return 'fileRelatedToParentClass'
-        elif filePath in self.neighboringFiles['filesRelatedToSiblingsClasses']:
-            return 'filesRelatedToSiblingsClasses'
-        elif filePath in self.neighboringFiles['fileRelatedToImportedClasses']:
-            return 'fileRelatedToImportedClasses'
-        elif filePath in self.neighboringFiles['fileRelatedToClassesFromNeighboringFiles']:
-            return 'fileRelatedToClassesFromNeighboringFiles'
+    def __get_file_category(self, file_path):
+        if file_path in self.neighboring_files['file_related_to_parent_class']:
+            return 'file_related_to_parent_class'
+        elif file_path in self.neighboring_files['files_related_to_siblings_classes']:
+            return 'files_related_to_siblings_classes'
+        elif file_path in self.neighboring_files['file_related_to_imported_classes']:
+            return 'file_related_to_imported_classes'
+        elif file_path in self.neighboring_files['file_related_to_classes_from_neighboring_files']:
+            return 'file_related_to_classes_from_neighboring_files'
         else:
             return 'unknown'
 
-    # Funktion dient dazu die Fenster herauszufiltern, welche einen Schwellenwert erfüllen und
-    # gleichzeitig sich nicht zu stark überlappen
-    def __filterWindowsOfSpecificFile(self, windowsOfSpecificFile):
-        intersectionThreshold = 0.2
-        valueThreshold = 0.2
+    def __filter_windows_of_specific_file(self, windows_of_specific_file):
+        intersection_threshold = 0.2
+        value_threshold = 0.2
 
-        thresholdFulfillingWindows = [window for window in windowsOfSpecificFile if
-                                      window['value'] > valueThreshold]
-        thresholdFulfillingWindows.sort(key=lambda x: x['value'], reverse=True)
+        threshold_fulfilling_windows = [window for window in windows_of_specific_file if window['value'] > value_threshold]
+        threshold_fulfilling_windows.sort(key=lambda x: x['value'], reverse=True)
 
-        for window in thresholdFulfillingWindows:  # Die beiden Zahlwerte in range werden zu einer Sequenz umgewandelt um später die Überschneidung zu berechnen
+        for window in threshold_fulfilling_windows:
             window['range'] = list(range(window['range'][0], window['range'][1]))
 
-        disjunctWindows = []  # inklusive disjunkte und fast disjunkte Windows (siehe intersectionThreshold)
+        disjunct_windows = []
+        if threshold_fulfilling_windows:
+            disjunct_windows.append(threshold_fulfilling_windows[0])
 
-        if len(thresholdFulfillingWindows) > 0:
-            disjunctWindows.append(thresholdFulfillingWindows[
-                                       0])  # Füge das erste Fenster hinzu, da es das Fenster mit dem höchsten value ist
-
-        for window in thresholdFulfillingWindows[
-                      1:]:  # Iteriere absteigend (bezogen auf value) über alle Fenster und füge sie hinzu
-            rangeSequenceOfWindow = set(window['range'])  # wenn die Überschneidung nicht zu groß ist
-            notAddDueToIntersection = False
-            for filteredWindow in disjunctWindows:
-                rangeSequenceOfFilteredWindow = set(filteredWindow['range'])
-                intersectionValue = len(rangeSequenceOfWindow.intersection(rangeSequenceOfFilteredWindow))
-                proportion = intersectionValue / self.coDomainWindowSize
-                if proportion > intersectionThreshold:
-                    notAddDueToIntersection = True
+        for window in threshold_fulfilling_windows[1:]:
+            range_sequence_of_window = set(window['range'])
+            not_add_due_to_intersection = False
+            for filtered_window in disjunct_windows:
+                range_sequence_of_filtered_window = set(filtered_window['range'])
+                intersection_value = len(range_sequence_of_window.intersection(range_sequence_of_filtered_window))
+                proportion = intersection_value / self.co_domain_window_size
+                if proportion > intersection_threshold:
+                    not_add_due_to_intersection = True
                     break
-            if notAddDueToIntersection == False:
-                disjunctWindows.append(window)
+            if not not_add_due_to_intersection:
+                disjunct_windows.append(window)
 
-        for window in disjunctWindows:  # Die Sequenz wird wieder in ein Intervall umgewandelt
+        for window in disjunct_windows:
             window['range'] = [window['range'][0], window['range'][-1]]
 
-        return disjunctWindows
+        return disjunct_windows
 
-    def __calculateJaccardValue(self, domainWindow, slidingWindow):
-        domainWindowTokenized = self.__tokenizeCode(domainWindow)
-        slidingWindowTokenized = self.__tokenizeCode(slidingWindow)
-        intersection = len(set(domainWindowTokenized).intersection(slidingWindowTokenized))
-        union = len(set(domainWindowTokenized).union(slidingWindowTokenized))
-        jaccardValue = intersection / union
-        return jaccardValue
+    def __calculate_jaccard_value(self, domain_window, sliding_window):
+        domain_window_tokenized = self.__tokenize_code(domain_window)
+        sliding_window_tokenized = self.__tokenize_code(sliding_window)
+        intersection = len(set(domain_window_tokenized).intersection(sliding_window_tokenized))
+        union = len(set(domain_window_tokenized).union(sliding_window_tokenized))
+        jaccard_value = intersection / union
+        return jaccard_value
 
-    def __calculateCosineValue(self, domainWindow, slidingWindow):
-        # Tokenisierung des Codes in Wörter
-        domainWindowTokenized = self.__tokenizeCode(domainWindow)
-        slidingWindowTokenized = self.__tokenizeCode(slidingWindow)
+    def __calculate_cosine_value(self, domain_window, sliding_window):
+        domain_window_tokenized = self.__tokenize_code(domain_window)
+        sliding_window_tokenized = self.__tokenize_code(sliding_window)
 
-        # Zusammenfügen der Tokens zu Sätzen für TF-IDF
-        sentence1 = ' '.join(domainWindowTokenized)
-        sentence2 = ' '.join(slidingWindowTokenized)
+        sentence1 = ' '.join(domain_window_tokenized)
+        sentence2 = ' '.join(sliding_window_tokenized)
 
-        # TF-IDF Vektorisierung
         vectorizer = TfidfVectorizer()
         vectors = vectorizer.fit_transform([sentence1, sentence2])
 
-        # Berechnung der Kosinusähnlichkeit
         similarity = cosine_similarity(vectors)
 
         return similarity[0, 1]
 
-    def __calculateLevenshteinValue(self, domainWindowCode, slidingWindow):
-        # Split code into lines
-        lines1 = domainWindowCode.splitlines()
-        lines2 = slidingWindow.splitlines()
-        m = len(lines1)
-        n = len(lines2)
+    def __calculate_levenshtein_value(self, domain_window_code, sliding_window):
+        lines1 = domain_window_code.splitlines()
+        lines2 = sliding_window.splitlines()
+        m, n = len(lines1), len(lines2)
 
-        # Initialize dp matrix
         dp = [[0] * (n + 1) for _ in range(m + 1)]
 
-        # Base cases
         for i in range(m + 1):
             dp[i][0] = i
         for j in range(n + 1):
             dp[0][j] = j
 
-        # Fill dp matrix
         for i in range(1, m + 1):
             for j in range(1, n + 1):
                 if lines1[i - 1] == lines2[j - 1]:
                     dp[i][j] = dp[i - 1][j - 1]
                 else:
-                    dp[i][j] = min(dp[i - 1][j] + 1,      # Delete operation
-                                   dp[i][j - 1] + 1,      # Insert operation
-                                   dp[i - 1][j - 1] + 1)  # Replace operation
+                    dp[i][j] = min(dp[i - 1][j] + 1, dp[i][j - 1] + 1, dp[i - 1][j - 1] + 1)
 
         return dp[m][n]
 
-    def __printPlot(self, windowsOfSpecificFile, filePath):
+    def __print_plot(self, windows_of_specific_file, file_path):
         print("plo")
         # Extracting ranges, values, and file paths
-        x_ranges = [window['range'] for window in windowsOfSpecificFile]
-        y_values = [window['value'] for window in windowsOfSpecificFile]
-        file_names = [re.search(r'[^/\\]+$', window['filePath']).group() for window in windowsOfSpecificFile]
+        x_ranges = [window['range'] for window in windows_of_specific_file]
+        y_values = [window['value'] for window in windows_of_specific_file]
+        file_names = [re.search(r'[^/\\]+$', window['file_path']).group() for window in windows_of_specific_file]
 
-        repo_title_index = filePath.find("repos")
+        repo_title_index = file_path.find("repos")
         if repo_title_index != -1:
-            plot_title = filePath[repo_title_index:]
+            plot_title = file_path[repo_title_index:]
         else:
-            plot_title = filePath
+            plot_title = file_path
 
         # Generating a colormap
         colors = plt.cm.viridis(np.linspace(0, 1, len(x_ranges)))
 
         # Plotting the diagram with horizontal lines for ranges
         plt.figure(figsize=(10, 6))
-        for i, (x_range, y_value, file_path) in enumerate(zip(x_ranges, y_values, file_names)):
+        for i, (x_range, y_value, file_path_i) in enumerate(zip(x_ranges, y_values, file_names)):
             plt.hlines(y=y_value, xmin=x_range[0], xmax=x_range[1], color=colors[i], linewidth=2)
-            plt.annotate(file_path, xy=(x_range[0], y_value), xytext=(5, 2), textcoords='offset points', fontsize=8, color=colors[i])
+            plt.annotate(file_path_i, xy=(x_range[0], y_value), xytext=(5, 2), textcoords='offset points', fontsize=8,
+                         color=colors[i])
 
         plt.xlabel('Range')
         plt.ylabel('Value')

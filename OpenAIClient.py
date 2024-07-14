@@ -1,21 +1,15 @@
-import os
 import openai
 from openai import OpenAI
 
-# Setzen der Umgebungsvariable im Skript (nur für das Beispiel)
-os.environ["OPENAI_API_KEY"] = "KEY"
-
-# Initialisierung des Clients
-openai.api_key = os.environ.get("OPENAI_API_KEY")
 
 class OpenAIClient:
 
-    def __init__(self, context):
+    def __init__(self, context, openai_key):
         self.context = context
+        openai.api_key = openai_key
 
-
-    def submitPrompt(self):
-        #create two variables, one for the substring in self.context that ist before <insert Code here>, and the other for the substring after <insert Code here>
+    def submit_prompt(self):
+        # create two variables, one for the substring in self.context that ist before <insert Code here>, and the other for the substring after <insert Code here>
         before = self.context.split("<insert Code here>")[0]
         after = self.context.split("<insert Code here>")[1]
 
@@ -29,7 +23,7 @@ class OpenAIClient:
         #     suffix=after,
         #     max_tokens=100
         # )
-        #return response.choices[0].text.strip()
+        # return response.choices[0].text.strip()
         # completion = openai.chat.completions.create(
         #     model="gpt-3.5-turbo-0125",
         #     messages=[
@@ -49,8 +43,3 @@ class OpenAIClient:
         )
         print("completion: ", completion)
         return completion.choices[0].message
-
-
-
-
-
