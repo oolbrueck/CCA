@@ -3,6 +3,8 @@ import os
 import javalang
 import warnings
 
+from Protocol import protocol_obj
+
 
 # Die Klasse Simulator dient dazu der CodeCompletion-Klasse Files zur verfügung zu stellen, welche als Kontext angesehen werden können.
 # Bei Code-Assitenten wie GitHub Copilot speist sich der Kontext aus dem aktuellen File sowie weiteren Files in geöffneten Tabs (max. 20).
@@ -105,6 +107,8 @@ class Simulator:
 
         if len(union_of_all_files) < 20:
             warnings.warn("Es konnten nicht genügend Dateien gefunden werden, um den Kontext zu simulieren.")
+            # setzte im Protokol das attribut valid auf false
+            protocol_obj.is_valid = False
 
         files_to_exclude = []  # Liste der Files, die nicht in den Kontext einbezogen werden sollen, da die Gesamtanzahl der Files > 20 ist
         if len(union_of_all_files) > 20:
@@ -113,6 +117,7 @@ class Simulator:
         for key in neighboring_files.keys():  # Die identifizierten Files werden aus dem neighboring_files-Dictionary entfernt
             neighboring_files[key] = [path for path in neighboring_files[key] if path not in files_to_exclude]
 
+        protocol_obj.neighboring_files = neighboring_files
         return neighboring_files
 
     def __get_class_name_from_file(self, file_path):
