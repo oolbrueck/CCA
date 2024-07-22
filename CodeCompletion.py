@@ -43,6 +43,7 @@ program_parameter_context_token_limit = int(sys.argv[8])
 program_parameter_intersection_threshold = float(sys.argv[9])
 program_parameter_value_threshold = float(sys.argv[10])
 program_parameter_model = sys.argv[11]
+program_parameter_original_code = sys.argv[12]
 
 # Setzen der Programmparameter im Protokoll
 protocol_obj.program_parameters['path_to_repo'] = program_parameter_path_to_repo
@@ -55,9 +56,16 @@ protocol_obj.program_parameters['context_token_limit'] = program_parameter_conte
 protocol_obj.program_parameters['intersection_threshold'] = program_parameter_intersection_threshold
 protocol_obj.program_parameters['value_threshold'] = program_parameter_value_threshold
 protocol_obj.program_parameters['model'] = program_parameter_model
+protocol_obj.program_parameters['original_code'] = program_parameter_original_code
 
 # Generieren der Code-Vervollständigung
 code_completion = CodeCompletion()
 completion = code_completion.complete()
 
 protocol_obj.completion = completion
+
+#TODO
+# calculate the codebleau score between the original code and the completion
+# codebleu_score = calculate_code_bleu_score(program_parameter_original_code, completion)
+# protocol_obj.code_bleu_score = codebleu_score
+
