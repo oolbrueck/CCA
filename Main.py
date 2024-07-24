@@ -18,11 +18,18 @@
 #
 # # Ausgabe der Antwort
 # print(completion.choices[0].message)
-from CodeCompletion import CodeCompletion
 
-print("initiating CodeCompletion")
 
-codeCompletion = CodeCompletion(r"C:\Users\oligo\OneDrive\Bachelor Arbeit\repos\elasticsearch-java-main")
-codeCompletion.complete(r"C:\Users\oligo\OneDrive\Bachelor Arbeit\repos\elasticsearch-java-main\java-client\src\main\java\co\elastic\clients\json\SimpleJsonpMapper.java", 107)
+#codeCompletion = CodeCompletion(r"C:\Users\oligo\OneDrive\Bachelor Arbeit\repos\elasticsearch-java-main")
+#codeCompletion.complete(r"C:\Users\oligo\OneDrive\Bachelor Arbeit\repos\elasticsearch-java-main\java-client\src\main\java\co\elastic\clients\json\SimpleJsonpMapper.java", 107)
+
+
+# Ursprünglicher Pfad mit vielen Backslashes
+path = "C:\\Users\\oligo\\OneDrive\\Bachelor Arbeit\\repos\\elasticsearch-java-main\\examples\\realworld-app\\rw-database\\src\\main\\java\\realworld\\db\\UserService.java"
+
+# Ersetzen von Backslashes durch Forward Slashes
+normalized_path = path.replace("\\", "/")
+
+print(normalized_path)
 
 

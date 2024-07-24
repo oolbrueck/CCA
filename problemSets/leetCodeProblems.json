@@ -1,0 +1,6 @@
+[
+  {
+    "id": 0,
+    "problem": "class Solution {\n    //Given n pairs of parentheses, write a function to generate all combinations of well-formed parentheses.\n    //Constraints: 1 <= n <= 8\n    public List<String> generateParenthesis(int n) {\n        <insert Code here>\n    }\n}"
+  }
+]

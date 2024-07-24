@@ -1,9 +1,9 @@
 [
   {
     "id": 0,
-    "repo_path": "",
-    "current_file": "",
-    "cursor_position": 0,
-    "solution": "",
+    "repo_path": "/elasticsearch-java-main",
+    "current_file": "/elasticsearch-java-main/java-client/src/main/java/co/elastic/clients/json/JsonpUtils.java",
+    "cursor_position": 106,
+    "solution": "throw new UnexpectedJsonEventException(parser, event, expected);"
   }
 ]

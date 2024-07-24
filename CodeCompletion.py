@@ -64,6 +64,8 @@ completion = code_completion.complete()
 
 protocol_obj.completion = completion
 
+print(protocol_obj.completion)
+
 #TODO
 # calculate the codebleau score between the original code and the completion
 # codebleu_score = calculate_code_bleu_score(program_parameter_original_code, completion)
