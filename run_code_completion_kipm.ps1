@@ -16,7 +16,7 @@ foreach ($item in $jsonContent) {
         $pathPrefix + $item.repo_path
         $pathPrefix + $item.current_file
         $item.cursor_position
-        "REDACTED"
+        ""
         "jaccard"
         "20"
         "60"
