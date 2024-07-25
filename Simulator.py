@@ -1,7 +1,9 @@
 import os
 
 import javalang
-from pydantic import warnings
+import warnings
+
+from Protocol import protocol_obj
 
 
 # Die Klasse Simulator dient dazu der CodeCompletion-Klasse Files zur verfügung zu stellen, welche als Kontext angesehen werden können.
@@ -17,40 +19,41 @@ from pydantic import warnings
 # Die Files werden kategorisiert bereitgestellt, um die Verwendung in der CodeCompletion-Klasse zu erleichtern.
 class Simulator:
 
-    def __init__(self, pathToRepo):
-        self.pathToRepo = pathToRepo
-        self.classesWithTheirPath, self.classesWithTheirParent = self.__getClassStructure(pathToRepo)
+    def __init__(self, path_to_repo):
+        self.path_to_repo = path_to_repo
+        self.classes_with_their_path, self.classes_with_their_parent = self.__get_class_structure()
 
     # Die Funktion gibt zwei Dictionaries zurück, welche zum einen die Klassen und deren Pfade und zum anderen
     # die Klassen und deren Elternklasse enthalten, welche im Repository vorhanden sind.
     # In dieser Funktion wird dazu das gesamte Repository durchsucht.
-    def __getClassStructure(self, pathToRepo):
-        classesWithPaths = {}
-        classesWithParentClass = {}
+    def __get_class_structure(self):
+        classes_with_paths = {}
+        classes_with_parent_class = {}
 
-        if os.path.exists("project_structure.json"): # Da das traversieren des Repositories dauern kann, wird die Struktur beim ersten Durchlauf in einer Datei gespeichert
+        if os.path.exists(
+                "project_structure.json"):  # Da das traversieren des Repositories dauern kann, wird die Struktur beim ersten Durchlauf in einer Datei gespeichert
             import json
             with open("project_structure.json", "r") as f:
                 data = json.load(f)
                 return data["classesWithPaths"], data["classesWithParentClass"]
         else:
-            for root, dirs, files in os.walk(pathToRepo):
+            for root, dirs, files in os.walk(self.path_to_repo):
                 for file in files:
                     if file.endswith(".java"):
-                        filepath = os.path.join(root, file)
+                        file_path = os.path.join(root, file)
 
-                        className = self.__getClassNameFromFile(filepath)
+                        class_name = self.__get_class_name_from_file(file_path)
 
-                        if className is not None:
-                            classesWithPaths[className] = filepath
+                        if class_name is not None:
+                            classes_with_paths[class_name] = file_path
 
-                            with open(filepath, 'r') as f:
+                            with open(file_path, 'r') as f:
                                 java_code = f.read()
 
                             tree = javalang.parse.parse(java_code)
 
                             for _, node in tree.filter(javalang.tree.ClassDeclaration):
-                                if node.name == className:
+                                if node.name == class_name:
                                     parent_class = node.extends.name if node.extends else None
                                     if parent_class:
                                         classes_with_parent_class[class_name] = parent_class
@@ -59,10 +62,10 @@ class Simulator:
 
             import json
             with open("project_structure.json", "w") as f:
-                json.dump({"classesWithPaths": classesWithPaths, "classesWithParentClass": classesWithParentClass}, f)
+                json.dump({"classesWithPaths": classes_with_paths, "classesWithParentClass": classes_with_parent_class},
+                          f)
 
-        return classesWithPaths, classesWithParentClass
-
+        return classes_with_paths, classes_with_parent_class
 
     # Die Funktion gibt die "benachbarten Files" des übergebenen Files zurück.
     def get_neighboring_files(self, file):
@@ -170,61 +173,56 @@ class Simulator:
             java_code = file.read()
 
         try:
-            tree = javalang.parse.parse(javaCode)
+            tree = javalang.parse.parse(java_code)
             for path, node in tree:
                 if isinstance(node, javalang.tree.ClassDeclaration):
                     return node.name
         except javalang.parser.JavaSyntaxError as e:
-            print(f"Syntaxfehler beim Parsen der Datei {filePath}: {e}")
+            print(f"Syntaxfehler beim Parsen der Datei {file_path}: {e}")
             return None
         except Exception as e:
-            print(f"Fehler beim Analysieren der Datei {filePath}: {e}")
+            print(f"Fehler beim Analysieren der Datei {file_path}: {e}")
             return None
 
-    def __getParentClass(self, filePath):
+    def __get_parent_class(self, file_path):
         parent = None
-        for key, value in self.classesWithTheirPath.items():
-            if value == filePath:
+        for key, value in self.classes_with_their_path.items():
+            if value == file_path:
                 parent = key
                 break
         return [parent] if parent is not None else []
 
-    def __getChildClasses(self, parentClass):
+    def __get_child_classes(self, parentClass):
         children = []
-        for key, value in self.classesWithTheirParent.items():
+        for key, value in self.classes_with_their_parent.items():
             if value == parentClass:
                 children.append(key)
         return children
 
-    def __getImportedClasses(self, filePath):
-        importedClasses = []
-        with open(filePath, 'r') as file:
-            javaCode = file.read()
+    def __get_imported_classes(self, file_path):
+        imported_classes = []
+        with open(file_path, 'r') as file:
+            java_code = file.read()
         try:
-            tree = javalang.parse.parse(javaCode)
+            tree = javalang.parse.parse(java_code)
             for path, node in tree:
                 if isinstance(node, javalang.tree.Import):
-                    importedClasses.append(node.path)
+                    imported_classes.append(node.path)
         except javalang.parser.JavaSyntaxError as e:
-            print(f"Syntaxfehler beim Parsen der Datei {filePath}: {e}")
+            print(f"Syntaxfehler beim Parsen der Datei {file_path}: {e}")
         except Exception as e:
-            print(f"Fehler beim Analysieren der Datei {filePath}: {e}")
+            print(f"Fehler beim Analysieren der Datei {file_path}: {e}")
 
-        importedClassesThatBelongToRepo = []
-        for importedClass in importedClasses:
-            for key in self.classesWithTheirPath.keys():
-                if importedClass.endswith(key):
-                    className = importedClass.split('.')[-1]
-                    importedClassesThatBelongToRepo.append(className)
-        return importedClassesThatBelongToRepo
+        imported_classes_that_belong_to_repo = []
+        for imported_class in imported_classes:
+            for key in self.classes_with_their_path.keys():
+                if imported_class.endswith(key):
+                    class_name = imported_class.split('.')[-1]
+                    imported_classes_that_belong_to_repo.append(class_name)
+        return imported_classes_that_belong_to_repo
 
-    def __getClassesFromNeighboringFiles(self, filePath):
-        neighboringClasses = []
-
-        for key, value in self.classesWithTheirPath.items():
-            if os.path.dirname(value) == os.path.dirname(filePath) and value != filePath:
-                neighboringClasses.append(key)
-        return neighboringClasses
+    def __get_classes_from_neighboring_files(self, file_path):
+        neighboring_classes = []
 
         for key, value in self.classes_with_their_path.items():
             #print(os.path.dirname(value) + " == " + os.path.dirname(file_path) + " and " + value + " != " + file_path)
@@ -232,4 +230,5 @@ class Simulator:
                 neighboring_classes.append(key)
         return neighboring_classes
 
-
+    def get_path_to_class(self, class_name):
+        return self.classes_with_their_path.get(class_name, None)
