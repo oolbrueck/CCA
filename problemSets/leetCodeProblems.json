@@ -3774,21 +3774,6 @@
         "givenJavaCode": "class Solution {\r\n    public long countQuadruplets(int[] nums) {\r\n        \r\n    }\r\n}"
     },
     {
-        "excercise": "You are given a 0-indexed integer array nums of length n. The number of ways to partition nums is the number of pivot indices that satisfy both conditions:\n\t1 <= pivot < n\n\tnums[0] + nums[1] + ... + nums[pivot - 1] == nums[pivot] + nums[pivot + 1] + ... + nums[n - 1]\nYou are also given an integer k. You can choose to change the value of one element of nums to k, or to leave the array unchanged.\nReturn the maximum possible number of ways to partition nums to satisfy both conditions after changing at most one element.\nExample 1:\nInput: nums = [2,-1,2], k = 3\nOutput: 1\nExplanation: One optimal approach is to change nums[0] to k. The array becomes [3,-1,2].\nThere is one way to partition the array:\n- For pivot = 2, we have the partition [3,-1 | 2]: 3 + -1 == 2.\nExample 2:\nInput: nums = [0,0,0], k = 1\nOutput: 2\nExplanation: The optimal approach is to leave the array unchanged.\nThere are two ways to partition the array:\n- For pivot = 1, we have the partition [0 | 0,0]: 0 == 0 + 0.\n- For pivot = 2, we have the partition [0,0 | 0]: 0 + 0 == 0.\nExample 3:\nInput: nums = [22,4,-25,-20,-15,15,-16,7,19,-10,0,-13,-14], k = -33\nOutput: 4\nExplanation: One optimal approach is to change nums[2] to k. The array becomes [22,4,-33,-20,-15,15,-16,7,19,-10,0,-13,-14].\nThere are four ways to partition the array.\nConstraints:\n\tn == nums.length\n\t2 <= n <= 10^5\n\t-10^5 <= k, nums[i] <= 10^5",
-        "topics": [
-            "Array",
-            "Hash Table",
-            "Counting",
-            "Enumeration",
-            "Prefix Sum"
-        ],
-        "url": "https://leetcode.com/problems/maximum-number-of-ways-to-partition-an-array/description/",
-        "difficulty": "Hard",
-        "givenPythonCode": "class Solution:\r\n    def waysToPartition(self, nums: List[int], k: int) -> int:\r\n        ",
-        "givenJsCode": "/**\r\n * @param {number[]} nums\r\n * @param {number} k\r\n * @return {number}\r\n */\r\nvar waysToPartition = function(nums, k) {\r\n    \r\n};",
-        "givenJavaCode": "class Solution {\r\n    public int waysToPartition(int[] nums, int k) {\r\n        \r\n    }\r\n}"
-    },
-    {
         "excercise": "You have n robots. You are given two 0-indexed integer arrays, chargeTimes and runningCosts, both of length n. The i^th robot costs chargeTimes[i] units to charge and costs runningCosts[i] units to run. You are also given an integer budget.\nThe total cost of running k chosen robots is equal to max(chargeTimes) + k * sum(runningCosts), where max(chargeTimes) is the largest charge cost among the k robots and sum(runningCosts) is the sum of running costs among the k robots.\nReturn the maximum number of consecutive robots you can run such that the total cost does not exceed budget.\nExample 1:\nInput: chargeTimes = [3,6,1,3,4], runningCosts = [2,1,3,4,5], budget = 25\nOutput: 3\nExplanation: \nIt is possible to run all individual and consecutive pairs of robots within budget.\nTo obtain answer 3, consider the first 3 robots. The total cost will be max(3,6,1) + 3 * sum(2,1,3) = 6 + 3 * 6 = 24 which is less than 25.\nIt can be shown that it is not possible to run more than 3 consecutive robots within budget, so we return 3.\nExample 2:\nInput: chargeTimes = [11,12,19], runningCosts = [10,8,7], budget = 19\nOutput: 0\nExplanation: No robot can be run that does not exceed the budget, so we return 0.\nConstraints:\n\tchargeTimes.length == runningCosts.length == n\n\t1 <= n <= 5 * 10^4\n\t1 <= chargeTimes[i], runningCosts[i] <= 10^5\n\t1 <= budget <= 10^15",
         "topics": [
             "Array",
@@ -3872,20 +3857,6 @@
         "givenJavaCode": "class Solution {\r\n    public int maxTrailingZeros(int[][] grid) {\r\n        \r\n    }\r\n}"
     },
     {
-        "excercise": "You are given two strings a and b that consist of lowercase letters. In one operation, you can change any character in a or b to any lowercase letter.\nYour goal is to satisfy one of the following three conditions:\n\tEvery letter in a is strictly less than every letter in b in the alphabet.\n\tEvery letter in b is strictly less than every letter in a in the alphabet.\n\tBoth a and b consist of only one distinct letter.\nReturn the minimum number of operations needed to achieve your goal.\nExample 1:\nInput: a = \"aba\", b = \"caa\"\nOutput: 2\nExplanation: Consider the best way to make each condition true:\n1) Change b to \"ccc\" in 2 operations, then every letter in a is less than every letter in b.\n2) Change a to \"bbb\" and b to \"aaa\" in 3 operations, then every letter in b is less than every letter in a.\n3) Change a to \"aaa\" and b to \"aaa\" in 2 operations, then a and b consist of one distinct letter.\nThe best way was done in 2 operations (either condition 1 or condition 3).\nExample 2:\nInput: a = \"dabadd\", b = \"cda\"\nOutput: 3\nExplanation: The best way is to make condition 1 true by changing b to \"eee\".\nConstraints:\n\t1 <= a.length, b.length <= 10^5\n\ta and b consist only of lowercase letters.",
-        "topics": [
-            "Hash Table",
-            "String",
-            "Counting",
-            "Prefix Sum"
-        ],
-        "url": "https://leetcode.com/problems/change-minimum-characters-to-satisfy-one-of-three-conditions/description/",
-        "difficulty": "Medium",
-        "givenPythonCode": "class Solution:\r\n    def minCharacters(self, a: str, b: str) -> int:\r\n        ",
-        "givenJsCode": "/**\r\n * @param {string} a\r\n * @param {string} b\r\n * @return {number}\r\n */\r\nvar minCharacters = function(a, b) {\r\n    \r\n};",
-        "givenJavaCode": "class Solution {\r\n    public int minCharacters(String a, String b) {\r\n        \r\n    }\r\n}"
-    },
-    {
         "excercise": "You are given a string s of lowercase English letters and a 2D integer array shifts where shifts[i] = [starti, endi, directioni]. For every i, shift the characters in s from the index starti to the index endi (inclusive) forward if directioni = 1, or shift the characters backward if directioni = 0.\nShifting a character forward means replacing it with the next letter in the alphabet (wrapping around so that 'z' becomes 'a'). Similarly, shifting a character backward means replacing it with the previous letter in the alphabet (wrapping around so that 'a' becomes 'z').\nReturn the final string after all such shifts to s are applied.\nExample 1:\nInput: s = \"abc\", shifts = [[0,1,0],[1,2,1],[0,2,1]]\nOutput: \"ace\"\nExplanation: Firstly, shift the characters from index 0 to index 1 backward. Now s = \"zac\".\nSecondly, shift the characters from index 1 to index 2 forward. Now s = \"zbd\".\nFinally, shift the characters from index 0 to index 2 forward. Now s = \"ace\".\nExample 2:\nInput: s = \"dztz\", shifts = [[0,0,0],[1,1,1]]\nOutput: \"catz\"\nExplanation: Firstly, shift the characters from index 0 to index 0 backward. Now s = \"cztz\".\nFinally, shift the characters from index 1 to index 1 forward. Now s = \"catz\".\nConstraints:\n\t1 <= s.length, shifts.length <= 5 * 10^4\n\tshifts[i].length == 3\n\t0 <= starti <= endi < s.length\n\t0 <= directioni <= 1\n\ts consists of lowercase English letters.",
         "topics": [
             "Array",
@@ -3911,20 +3882,6 @@
         "givenPythonCode": "class Solution:\r\n    def maxSumRangeQuery(self, nums: List[int], requests: List[List[int]]) -> int:\r\n        ",
         "givenJsCode": "/**\r\n * @param {number[]} nums\r\n * @param {number[][]} requests\r\n * @return {number}\r\n */\r\nvar maxSumRangeQuery = function(nums, requests) {\r\n    \r\n};",
         "givenJavaCode": "class Solution {\r\n    public int maxSumRangeQuery(int[] nums, int[][] requests) {\r\n        \r\n    }\r\n}"
-    },
-    {
-        "excercise": "The min-product of an array is equal to the minimum value in the array multiplied by the array's sum.\n\tFor example, the array [3,2,5] (minimum value is 2) has a min-product of 2 * (3+2+5) = 2 * 10 = 20.\nGiven an array of integers nums, return the maximum min-product of any non-empty subarray of nums. Since the answer may be large, return it modulo 10^9 + 7.\nNote that the min-product should be maximized before performing the modulo operation. Testcases are generated such that the maximum min-product without modulo will fit in a 64-bit signed integer.\nA subarray is a contiguous part of an array.\nExample 1:\nInput: nums = [1,2,3,2]\nOutput: 14\nExplanation: The maximum min-product is achieved with the subarray [2,3,2] (minimum value is 2).\n2 * (2+3+2) = 2 * 7 = 14.\nExample 2:\nInput: nums = [2,3,3,1,2]\nOutput: 18\nExplanation: The maximum min-product is achieved with the subarray [3,3] (minimum value is 3).\n3 * (3+3) = 3 * 6 = 18.\nExample 3:\nInput: nums = [3,1,5,6,4,2]\nOutput: 60\nExplanation: The maximum min-product is achieved with the subarray [5,6,4] (minimum value is 4).\n4 * (5+6+4) = 4 * 15 = 60.\nConstraints:\n\t1 <= nums.length <= 10^5\n\t1 <= nums[i] <= 10^7",
-        "topics": [
-            "Array",
-            "Stack",
-            "Monotonic Stack",
-            "Prefix Sum"
-        ],
-        "url": "https://leetcode.com/problems/maximum-subarray-min-product/description/",
-        "difficulty": "Medium",
-        "givenPythonCode": "class Solution:\r\n    def maxSumMinProduct(self, nums: List[int]) -> int:\r\n        ",
-        "givenJsCode": "/**\r\n * @param {number[]} nums\r\n * @return {number}\r\n */\r\nvar maxSumMinProduct = function(nums) {\r\n    \r\n};",
-        "givenJavaCode": "class Solution {\r\n    public int maxSumMinProduct(int[] nums) {\r\n        \r\n    }\r\n}"
     },
     {
         "excercise": "You are given a 0-indexed array of n integers differences, which describes the differences between each pair of consecutive integers of a hidden sequence of length (n + 1). More formally, call the hidden sequence hidden, then we have that differences[i] = hidden[i + 1] - hidden[i].\nYou are further given two integers lower and upper that describe the inclusive range of values [lower, upper] that the hidden sequence can contain.\n\tFor example, given differences = [1, -3, 4], lower = 1, upper = 6, the hidden sequence is a sequence of length 4 whose elements are in between 1 and 6 (inclusive).\n\t\t[3, 4, 1, 5] and [4, 5, 2, 6] are possible hidden sequences.\n\t\t[5, 6, 3, 7] is not possible since it contains an element greater than 6.\n\t\t[1, 2, 3, 4] is not possible since the differences are not correct.\nReturn the number of possible hidden sequences there are. If there are no possible sequences, return 0.\nExample 1:\nInput: differences = [1,-3,4], lower = 1, upper = 6\nOutput: 2\nExplanation: The possible hidden sequences are:\n- [3, 4, 1, 5]\n- [4, 5, 2, 6]\nThus, we return 2.\nExample 2:\nInput: differences = [3,-4,5,1,-2], lower = -4, upper = 5\nOutput: 4\nExplanation: The possible hidden sequences are:\n- [-3, 0, -4, 1, 2, 0]\n- [-2, 1, -3, 2, 3, 1]\n- [-1, 2, -2, 3, 4, 2]\n- [0, 3, -1, 4, 5, 3]\nThus, we return 4.\nExample 3:\nInput: differences = [4,-7,2], lower = 3, upper = 6\nOutput: 0\nExplanation: There are no possible hidden sequences. Thus, we return 0.\nConstraints:\n\tn == differences.length\n\t1 <= n <= 10^5\n\t-10^5 <= differences[i] <= 10^5\n\t-10^5 <= lower <= upper <= 10^5",
@@ -4135,19 +4092,6 @@
         "givenJavaCode": "class Solution {\r\n    public long maximumSumOfHeights(int[] heights) {\r\n        \r\n    }\r\n}"
     },
     {
-        "excercise": "There are n cars on an infinitely long road. The cars are numbered from 0 to n - 1 from left to right and each car is present at a unique point.\nYou are given a 0-indexed string directions of length n. directions[i] can be either 'L', 'R', or 'S' denoting whether the i^th car is moving towards the left, towards the right, or staying at its current point respectively. Each moving car has the same speed.\nThe number of collisions can be calculated as follows:\n\tWhen two cars moving in opposite directions collide with each other, the number of collisions increases by 2.\n\tWhen a moving car collides with a stationary car, the number of collisions increases by 1.\nAfter a collision, the cars involved can no longer move and will stay at the point where they collided. Other than that, cars cannot change their state or direction of motion.\nReturn the total number of collisions that will happen on the road.\nExample 1:\nInput: directions = \"RLRSLL\"\nOutput: 5\nExplanation:\nThe collisions that will happen on the road are:\n- Cars 0 and 1 will collide with each other. Since they are moving in opposite directions, the number of collisions becomes 0 + 2 = 2.\n- Cars 2 and 3 will collide with each other. Since car 3 is stationary, the number of collisions becomes 2 + 1 = 3.\n- Cars 3 and 4 will collide with each other. Since car 3 is stationary, the number of collisions becomes 3 + 1 = 4.\n- Cars 4 and 5 will collide with each other. After car 4 collides with car 3, it will stay at the point of collision and get hit by car 5. The number of collisions becomes 4 + 1 = 5.\nThus, the total number of collisions that will happen on the road is 5. \nExample 2:\nInput: directions = \"LLRR\"\nOutput: 0\nExplanation:\nNo cars will collide with each other. Thus, the total number of collisions that will happen on the road is 0.\nConstraints:\n\t1 <= directions.length <= 10^5\n\tdirections[i] is either 'L', 'R', or 'S'.",
-        "topics": [
-            "String",
-            "Stack",
-            "Simulation"
-        ],
-        "url": "https://leetcode.com/problems/count-collisions-on-a-road/description/",
-        "difficulty": "Medium",
-        "givenPythonCode": "class Solution:\r\n    def countCollisions(self, directions: str) -> int:\r\n        ",
-        "givenJsCode": "/**\r\n * @param {string} directions\r\n * @return {number}\r\n */\r\nvar countCollisions = function(directions) {\r\n    \r\n};",
-        "givenJavaCode": "class Solution {\r\n    public int countCollisions(String directions) {\r\n        \r\n    }\r\n}"
-    },
-    {
         "excercise": "Given a string s which represents an expression, evaluate this expression and return its value.\u00a0\nThe integer division should truncate toward zero.\nYou may assume that the given expression is always valid. All intermediate results will be in the range of [-2^31, 2^31 - 1].\nNote: You are not allowed to use any built-in function which evaluates strings as mathematical expressions, such as eval().\nExample 1:\nInput: s = \"3+2*2\"\nOutput: 7\nExample 2:\nInput: s = \" 3/2 \"\nOutput: 1\nExample 3:\nInput: s = \" 3+5 / 2 \"\nOutput: 5\nConstraints:\n\t1 <= s.length <= 3 * 10^5\n\ts consists of integers and operators ('+', '-', '*', '/') separated by some number of spaces.\n\ts represents a valid expression.\n\tAll the integers in the expression are non-negative integers in the range [0, 2^31 - 1].\n\tThe answer is guaranteed to fit in a 32-bit integer.",
         "topics": [
             "Math",
@@ -4174,19 +4118,6 @@
         "givenPythonCode": "class Solution:\r\n    def numberOfWeakCharacters(self, properties: List[List[int]]) -> int:\r\n        ",
         "givenJsCode": "/**\r\n * @param {number[][]} properties\r\n * @return {number}\r\n */\r\nvar numberOfWeakCharacters = function(properties) {\r\n    \r\n};",
         "givenJavaCode": "class Solution {\r\n    public int numberOfWeakCharacters(int[][] properties) {\r\n        \r\n    }\r\n}"
-    },
-    {
-        "excercise": "We are given an array asteroids of integers representing asteroids in a row.\nFor each asteroid, the absolute value represents its size, and the sign represents its direction (positive meaning right, negative meaning left). Each asteroid moves at the same speed.\nFind out the state of the asteroids after all collisions. If two asteroids meet, the smaller one will explode. If both are the same size, both will explode. Two asteroids moving in the same direction will never meet.\nExample 1:\nInput: asteroids = [5,10,-5]\nOutput: [5,10]\nExplanation: The 10 and -5 collide resulting in 10. The 5 and 10 never collide.\nExample 2:\nInput: asteroids = [8,-8]\nOutput: []\nExplanation: The 8 and -8 collide exploding each other.\nExample 3:\nInput: asteroids = [10,2,-5]\nOutput: [10]\nExplanation: The 2 and -5 collide resulting in -5. The 10 and -5 collide resulting in 10.\nConstraints:\n\t2 <= asteroids.length <= 10^4\n\t-1000 <= asteroids[i] <= 1000\n\tasteroids[i] != 0",
-        "topics": [
-            "Array",
-            "Stack",
-            "Simulation"
-        ],
-        "url": "https://leetcode.com/problems/asteroid-collision/description/",
-        "difficulty": "Medium",
-        "givenPythonCode": "class Solution:\r\n    def asteroidCollision(self, asteroids: List[int]) -> List[int]:\r\n        ",
-        "givenJsCode": "/**\r\n * @param {number[]} asteroids\r\n * @return {number[]}\r\n */\r\nvar asteroidCollision = function(asteroids) {\r\n    \r\n};",
-        "givenJavaCode": "class Solution {\r\n    public int[] asteroidCollision(int[] asteroids) {\r\n        \r\n    }\r\n}"
     },
     {
         "excercise": "Given a string s of lower and upper case English letters.\nA good string is a string which doesn't have two adjacent characters s[i] and s[i + 1] where:\n\t0 <= i <= s.length - 2\n\ts[i] is a lower-case letter and s[i + 1] is the same letter but in upper-case or vice-versa.\nTo make the string good, you can choose two adjacent characters that make the string bad and remove them. You can keep doing this until the string becomes good.\nReturn the string after making it good. The answer is guaranteed to be unique under the given constraints.\nNotice that an empty string is also good.\nExample 1:\nInput: s = \"leEeetcode\"\nOutput: \"leetcode\"\nExplanation: In the first step, either you choose i = 1 or i = 2, both will result \"leEeetcode\" to be reduced to \"leetcode\".\nExample 2:\nInput: s = \"abBAcC\"\nOutput: \"\"\nExplanation: We have many possible scenarios, and all lead to the same answer. For example:\n\"abBAcC\" --> \"aAcC\" --> \"cC\" --> \"\"\n\"abBAcC\" --> \"abBA\" --> \"aA\" --> \"\"\nExample 3:\nInput: s = \"s\"\nOutput: \"s\"\nConstraints:\n\t1 <= s.length <= 100\n\ts contains only lower and upper case English letters.",
@@ -4814,21 +4745,6 @@
         "givenJavaCode": "class Solution {\r\n    public int minimumOperations(int[] nums) {\r\n        \r\n    }\r\n}"
     },
     {
-        "excercise": "You are given a string s that consists of lowercase English letters.\nA string is called special if it is made up of only a single character. For example, the string \"abc\" is not special, whereas the strings \"ddd\", \"zz\", and \"f\" are special.\nReturn the length of the longest special substring of s which occurs at least thrice, or -1 if no special substring occurs at least thrice.\nA substring is a contiguous non-empty sequence of characters within a string.\nExample 1:\nInput: s = \"aaaa\"\nOutput: 2\nExplanation: The longest special substring which occurs thrice is \"aa\": substrings \"aaaa\", \"aaaa\", and \"aaaa\".\nIt can be shown that the maximum length achievable is 2.\nExample 2:\nInput: s = \"abcdef\"\nOutput: -1\nExplanation: There exists no special substring which occurs at least thrice. Hence return -1.\nExample 3:\nInput: s = \"abcaba\"\nOutput: 1\nExplanation: The longest special substring which occurs thrice is \"a\": substrings \"abcaba\", \"abcaba\", and \"abcaba\".\nIt can be shown that the maximum length achievable is 1.\nConstraints:\n\t3 <= s.length <= 5 * 10^5\n\ts consists of only lowercase English letters.",
-        "topics": [
-            "Hash Table",
-            "String",
-            "Binary Search",
-            "Sliding Window",
-            "Counting"
-        ],
-        "url": "https://leetcode.com/problems/find-longest-special-substring-that-occurs-thrice-ii/description/",
-        "difficulty": "Medium",
-        "givenPythonCode": "class Solution:\r\n    def maximumLength(self, s: str) -> int:\r\n        ",
-        "givenJsCode": "/**\r\n * @param {string} s\r\n * @return {number}\r\n */\r\nvar maximumLength = function(s) {\r\n    \r\n};",
-        "givenJavaCode": "class Solution {\r\n    public int maximumLength(String s) {\r\n        \r\n    }\r\n}"
-    },
-    {
         "excercise": "You are given a string num consisting of digits only.\nReturn the largest palindromic integer (in the form of a string) that can be formed using digits taken from num. It should not contain leading zeroes.\nNotes:\n\tYou do not need to use all the digits of num, but you must use at least one digit.\n\tThe digits can be reordered.\nExample 1:\nInput: num = \"444947137\"\nOutput: \"7449447\"\nExplanation: \nUse the digits \"4449477\" from \"444947137\" to form the palindromic integer \"7449447\".\nIt can be shown that \"7449447\" is the largest palindromic integer that can be formed.\nExample 2:\nInput: num = \"00009\"\nOutput: \"9\"\nExplanation: \nIt can be shown that \"9\" is the largest palindromic integer that can be formed.\nNote that the integer returned should not contain leading zeroes.\nConstraints:\n\t1 <= num.length <= 10^5\n\tnum consists of digits.",
         "topics": [
             "Hash Table",
@@ -4949,21 +4865,6 @@
         "givenPythonCode": "class Solution:\r\n    def mostFrequentEven(self, nums: List[int]) -> int:\r\n        ",
         "givenJsCode": "/**\r\n * @param {number[]} nums\r\n * @return {number}\r\n */\r\nvar mostFrequentEven = function(nums) {\r\n    \r\n};",
         "givenJavaCode": "class Solution {\r\n    public int mostFrequentEven(int[] nums) {\r\n        \r\n    }\r\n}"
-    },
-    {
-        "excercise": "We define a harmonious array as an array where the difference between its maximum value and its minimum value is exactly 1.\nGiven an integer array nums, return the length of its longest harmonious subsequence among all its possible subsequences.\nA subsequence of array is a sequence that can be derived from the array by deleting some or no elements without changing the order of the remaining elements.\nExample 1:\nInput: nums = [1,3,2,2,5,2,3,7]\nOutput: 5\nExplanation: The longest harmonious subsequence is [3,2,2,2,3].\nExample 2:\nInput: nums = [1,2,3,4]\nOutput: 2\nExample 3:\nInput: nums = [1,1,1,1]\nOutput: 0\nConstraints:\n\t1 <= nums.length <= 2 * 10^4\n\t-10^9 <= nums[i] <= 10^9",
-        "topics": [
-            "Array",
-            "Hash Table",
-            "Sliding Window",
-            "Sorting",
-            "Counting"
-        ],
-        "url": "https://leetcode.com/problems/longest-harmonious-subsequence/description/",
-        "difficulty": "Easy",
-        "givenPythonCode": "class Solution:\r\n    def findLHS(self, nums: List[int]) -> int:",
-        "givenJsCode": "/**\r\n * @param {number[]} nums\r\n * @return {number}\r\n */\r\nvar findLHS = function(nums) {\r\n    \r\n};",
-        "givenJavaCode": "class Solution {\r\n    public int findLHS(int[] nums) {\r\n        \r\n    }\r\n}"
     },
     {
         "excercise": "Given an integer array nums and an integer k, return the length of the shortest non-empty subarray of nums with a sum of at least k. If there is no such subarray, return -1.\nA subarray is a contiguous part of an array.\nExample 1:\nInput: nums = [1], k = 1\nOutput: 1\nExample 2:\nInput: nums = [1,2], k = 4\nOutput: -1\nExample 3:\nInput: nums = [2,-1,2], k = 3\nOutput: 3\nConstraints:\n\t1 <= nums.length <= 10^5\n\t-10^5 <= nums[i] <= 10^5\n\t1 <= k <= 10^9",
