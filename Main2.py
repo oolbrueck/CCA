@@ -103,31 +103,71 @@ import re
 import json
 import os
 
-# Define the directory containing the JSON files
-directory = r"C:\Users\oligo\OneDrive\Bachelor Arbeit\Thesis\leetCode"
 
-# Initialize the count of objects with the topic "Matrix"
-matrix_count = 0
+# there is a file problemSets/leetCodeProblems.json which contains an array of objects
+# iterate over all objects in the array which is in the json-file
+# count the objects where difficulty is not in ["Easy", "Medium", "Hard"] and print the count on the console
+# import json
+#
+# with open('problemSets/leetCodeProblems.json') as f:
+#     data = json.load(f)
+#     urls = []
+#     count = 0
+#     for problem in data:
+#         if problem['difficulty'] not in ['Easy', 'Medium', 'Hard']:
+#             urls.append(problem['url'])
+#
+#     print(urls)
+#
 
-# Iterate over each file in the directory
-for filename in os.listdir(directory):
-    # Construct the full path to the file
-    file_path = os.path.join(directory, filename)
+urlsFromProblemsThatShallBeRemoved = ['https://leetcode.com/problems/3sum-closest/', 'https://leetcode.com/problems/coin-change/',
+            'https://leetcode.com/problems/continuous-subarray-sum/', 'https://leetcode.com/problems/decode-ways/',
+            'https://leetcode.com/problems/optimal-division/', 'https://leetcode.com/problems/palindrome-partitioning/',
+            'https://leetcode.com/problems/reconstruct-original-digits-from-english/',
+            'https://leetcode.com/problems/find-eventual-safe-states/',
+            'https://leetcode.com/problems/recover-a-tree-from-preorder-traversal/description/',
+            'https://leetcode.com/problems/create-binary-tree-from-descriptions/description/',
+            'https://leetcode.com/problems/root-equals-sum-of-children/description/',
+            'https://leetcode.com/problems/spiral-matrix/description/',
+            'https://leetcode.com/problems/toeplitz-matrix/description/',
+            'https://leetcode.com/problems/special-positions-in-a-binary-matrix/description/',
+            'https://leetcode.com/problems/number-of-increasing-paths-in-a-grid/description/',
+            'https://leetcode.com/problems/strange-printer-ii/description/',
+            'https://leetcode.com/problems/cycle-length-queries-in-a-tree/description/',
+            'https://leetcode.com/problems/vertical-order-traversal-of-a-binary-tree/description/',
+            'https://leetcode.com/problems/step-by-step-directions-from-a-binary-tree-node-to-another/description/',
+            'https://leetcode.com/problems/minimum-number-of-operations-to-sort-a-binary-tree-by-level/description/',
+            'https://leetcode.com/problems/make-array-zero-by-subtracting-equal-amounts/description/',
+            'https://leetcode.com/problems/last-stone-weight/description/',
+            'https://leetcode.com/problems/minimum-cost-to-hire-k-workers/description/',
+            'https://leetcode.com/problems/smallest-range-covering-elements-from-k-lists/description/',
+            'https://leetcode.com/problems/minimum-space-wasted-from-packaging/description/',
+            'https://leetcode.com/problems/stamping-the-grid/description/',
+            'https://leetcode.com/problems/longest-well-performing-interval/description/',
+            'https://leetcode.com/problems/count-of-interesting-subarrays/description/',
+            'https://leetcode.com/problems/ant-on-the-boundary/description/',
+            'https://leetcode.com/problems/text-justification/description/',
+            'https://leetcode.com/problems/find-winner-on-a-tic-tac-toe-game/description/',
+            'https://leetcode.com/problems/add-binary/description/',
+            'https://leetcode.com/problems/count-visited-nodes-in-a-directed-graph/description/',
+            'https://leetcode.com/problems/cat-and-mouse/description/',
+            'https://leetcode.com/problems/frog-position-after-t-seconds/description/',
+            'https://leetcode.com/problems/most-profitable-path-in-a-tree/description/',
+            'https://leetcode.com/problems/course-schedule-ii/description/',
+            'https://leetcode.com/problems/flower-planting-with-no-adjacent/description/',
+            'https://leetcode.com/problems/find-if-path-exists-in-graph/description/',
+            'https://leetcode.com/problems/number-of-different-subsequences-gcds/description/',
+            'https://leetcode.com/problems/replace-question-marks-in-string-to-minimize-its-value/description/',
+            'https://leetcode.com/problems/minimum-length-of-anagram-concatenation/description/',
+            'https://leetcode.com/problems/most-common-word/description/',
+            'https://leetcode.com/problems/maximum-sum-of-distinct-subarrays-with-length-k/description/',
+            'https://leetcode.com/problems/take-k-of-each-character-from-left-and-right/description/',
+            'https://leetcode.com/problems/maximum-average-subarray-i/description/',
+            'https://leetcode.com/problems/minimum-difference-between-highest-and-lowest-of-k-scores/description/',
+            'https://leetcode.com/problems/find-the-maximum-number-of-elements-in-subset/description/']
 
-    # Check if the entry is a file
-    if os.path.isfile(file_path):
-        # Open the file and load the JSON data
-        with open(file_path, 'r', encoding='utf-8') as f:
-            data = json.load(f)
-
-            # Check if the 'Topics' key is present in the data
-            if 'topics' in data:
-                # Check if the 'Matrix' topic is present in the list of topics
-                if 'Matrix' in data['topics']:
-                    matrix_count += 1
-
-# Print the count of objects with the topic "Matrix"
-print(f"Number of objects with the topic 'Matrix': {matrix_count}")
+# there is a file problemSets/leetCodeProblems.json which contains an array of objects
+# remove all objects where the url is in the list urlsFromProblemsThatShallBeRemoved
 
 
 
