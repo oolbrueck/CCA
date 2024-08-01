@@ -26,18 +26,6 @@
         "difficulty": "Medium"
     },
     {
-        "excercise": "Given four integer arrays nums1, nums2, nums3, and nums4 all of length n, return the number of tuples (i, j, k, l) such that:\n\t0 <= i, j, k, l < n\n\tnums1[i] + nums2[j] + nums3[k] + nums4[l] == 0\nExample 1:\nInput: nums1 = [1,2], nums2 = [-2,-1], nums3 = [-1,2], nums4 = [0,2]\nOutput: 2\nExplanation:\nThe two tuples are:\n1. (0, 0, 0, 1) -> nums1[0] + nums2[0] + nums3[0] + nums4[1] = 1 + (-2) + (-1) + 2 = 0\n2. (1, 1, 0, 0) -> nums1[1] + nums2[1] + nums3[0] + nums4[0] = 2 + (-1) + (-1) + 0 = 0\nExample 2:\nInput: nums1 = [0], nums2 = [0], nums3 = [0], nums4 = [0]\nOutput: 1\nConstraints:\n\tn == nums1.length\n\tn == nums2.length\n\tn == nums3.length\n\tn == nums4.length\n\t1 <= n <= 200\n\t-2^28 <= nums1[i], nums2[i], nums3[i], nums4[i] <= 2^28",
-        "topics": [
-            "Array",
-            "Hash Table"
-        ],
-        "url": "https://leetcode.com/problems/4sum-ii/",
-        "givenPythonCode": "/**\n * @param {number[]} nums1\n * @param {number[]} nums2\n * @param {number[]} nums3\n * @param {number[]} nums4\n * @return {number}\n */\nvar fourSumCount = function(nums1, nums2, nums3, nums4) {\n    \n};",
-        "givenJsCode": "class Solution:\n    def fourSumCount(self, nums1: List[int], nums2: List[int], nums3: List[int], nums4: List[int]) -> int:\n        ",
-        "givenJavaCode": "class Solution {\n    public int fourSumCount(int[] nums1, int[] nums2, int[] nums3, int[] nums4) {\n        \n    }\n}",
-        "difficulty": "Medium"
-    },
-    {
         "excercise": "Given an array nums of n integers, return an array of all the unique quadruplets [nums[a], nums[b], nums[c], nums[d]] such that:\n\t0 <= a, b, c, d < n\n\ta, b, c, and d are distinct.\n\tnums[a] + nums[b] + nums[c] + nums[d] == target\nYou may return the answer in any order.\nExample 1:\nInput: nums = [1,0,-1,0,-2,2], target = 0\nOutput: [[-2,-1,1,2],[-2,0,0,2],[-1,0,0,1]]\nExample 2:\nInput: nums = [2,2,2,2,2], target = 8\nOutput: [[2,2,2,2]]\nConstraints:\n\t1 <= nums.length <= 200\n\t-10^9 <= nums[i] <= 10^9\n\t-10^9 <= target <= 10^9",
         "topics": [
             "Array",
@@ -605,30 +593,6 @@
         "difficulty": "Medium"
     },
     {
-        "excercise": "Given an integer array nums of length n where all the integers of nums are in the range [1, n] and each integer appears once or twice, return an array of all the integers that appears twice.\nYou must write an algorithm that runs in O(n) time and uses only constant extra space.\nExample 1:\nInput: nums = [4,3,2,7,8,2,3,1]\nOutput: [2,3]\nExample 2:\nInput: nums = [1,1,2]\nOutput: [1]\nExample 3:\nInput: nums = [1]\nOutput: []\nConstraints:\n\tn == nums.length\n\t1 <= n <= 10^5\n\t1 <= nums[i] <= n\n\tEach element in nums appears once or twice.",
-        "topics": [
-            "Array",
-            "Hash Table"
-        ],
-        "url": "https://leetcode.com/problems/find-all-duplicates-in-an-array/",
-        "givenPythonCode": "/**\n * @param {number[]} nums\n * @return {number[]}\n */\nvar findDuplicates = function(nums) {\n    \n};",
-        "givenJsCode": "class Solution:\n    def findDuplicates(self, nums: List[int]) -> List[int]:\n        ",
-        "givenJavaCode": "class Solution {\n    public List<Integer> findDuplicates(int[] nums) {\n        \n    }\n}",
-        "difficulty": "Medium"
-    },
-    {
-        "excercise": "Given an array nums of n integers where nums[i] is in the range [1, n], return an array of all the integers in the range [1, n] that do not appear in nums.\nExample 1:\nInput: nums = [4,3,2,7,8,2,3,1]\nOutput: [5,6]\nExample 2:\nInput: nums = [1,1]\nOutput: [2]\nConstraints:\n\tn == nums.length\n\t1 <= n <= 10^5\n\t1 <= nums[i] <= n\nFollow up: Could you do it without extra space and in O(n) runtime? You may assume the returned list does not count as extra space.",
-        "topics": [
-            "Array",
-            "Hash Table"
-        ],
-        "url": "https://leetcode.com/problems/find-all-numbers-disappeared-in-an-array/",
-        "difficulty": "Easy",
-        "givenPythonCode": "/**\n * @param {number[]} nums\n * @return {number[]}\n */\nvar findDisappearedNumbers = function(nums) {\n    \n};",
-        "givenJsCode": "class Solution:\n    def findDisappearedNumbers(self, nums: List[int]) -> List[int]:\n        ",
-        "givenJavaCode": "class Solution {\n    public List<Integer> findDisappearedNumbers(int[] nums) {\n        \n    }\n}"
-    },
-    {
         "excercise": "Given a list paths of directory info, including the directory path, and all the files with contents in this directory, return all the duplicate files in the file system in terms of their paths. You may return the answer in any order.\nA group of duplicate files consists of at least two files that have the same content.\nA single directory info string in the input list has the following format:\n\t\"root/d1/d2/.../dm f1.txt(f1_content) f2.txt(f2_content) ... fn.txt(fn_content)\"\nIt means there are n files (f1.txt, f2.txt ... fn.txt) with content (f1_content, f2_content ... fn_content) respectively in the directory \"root/d1/d2/.../dm\". Note that n >= 1 and m >= 0. If m = 0, it means the directory is just the root directory.\nThe output is a list of groups of duplicate file paths. For each group, it contains all the file paths of the files that have the same content. A file path is a string that has the following format:\n\t\"directory_path/file_name.txt\"\nExample 1:\nInput: paths = [\"root/a 1.txt(abcd) 2.txt(efgh)\",\"root/c 3.txt(abcd)\",\"root/c/d 4.txt(efgh)\",\"root 4.txt(efgh)\"]\nOutput: [[\"root/a/2.txt\",\"root/c/d/4.txt\",\"root/4.txt\"],[\"root/a/1.txt\",\"root/c/3.txt\"]]\nExample 2:\nInput: paths = [\"root/a 1.txt(abcd) 2.txt(efgh)\",\"root/c 3.txt(abcd)\",\"root/c/d 4.txt(efgh)\"]\nOutput: [[\"root/a/2.txt\",\"root/c/d/4.txt\"],[\"root/a/1.txt\",\"root/c/3.txt\"]]\nConstraints:\n\t1 <= paths.length <= 2 * 10^4\n\t1 <= paths[i].length <= 3000\n\t1 <= sum(paths[i].length) <= 5 * 10^5\n\tpaths[i] consist of English letters, digits, '/', '.', '(', ')', and ' '.\n\tYou may assume no files or directories share the same name in the same directory.\n\tYou may assume each given directory info represents a unique directory. A single blank space separates the directory path and file info.\nFollow up:\n\tImagine you are given a real file system, how will you search files? DFS or BFS?\n\tIf the file content is very large (GB level), how will you modify your solution?\n\tIf you can only read the file by 1kb each time, how will you modify your solution?\n\tWhat is the time complexity of your modified solution? What is the most time-consuming part and memory-consuming part of it? How to optimize?\n\tHow to make sure the duplicated files you find are not false positive?",
         "topics": [
             "Array",
@@ -754,18 +718,6 @@
         "givenPythonCode": "/**\n * @param {number[]} nums\n * @return {number}\n */\nvar findDuplicate = function(nums) {\n    \n};",
         "givenJsCode": "class Solution:\n    def findDuplicate(self, nums: List[int]) -> int:\n        ",
         "givenJavaCode": "class Solution {\n    public int findDuplicate(int[] nums) {\n        \n    }\n}",
-        "difficulty": "Medium"
-    },
-    {
-        "excercise": "Given an unsorted integer array nums. Return the smallest positive integer that is not present in nums.\nYou must implement an algorithm that runs in O(n) time and uses O(1) auxiliary space.\nExample 1:\nInput: nums = [1,2,0]\nOutput: 3\nExplanation: The numbers in the range [1,2] are all in the array.\nExample 2:\nInput: nums = [3,4,-1,1]\nOutput: 2\nExplanation: 1 is in the array but 2 is missing.\nExample 3:\nInput: nums = [7,8,9,11,12]\nOutput: 1\nExplanation: The smallest positive integer 1 is missing.\nConstraints:\n\t1 <= nums.length <= 10^5\n\t-2^31 <= nums[i] <= 2^31 - 1",
-        "topics": [
-            "Array",
-            "Hash Table"
-        ],
-        "url": "https://leetcode.com/problems/first-missing-positive/",
-        "givenPythonCode": "class Solution:\n    def firstMissingPositive(self, nums: List[int]) -> int:\n        ",
-        "givenJsCode": "/**\n * @param {number[]} nums\n * @return {number}\n */\nvar firstMissingPositive = function(nums) {\n    \n};",
-        "givenJavaCode": "class Solution {\n    public int firstMissingPositive(int[] nums) {\n        \n    }\n}",
         "difficulty": "Medium"
     },
     {
@@ -928,17 +880,6 @@
         "givenPythonCode": "class Solution:\n    def increasingTriplet(self, nums: List[int]) -> bool:\n        ",
         "givenJsCode": "/**\n * @param {number[]} nums\n * @return {boolean}\n */\nvar increasingTriplet = function(nums) {\n    \n};",
         "givenJavaCode": "class Solution {\n    public boolean increasingTriplet(int[] nums) {\n        \n    }\n}",
-        "difficulty": "Medium"
-    },
-    {
-        "excercise": "You are given an array of non-overlapping intervals intervals where intervals[i] = [starti, endi] represent the start and the end of the i^th interval and intervals is sorted in ascending order by starti. You are also given an interval newInterval = [start, end] that represents the start and end of another interval.\nInsert newInterval into intervals such that intervals is still sorted in ascending order by starti and intervals still does not have any overlapping intervals (merge overlapping intervals if necessary).\nReturn intervals after the insertion.\nNote that you don't need to modify intervals in-place. You can make a new array and return it.\nExample 1:\nInput: intervals = [[1,3],[6,9]], newInterval = [2,5]\nOutput: [[1,5],[6,9]]\nExample 2:\nInput: intervals = [[1,2],[3,5],[6,7],[8,10],[12,16]], newInterval = [4,8]\nOutput: [[1,2],[3,10],[12,16]]\nExplanation: Because the new interval [4,8] overlaps with [3,5],[6,7],[8,10].\nConstraints:\n\t0 <= intervals.length <= 10^4\n\tintervals[i].length == 2\n\t0 <= starti <= endi <= 10^5\n\tintervals is sorted by starti in ascending order.\n\tnewInterval.length == 2\n\t0 <= start <= end <= 10^5",
-        "topics": [
-            "Array"
-        ],
-        "url": "https://leetcode.com/problems/insert-interval/",
-        "givenPythonCode": "/**\n * @param {number[][]} intervals\n * @param {number[]} newInterval\n * @return {number[][]}\n */\nvar insert = function(intervals, newInterval) {\n    \n};",
-        "givenJsCode": "class Solution:\n    def insert(self, intervals: List[List[int]], newInterval: List[int]) -> List[List[int]]:\n        ",
-        "givenJavaCode": "class Solution {\n    public int[][] insert(int[][] intervals, int[] newInterval) {\n        \n    }\n}",
         "difficulty": "Medium"
     },
     {
@@ -1279,17 +1220,6 @@
         "givenJsCode": "class Solution:\n    def majorityElement(self, nums: List[int]) -> List[int]:\n        ",
         "givenJavaCode": "class Solution {\n    public List<Integer> majorityElement(int[] nums) {\n        \n    }\n}",
         "difficulty": "Medium"
-    },
-    {
-        "excercise": "Given a binary array nums, return the maximum number of consecutive 1's in the array.\nExample 1:\nInput: nums = [1,1,0,1,1,1]\nOutput: 3\nExplanation: The first two digits or the last three digits are consecutive 1s. The maximum number of consecutive 1s is 3.\nExample 2:\nInput: nums = [1,0,1,1,0,1]\nOutput: 2\nConstraints:\n\t1 <= nums.length <= 10^5\n\tnums[i] is either 0 or 1.",
-        "topics": [
-            "Array"
-        ],
-        "url": "https://leetcode.com/problems/max-consecutive-ones/",
-        "difficulty": "Easy",
-        "givenPythonCode": "/**\n * @param {number[]} nums\n * @return {number}\n */\nvar findMaxConsecutiveOnes = function(nums) {\n    \n};",
-        "givenJsCode": "class Solution:\n    def findMaxConsecutiveOnes(self, nums: List[int]) -> int:\n        ",
-        "givenJavaCode": "class Solution {\n    public int findMaxConsecutiveOnes(int[] nums) {\n        \n    }\n}"
     },
     {
         "excercise": "Given a string array words, return the maximum value of length(word[i]) * length(word[j]) where the two words do not share common letters. If no such two words exist, return 0.\nExample 1:\nInput: words = [\"abcw\",\"baz\",\"foo\",\"bar\",\"xtfn\",\"abcdef\"]\nOutput: 16\nExplanation: The two words can be \"abcw\", \"xtfn\".\nExample 2:\nInput: words = [\"a\",\"ab\",\"abc\",\"d\",\"cd\",\"bcd\",\"abcd\"]\nOutput: 4\nExplanation: The two words can be \"ab\", \"cd\".\nExample 3:\nInput: words = [\"a\",\"aa\",\"aaa\",\"aaaa\"]\nOutput: 0\nExplanation: No such pair of words.\nConstraints:\n\t2 <= words.length <= 1000\n\t1 <= words[i].length <= 1000\n\twords[i] consists only of lowercase English letters.",
@@ -2244,17 +2174,6 @@
         "difficulty": "Hard"
     },
     {
-        "excercise": "You are given a sorted unique integer array nums.\nA range [a,b] is the set of all integers from a to b (inclusive).\nReturn the smallest sorted list of ranges that cover all the numbers in the array exactly. That is, each element of nums is covered by exactly one of the ranges, and there is no integer x such that x is in one of the ranges but not in nums.\nEach range [a,b] in the list should be output as:\n\t\"a->b\" if a != b\n\t\"a\" if a == b\nExample 1:\nInput: nums = [0,1,2,4,5,7]\nOutput: [\"0->2\",\"4->5\",\"7\"]\nExplanation: The ranges are:\n[0,2] --> \"0->2\"\n[4,5] --> \"4->5\"\n[7,7] --> \"7\"\nExample 2:\nInput: nums = [0,2,3,4,6,8,9]\nOutput: [\"0\",\"2->4\",\"6\",\"8->9\"]\nExplanation: The ranges are:\n[0,0] --> \"0\"\n[2,4] --> \"2->4\"\n[6,6] --> \"6\"\n[8,9] --> \"8->9\"\nConstraints:\n\t0 <= nums.length <= 20\n\t-2^31 <= nums[i] <= 2^31 - 1\n\tAll the values of nums are unique.\n\tnums is sorted in ascending order.",
-        "topics": [
-            "Array"
-        ],
-        "url": "https://leetcode.com/problems/summary-ranges/",
-        "difficulty": "Easy",
-        "givenPythonCode": "/**\n * @param {number[]} nums\n * @return {string[]}\n */\nvar summaryRanges = function(nums) {\n    \n};",
-        "givenJsCode": "class Solution:\n    def summaryRanges(self, nums: List[int]) -> List[str]:\n        ",
-        "givenJavaCode": "class Solution {\n    public List<String> summaryRanges(int[] nums) {\n        \n    }\n}"
-    },
-    {
         "excercise": "A super ugly number is a positive integer whose prime factors are in the array primes.\nGiven an integer n and an array of integers primes, return the n^th super ugly number.\nThe n^th super ugly number is guaranteed to fit in a 32-bit signed integer.\nExample 1:\nInput: n = 12, primes = [2,7,13,19]\nOutput: 32\nExplanation: [1,2,4,7,8,13,14,16,19,26,28,32] is the sequence of the first 12 super ugly numbers given primes = [2,7,13,19].\nExample 2:\nInput: n = 1, primes = [2,3,5]\nOutput: 1\nExplanation: 1 has no prime factors, therefore all of its prime factors are in the array primes = [2,3,5].\nConstraints:\n\t1 <= n <= 10^5\n\t1 <= primes.length <= 100\n\t2 <= primes[i] <= 1000\n\tprimes[i] is guaranteed to be a prime number.\n\tAll the values of primes are unique and sorted in ascending order.",
         "topics": [
             "Array",
@@ -2378,18 +2297,6 @@
         "givenJsCode": "class Solution:\n    def twoSum(self, numbers: List[int], target: int) -> List[int]:\n        ",
         "givenJavaCode": "class Solution {\n    public int[] twoSum(int[] numbers, int target) {\n        \n    }\n}",
         "difficulty": "Medium"
-    },
-    {
-        "excercise": "Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.\nYou may assume that each input would have exactly one solution, and you may not use the same element twice.\nYou can return the answer in any order.\nExample 1:\nInput: nums = [2,7,11,15], target = 9\nOutput: [0,1]\nExplanation: Because nums[0] + nums[1] == 9, we return [0, 1].\nExample 2:\nInput: nums = [3,2,4], target = 6\nOutput: [1,2]\nExample 3:\nInput: nums = [3,3], target = 6\nOutput: [0,1]\nConstraints:\n\t2 <= nums.length <= 10^4\n\t-10^9 <= nums[i] <= 10^9\n\t-10^9 <= target <= 10^9\n\tOnly one valid answer exists.\nFollow-up: Can you come up with an algorithm that is less than O(n^2) time complexity?",
-        "topics": [
-            "Array",
-            "Hash Table"
-        ],
-        "url": "https://leetcode.com/problems/two-sum/",
-        "difficulty": "Easy",
-        "givenPythonCode": "/**\n * @param {number[]} nums\n * @param {number} target\n * @return {number[]}\n */\nvar twoSum = function(nums, target) {\n    \n};",
-        "givenJsCode": "class Solution:\n    def twoSum(self, nums: List[int], target: int) -> List[int]:\n        ",
-        "givenJavaCode": "class Solution {\n    public int[] twoSum(int[] nums, int target) {\n        \n    }\n}"
     },
     {
         "excercise": "An ugly number is a positive integer whose prime factors are limited to 2, 3, and 5.\nGiven an integer n, return the n^th ugly number.\nExample 1:\nInput: n = 10\nOutput: 12\nExplanation: [1, 2, 3, 4, 5, 6, 8, 9, 10, 12] is the sequence of the first 10 ugly numbers.\nExample 2:\nInput: n = 1\nOutput: 1\nExplanation: 1 has no prime factors, therefore all of its prime factors are limited to 2, 3, and 5.\nConstraints:\n\t1 <= n <= 1690",
