@@ -8,8 +8,8 @@
         ],
         "url": "https://leetcode.com/problems/24-game/",
         "givenPythonCode": "class Solution:\n    def judgePoint24(self, cards: List[int]) -> bool:\n        ",
-        "givenJsCode": "class Solution {\n    public boolean judgePoint24(int[] cards) {\n        \n    }\n}",
-        "givenJavaCode": "/**\n * @param {number[]} cards\n * @return {boolean}\n */\nvar judgePoint24 = function(cards) {\n    \n};",
+        "givenJsCode": "/**\n * @param {number[]} cards\n * @return {boolean}\n */\nvar judgePoint24 = function(cards) {\n    \n};",
+        "givenJavaCode": "class Solution {\n    public boolean judgePoint24(int[] cards) {\n        \n    }\n}",
         "difficulty": "Hard"
     },
     {
@@ -20,8 +20,8 @@
             "Sorting"
         ],
         "url": "https://leetcode.com/problems/3sum/",
-        "givenPythonCode": "/**\n * @param {number[]} nums\n * @return {number[][]}\n */\nvar threeSum = function(nums) {\n    \n};",
-        "givenJsCode": "class Solution:\n    def threeSum(self, nums: List[int]) -> List[List[int]]:\n        ",
+        "givenJsCode": "/**\n * @param {number[]} nums\n * @return {number[][]}\n */\nvar threeSum = function(nums) {\n    \n};",
+        "givenPythonCode": "class Solution:\n    def threeSum(self, nums: List[int]) -> List[List[int]]:\n        ",
         "givenJavaCode": "class Solution {\n    public List<List<Integer>> threeSum(int[] nums) {\n        List<List<Integer>> res = new ArrayList<>();\n        Arrays.sort(nums);\n        for (int i = 0; i < nums.length - 2; i++) {\n            if (i == 0 || (i > 0 && nums[i] != nums[i - 1])) {\n                int lo = i + 1, hi = nums.length - 1, sum = 0 - nums[i];\n                while (lo < hi) {\n                    if (nums[lo] + nums[hi] == sum) {\n                        res.add(Arrays.asList(nums[i], nums[lo], nums[hi]));\n                        while (lo < hi && nums[lo] == nums[lo + 1]) lo++;\n                        while (lo < hi && nums[hi] == nums[hi - 1]) hi--;\n                        lo++;\n                        hi--;\n                    } else if (nums[lo] + nums[hi] < sum) lo++;\n                    else hi--;\n                }\n            }\n        }\n        return res;\n    }\n}\n\n",
         "difficulty": "Medium"
     },
@@ -33,8 +33,8 @@
             "Sorting"
         ],
         "url": "https://leetcode.com/problems/4sum/",
-        "givenPythonCode": "/**\n * @param {number[]} nums\n * @param {number} target\n * @return {number[][]}\n */\nvar fourSum = function(nums, target) {\n    \n};",
-        "givenJsCode": "class Solution:\n    def fourSum(self, nums: List[int], target: int) -> List[List[int]]:\n        ",
+        "givenJsCode": "/**\n * @param {number[]} nums\n * @param {number} target\n * @return {number[][]}\n */\nvar fourSum = function(nums, target) {\n    \n};",
+        "givenPythonCode": "class Solution:\n    def fourSum(self, nums: List[int], target: int) -> List[List[int]]:\n        ",
         "givenJavaCode": "class Solution {\n    public List<List<Integer>> fourSum(int[] nums, int target) {\n        \n    }\n}",
         "difficulty": "Medium"
     },
@@ -48,8 +48,8 @@
         ],
         "url": "https://leetcode.com/problems/add-binary/",
         "difficulty": "Easy",
-        "givenPythonCode": "/**\n * @param {string} a\n * @param {string} b\n * @return {string}\n */\nvar addBinary = function(a, b) {\n    \n};",
-        "givenJsCode": "class Solution:\n    def addBinary(self, a: str, b: str) -> str:\n        ",
+        "givenJsCode": "/**\n * @param {string} a\n * @param {string} b\n * @return {string}\n */\nvar addBinary = function(a, b) {\n    \n};",
+        "givenPythonCode": "class Solution:\n    def addBinary(self, a: str, b: str) -> str:\n        ",
         "givenJavaCode": "class Solution {\n    public String addBinary(String a, String b) {\n        \n    }\n}"
     },
     {
@@ -61,8 +61,8 @@
         ],
         "url": "https://leetcode.com/problems/add-strings/",
         "difficulty": "Easy",
-        "givenPythonCode": "/**\n * @param {string} num1\n * @param {string} num2\n * @return {string}\n */\nvar addStrings = function(num1, num2) {\n    \n};",
-        "givenJsCode": "class Solution:\n    def addStrings(self, num1: str, num2: str) -> str:\n        ",
+        "givenJsCode": "/**\n * @param {string} num1\n * @param {string} num2\n * @return {string}\n */\nvar addStrings = function(num1, num2) {\n    \n};",
+        "givenPythonCode": "class Solution:\n    def addStrings(self, num1: str, num2: str) -> str:\n        ",
         "givenJavaCode": "class Solution {\n    public String addStrings(String num1, String num2) {\n        \n    }\n}"
     },
     {
@@ -72,8 +72,8 @@
             "Backtracking"
         ],
         "url": "https://leetcode.com/problems/additive-number/",
-        "givenPythonCode": "/**\n * @param {string} num\n * @return {boolean}\n */\nvar isAdditiveNumber = function(num) {\n    \n};",
-        "givenJsCode": "class Solution:\n    def isAdditiveNumber(self, num: str) -> bool:\n        ",
+        "givenJsCode": "/**\n * @param {string} num\n * @return {boolean}\n */\nvar isAdditiveNumber = function(num) {\n    \n};",
+        "givenPythonCode": "class Solution:\n    def isAdditiveNumber(self, num: str) -> bool:\n        ",
         "givenJavaCode": "class Solution {\n    public boolean isAdditiveNumber(String num) {\n        \n    }\n}",
         "difficulty": "Medium"
     },
@@ -85,8 +85,8 @@
         ],
         "url": "https://leetcode.com/problems/arithmetic-slices-ii-subsequence/",
         "givenPythonCode": "class Solution:\n    def numberOfArithmeticSlices(self, nums: List[int]) -> int:\n        ",
-        "givenJsCode": "class Solution {\n    public int numberOfArithmeticSlices(int[] nums) {\n        \n    }\n}",
-        "givenJavaCode": "/**\n * @param {number[]} nums\n * @return {number}\n */\nvar numberOfArithmeticSlices = function(nums) {\n    \n};",
+        "givenJsCode": "/**\n * @param {number[]} nums\n * @return {number}\n */\nvar numberOfArithmeticSlices = function(nums) {\n    \n};",
+        "givenJavaCode": "class Solution {\n    public int numberOfArithmeticSlices(int[] nums) {\n        \n    }\n}",
         "difficulty": "Medium"
     },
     {
@@ -96,8 +96,8 @@
             "Dynamic Programming"
         ],
         "url": "https://leetcode.com/problems/arithmetic-slices/",
-        "givenPythonCode": "/**\n * @param {number[]} nums\n * @return {number}\n */\nvar numberOfArithmeticSlices = function(nums) {\n    \n};",
-        "givenJsCode": "class Solution:\n    def numberOfArithmeticSlices(self, nums: List[int]) -> int:\n        ",
+        "givenJsCode": "/**\n * @param {number[]} nums\n * @return {number}\n */\nvar numberOfArithmeticSlices = function(nums) {\n    \n};",
+        "givenPythonCode": "class Solution:\n    def numberOfArithmeticSlices(self, nums: List[int]) -> int:\n        ",
         "givenJavaCode": "class Solution {\n    public int numberOfArithmeticSlices(int[] nums) {\n        \n    }\n}",
         "difficulty": "Hard"
     },
@@ -108,8 +108,8 @@
             "Depth-First Search"
         ],
         "url": "https://leetcode.com/problems/array-nesting/",
-        "givenPythonCode": "/**\n * @param {number[]} nums\n * @return {number}\n */\nvar arrayNesting = function(nums) {\n    \n};",
-        "givenJsCode": "class Solution:\n    def arrayNesting(self, nums: List[int]) -> int:\n        ",
+        "givenJsCode": "/**\n * @param {number[]} nums\n * @return {number}\n */\nvar arrayNesting = function(nums) {\n    \n};",
+        "givenPythonCode": "class Solution:\n    def arrayNesting(self, nums: List[int]) -> int:\n        ",
         "givenJavaCode": "class Solution {\n    public int arrayNesting(int[] nums) {\n        \n    }\n}",
         "difficulty": "Medium"
     },
@@ -123,8 +123,8 @@
         ],
         "url": "https://leetcode.com/problems/assign-cookies/",
         "difficulty": "Easy",
-        "givenPythonCode": "/**\n * @param {number[]} g\n * @param {number[]} s\n * @return {number}\n */\nvar findContentChildren = function(g, s) {\n    \n};",
-        "givenJsCode": "class Solution:\n    def findContentChildren(self, g: List[int], s: List[int]) -> int:\n        ",
+        "givenJsCode": "/**\n * @param {number[]} g\n * @param {number[]} s\n * @return {number}\n */\nvar findContentChildren = function(g, s) {\n    \n};",
+        "givenPythonCode": "class Solution:\n    def findContentChildren(self, g: List[int], s: List[int]) -> int:\n        ",
         "givenJavaCode": "class Solution {\n    public int findContentChildren(int[] g, int[] s) {\n        \n    }\n}"
     },
     {
@@ -135,8 +135,8 @@
             "Stack"
         ],
         "url": "https://leetcode.com/problems/basic-calculator-ii/",
-        "givenPythonCode": "/**\n * @param {string} s\n * @return {number}\n */\nvar calculate = function(s) {\n    \n};",
-        "givenJsCode": "class Solution:\n    def calculate(self, s: str) -> int:\n        ",
+        "givenPythonCode": "class Solution:\n    def calculate(self, s: str) -> int:\n        ",
+        "givenJsCode": "/**\n * @param {string} s\n * @return {number}\n */\nvar calculate = function(s) {\n    \n};",
         "givenJavaCode": "class Solution {\n    public int calculate(String s) {\n        \n    }\n}",
         "difficulty": "Medium"
     },
@@ -148,8 +148,8 @@
             "Greedy"
         ],
         "url": "https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/",
-        "givenPythonCode": "/**\n * @param {number[]} prices\n * @return {number}\n */\nvar maxProfit = function(prices) {\n    \n};",
-        "givenJsCode": "class Solution:\n    def maxProfit(self, prices: List[int]) -> int:\n        ",
+        "givenPythonCode": "class Solution:\n    def maxProfit(self, prices: List[int]) -> int:\n        ",
+        "givenJsCode": "/**\n * @param {number[]} prices\n * @return {number}\n */\nvar maxProfit = function(prices) {\n    \n};",
         "givenJavaCode": "class Solution {\n    public int maxProfit(int[] prices) {\n        \n    }\n}",
         "difficulty": "Medium"
     },
@@ -184,8 +184,8 @@
             "Dynamic Programming"
         ],
         "url": "https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-cooldown/",
-        "givenPythonCode": "/**\n * @param {number[]} prices\n * @return {number}\n */\nvar maxProfit = function(prices) {\n    \n};",
-        "givenJsCode": "class Solution:\n    def maxProfit(self, prices: List[int]) -> int:\n        ",
+        "givenPythonCode": "class Solution:\n    def maxProfit(self, prices: List[int]) -> int:\n        ",
+        "givenJsCode": "/**\n * @param {number[]} prices\n * @return {number}\n */\nvar maxProfit = function(prices) {\n    \n};",
         "givenJavaCode": "class Solution {\n    public int maxProfit(int[] prices) {\n        \n    }\n}",
         "difficulty": "Hard"
     },
@@ -195,8 +195,8 @@
             "Bit Manipulation"
         ],
         "url": "https://leetcode.com/problems/bitwise-and-of-numbers-range/",
-        "givenPythonCode": "/**\n * @param {number} left\n * @param {number} right\n * @return {number}\n */\nvar rangeBitwiseAnd = function(left, right) {\n    \n};",
-        "givenJsCode": "class Solution:\n    def rangeBitwiseAnd(self, left: int, right: int) -> int:\n        ",
+        "givenPythonCode": "class Solution:\n    def rangeBitwiseAnd(self, left: int, right: int) -> int:\n        ",
+        "givenJsCode": "/**\n * @param {number} left\n * @param {number} right\n * @return {number}\n */\nvar rangeBitwiseAnd = function(left, right) {\n    \n};",
         "givenJavaCode": "class Solution {\n    public int rangeBitwiseAnd(int left, int right) {\n        \n    }\n}",
         "difficulty": "Medium"
     },
@@ -208,8 +208,8 @@
             "Counting"
         ],
         "url": "https://leetcode.com/problems/bulls-and-cows/",
-        "givenPythonCode": "/**\n * @param {string} secret\n * @param {string} guess\n * @return {string}\n */\nvar getHint = function(secret, guess) {\n    \n};",
-        "givenJsCode": "class Solution:\n    def getHint(self, secret: str, guess: str) -> str:\n        ",
+        "givenPythonCode": "class Solution:\n    def getHint(self, secret: str, guess: str) -> str:\n        ",
+        "givenJsCode": "/**\n * @param {string} secret\n * @param {string} guess\n * @return {string}\n */\nvar getHint = function(secret, guess) {\n    \n};",
         "givenJavaCode": "class Solution {\n    public String getHint(String secret, String guess) {\n        \n    }\n}",
         "difficulty": "Medium"
     },
@@ -221,8 +221,8 @@
         ],
         "url": "https://leetcode.com/problems/burst-balloons/",
         "givenPythonCode": "class Solution:\n    def maxCoins(self, nums: List[int]) -> int:\n        ",
-        "givenJsCode": "class Solution {\n    public int maxCoins(int[] nums) {\n        \n    }\n}",
-        "givenJavaCode": "/**\n * @param {number[]} nums\n * @return {number}\n */\nvar maxCoins = function(nums) {\n    \n};",
+        "givenJsCode": "/**\n * @param {number[]} nums\n * @return {number}\n */\nvar maxCoins = function(nums) {\n    \n};",
+        "givenJavaCode": "class Solution {\n    public int maxCoins(int[] nums) {\n        \n    }\n}",
         "difficulty": "Medium"
     },
     {
@@ -234,8 +234,8 @@
         ],
         "url": "https://leetcode.com/problems/bus-routes/",
         "givenPythonCode": "class Solution:\n    def numBusesToDestination(self, routes: List[List[int]], source: int, target: int) -> int:\n        ",
-        "givenJsCode": "class Solution {\n    public int numBusesToDestination(int[][] routes, int source, int target) {\n        \n    }\n}",
-        "givenJavaCode": "/**\n * @param {number[][]} routes\n * @param {number} source\n * @param {number} target\n * @return {number}\n */\nvar numBusesToDestination = function(routes, source, target) {\n    \n};",
+        "givenJsCode": "/**\n * @param {number[][]} routes\n * @param {number} source\n * @param {number} target\n * @return {number}\n */\nvar numBusesToDestination = function(routes, source, target) {\n    \n};",
+        "givenJavaCode": "class Solution {\n    public int numBusesToDestination(int[][] routes, int source, int target) {\n        \n    }\n}",
         "difficulty": "Hard"
     },
     {
@@ -257,8 +257,8 @@
             "Dynamic Programming"
         ],
         "url": "https://leetcode.com/problems/coin-change-ii/",
-        "givenPythonCode": "/**\n * @param {number} amount\n * @param {number[]} coins\n * @return {number}\n */\nvar change = function(amount, coins) {\n    \n};",
-        "givenJsCode": "class Solution:\n    def change(self, amount: int, coins: List[int]) -> int:\n        ",
+        "givenPythonCode": "class Solution:\n    def change(self, amount: int, coins: List[int]) -> int:\n        ",
+        "givenJsCode": "/**\n * @param {number} amount\n * @param {number[]} coins\n * @return {number}\n */\nvar change = function(amount, coins) {\n    \n};",
         "givenJavaCode": "class Solution {\n    public int change(int amount, int[] coins) {\n        \n    }\n}",
         "difficulty": "Hard"
     },
@@ -269,8 +269,8 @@
             "Backtracking"
         ],
         "url": "https://leetcode.com/problems/combination-sum-ii/",
-        "givenPythonCode": "/**\n * @param {number[]} candidates\n * @param {number} target\n * @return {number[][]}\n */\nvar combinationSum2 = function(candidates, target) {\n    \n};",
-        "givenJsCode": "class Solution:\n    def combinationSum2(self, candidates: List[int], target: int) -> List[List[int]]:\n        ",
+        "givenPythonCode": "class Solution:\n    def combinationSum2(self, candidates: List[int], target: int) -> List[List[int]]:\n        ",
+        "givenJsCode": "/**\n * @param {number[]} candidates\n * @param {number} target\n * @return {number[][]}\n */\nvar combinationSum2 = function(candidates, target) {\n    \n};",
         "givenJavaCode": "class Solution {\n    public List<List<Integer>> combinationSum2(int[] candidates, int target) {\n        \n    }\n}",
         "difficulty": "Medium"
     },
@@ -281,8 +281,8 @@
             "Backtracking"
         ],
         "url": "https://leetcode.com/problems/combination-sum-iii/",
-        "givenPythonCode": "/**\n * @param {number} k\n * @param {number} n\n * @return {number[][]}\n */\nvar combinationSum3 = function(k, n) {\n    \n};",
-        "givenJsCode": "class Solution:\n    def combinationSum3(self, k: int, n: int) -> List[List[int]]:\n        ",
+        "givenPythonCode": "class Solution:\n    def combinationSum3(self, k: int, n: int) -> List[List[int]]:\n        ",
+        "givenJsCode": "/**\n * @param {number} k\n * @param {number} n\n * @return {number[][]}\n */\nvar combinationSum3 = function(k, n) {\n    \n};",
         "givenJavaCode": "class Solution {\n    public List<List<Integer>> combinationSum3(int k, int n) {\n        \n    }\n}",
         "difficulty": "Medium"
     },
@@ -316,8 +316,8 @@
             "Backtracking"
         ],
         "url": "https://leetcode.com/problems/combinations/",
-        "givenPythonCode": "/**\n * @param {number} n\n * @param {number} k\n * @return {number[][]}\n */\nvar combine = function(n, k) {\n    \n};",
-        "givenJsCode": "class Solution:\n    def combine(self, n: int, k: int) -> List[List[int]]:\n        ",
+        "givenPythonCode": "class Solution:\n    def combine(self, n: int, k: int) -> List[List[int]]:\n        ",
+        "givenJsCode": "/**\n * @param {number} n\n * @param {number} k\n * @return {number[][]}\n */\nvar combine = function(n, k) {\n    \n};",
         "givenJavaCode": "class Solution {\n    public List<List<Integer>> combine(int n, int k) {\n        \n    }\n}",
         "difficulty": "Medium"
     },
@@ -328,8 +328,8 @@
             "String"
         ],
         "url": "https://leetcode.com/problems/compare-version-numbers/",
-        "givenPythonCode": "/**\n * @param {string} version1\n * @param {string} version2\n * @return {number}\n */\nvar compareVersion = function(version1, version2) {\n    \n};",
-        "givenJsCode": "class Solution:\n    def compareVersion(self, version1: str, version2: str) -> int:\n        ",
+        "givenPythonCode": "class Solution:\n    def compareVersion(self, version1: str, version2: str) -> int:\n        ",
+        "givenJsCode": "/**\n * @param {string} version1\n * @param {string} version2\n * @return {number}\n */\nvar compareVersion = function(version1, version2) {\n    \n};",
         "givenJavaCode": "class Solution {\n    public int compareVersion(String version1, String version2) {\n        \n    }\n}",
         "difficulty": "Medium"
     },
@@ -341,8 +341,8 @@
             "Simulation"
         ],
         "url": "https://leetcode.com/problems/complex-number-multiplication/",
-        "givenPythonCode": "/**\n * @param {string} num1\n * @param {string} num2\n * @return {string}\n */\nvar complexNumberMultiply = function(num1, num2) {\n    \n};",
-        "givenJsCode": "class Solution:\n    def complexNumberMultiply(self, num1: str, num2: str) -> str:\n        ",
+        "givenPythonCode": "class Solution:\n    def complexNumberMultiply(self, num1: str, num2: str) -> str:\n        ",
+        "givenJsCode": "/**\n * @param {string} num1\n * @param {string} num2\n * @return {string}\n */\nvar complexNumberMultiply = function(num1, num2) {\n    \n};",
         "givenJavaCode": "class Solution {\n    public String complexNumberMultiply(String num1, String num2) {\n        \n    }\n}",
         "difficulty": "Medium"
     },
@@ -355,8 +355,8 @@
         ],
         "url": "https://leetcode.com/problems/contains-duplicate-ii/",
         "difficulty": "Easy",
-        "givenPythonCode": "/**\n * @param {number[]} nums\n * @param {number} k\n * @return {boolean}\n */\nvar containsNearbyDuplicate = function(nums, k) {\n    \n};",
-        "givenJsCode": "class Solution:\n    def containsNearbyDuplicate(self, nums: List[int], k: int) -> bool:\n        ",
+        "givenPythonCode": "class Solution:\n    def containsNearbyDuplicate(self, nums: List[int], k: int) -> bool:\n        ",
+        "givenJsCode": "/**\n * @param {number[]} nums\n * @param {number} k\n * @return {boolean}\n */\nvar containsNearbyDuplicate = function(nums, k) {\n    \n};",
         "givenJavaCode": "class Solution {\n    public boolean containsNearbyDuplicate(int[] nums, int k) {\n        \n    }\n}"
     },
     {
@@ -368,8 +368,8 @@
         ],
         "url": "https://leetcode.com/problems/contains-duplicate/",
         "difficulty": "Easy",
-        "givenPythonCode": "/**\n * @param {number[]} nums\n * @return {boolean}\n */\nvar containsDuplicate = function(nums) {\n    \n};",
-        "givenJsCode": "class Solution:\n    def containsDuplicate(self, nums: List[int]) -> bool:\n        ",
+        "givenPythonCode": "class Solution:\n    def containsDuplicate(self, nums: List[int]) -> bool:\n        ",
+        "givenJsCode": "/**\n * @param {number[]} nums\n * @return {boolean}\n */\nvar containsDuplicate = function(nums) {\n    \n};",
         "givenJavaCode": "class Solution {\n    public boolean containsDuplicate(int[] nums) {\n        \n    }\n}"
     },
     {
@@ -380,8 +380,8 @@
             "Prefix Sum"
         ],
         "url": "https://leetcode.com/problems/contiguous-array/",
-        "givenPythonCode": "/**\n * @param {number[]} nums\n * @return {number}\n */\nvar findMaxLength = function(nums) {\n    \n};",
-        "givenJsCode": "class Solution:\n    def findMaxLength(self, nums: List[int]) -> int:\n        ",
+        "givenPythonCode": "class Solution:\n    def findMaxLength(self, nums: List[int]) -> int:\n        ",
+        "givenJsCode": "/**\n * @param {number[]} nums\n * @return {number}\n */\nvar findMaxLength = function(nums) {\n    \n};",
         "givenJavaCode": "class Solution {\n    public int findMaxLength(int[] nums) {\n        \n    }\n}",
         "difficulty": "Medium"
     },
@@ -393,8 +393,8 @@
         ],
         "url": "https://leetcode.com/problems/convert-a-number-to-hexadecimal/",
         "difficulty": "Easy",
-        "givenPythonCode": "/**\n * @param {number} num\n * @return {string}\n */\nvar toHex = function(num) {\n    \n};",
-        "givenJsCode": "class Solution:\n    def toHex(self, num: int) -> str:\n        ",
+        "givenPythonCode": "class Solution:\n    def toHex(self, num: int) -> str:\n        ",
+        "givenJsCode": "/**\n * @param {number} num\n * @return {string}\n */\nvar toHex = function(num) {\n    \n};",
         "givenJavaCode": "class Solution {\n    public String toHex(int num) {\n        \n    }\n}"
     },
     {
@@ -403,8 +403,8 @@
             "String"
         ],
         "url": "https://leetcode.com/problems/count-and-say/",
-        "givenPythonCode": "/**\n * @param {number} n\n * @return {string}\n */\nvar countAndSay = function(n) {\n    \n};",
-        "givenJsCode": "class Solution:\n    def countAndSay(self, n: int) -> str:\n        ",
+        "givenPythonCode": "class Solution:\n    def countAndSay(self, n: int) -> str:\n        ",
+        "givenJsCode": "/**\n * @param {number} n\n * @return {string}\n */\nvar countAndSay = function(n) {\n    \n};",
         "givenJavaCode": "class Solution {\n    public String countAndSay(int n) {\n        \n    }\n}",
         "difficulty": "Medium"
     },
@@ -416,8 +416,8 @@
             "Backtracking"
         ],
         "url": "https://leetcode.com/problems/count-numbers-with-unique-digits/",
-        "givenPythonCode": "/**\n * @param {number} n\n * @return {number}\n */\nvar countNumbersWithUniqueDigits = function(n) {\n    \n};",
-        "givenJsCode": "class Solution:\n    def countNumbersWithUniqueDigits(self, n: int) -> int:\n        ",
+        "givenPythonCode": "class Solution:\n    def countNumbersWithUniqueDigits(self, n: int) -> int:\n        ",
+        "givenJsCode": "/**\n * @param {number} n\n * @return {number}\n */\nvar countNumbersWithUniqueDigits = function(n) {\n    \n};",
         "givenJavaCode": "class Solution {\n    public int countNumbersWithUniqueDigits(int n) {\n        \n    }\n}",
         "difficulty": "Medium"
     },
@@ -429,8 +429,8 @@
         ],
         "url": "https://leetcode.com/problems/counting-bits/",
         "difficulty": "Easy",
-        "givenPythonCode": "/**\n * @param {number} n\n * @return {number[]}\n */\nvar countBits = function(n) {\n    \n};",
-        "givenJsCode": "class Solution:\n    def countBits(self, n: int) -> List[int]:\n        ",
+        "givenPythonCode": "class Solution:\n    def countBits(self, n: int) -> List[int]:\n        ",
+        "givenJsCode": "/**\n * @param {number} n\n * @return {number[]}\n */\nvar countBits = function(n) {\n    \n};",
         "givenJavaCode": "class Solution {\n    public int[] countBits(int n) {\n        \n    }\n}"
     },
     {
@@ -455,8 +455,8 @@
         ],
         "url": "https://leetcode.com/problems/decode-ways-ii/",
         "givenPythonCode": "class Solution:\n    def numDecodings(self, s: str) -> int:\n        ",
-        "givenJsCode": "class Solution {\n    public int numDecodings(String s) {\n        \n    }\n}",
-        "givenJavaCode": "/**\n * @param {string} s\n * @return {number}\n */\nvar numDecodings = function(s) {\n    \n};",
+        "givenJsCode": "/**\n * @param {string} s\n * @return {number}\n */\nvar numDecodings = function(s) {\n    \n};",
+        "givenJavaCode": "class Solution {\n    public int numDecodings(String s) {\n        \n    }\n}",
         "difficulty": "Hard"
     },
     {
@@ -466,8 +466,8 @@
             "Dynamic Programming"
         ],
         "url": "https://leetcode.com/problems/delete-operation-for-two-strings/",
-        "givenPythonCode": "/**\n * @param {string} word1\n * @param {string} word2\n * @return {number}\n */\nvar minDistance = function(word1, word2) {\n    \n};",
-        "givenJsCode": "class Solution:\n    def minDistance(self, word1: str, word2: str) -> int:\n        ",
+        "givenPythonCode": "class Solution:\n    def minDistance(self, word1: str, word2: str) -> int:\n        ",
+        "givenJsCode": "/**\n * @param {string} word1\n * @param {string} word2\n * @return {number}\n */\nvar minDistance = function(word1, word2) {\n    \n};",
         "givenJavaCode": "class Solution {\n    public int minDistance(String word1, String word2) {\n        \n    }\n}",
         "difficulty": "Medium"
     },
@@ -478,8 +478,8 @@
         ],
         "url": "https://leetcode.com/problems/detect-capital/",
         "difficulty": "Easy",
-        "givenPythonCode": "/**\n * @param {string} word\n * @return {boolean}\n */\nvar detectCapitalUse = function(word) {\n    \n};",
-        "givenJsCode": "class Solution:\n    def detectCapitalUse(self, word: str) -> bool:\n        ",
+        "givenPythonCode": "class Solution:\n    def detectCapitalUse(self, word: str) -> bool:\n        ",
+        "givenJsCode": "/**\n * @param {string} word\n * @return {boolean}\n */\nvar detectCapitalUse = function(word) {\n    \n};",
         "givenJavaCode": "class Solution {\n    public boolean detectCapitalUse(String word) {\n        \n    }\n}"
     },
     {
@@ -501,8 +501,8 @@
             "Bit Manipulation"
         ],
         "url": "https://leetcode.com/problems/divide-two-integers/",
-        "givenPythonCode": "/**\n * @param {number} dividend\n * @param {number} divisor\n * @return {number}\n */\nvar divide = function(dividend, divisor) {\n    \n};",
-        "givenJsCode": "class Solution:\n    def divide(self, dividend: int, divisor: int) -> int:\n        ",
+        "givenPythonCode": "class Solution:\n    def divide(self, dividend: int, divisor: int) -> int:\n        ",
+        "givenJsCode": "/**\n * @param {number} dividend\n * @param {number} divisor\n * @return {number}\n */\nvar divide = function(dividend, divisor) {\n    \n};",
         "givenJavaCode": "class Solution {\n    public int divide(int dividend, int divisor) {\n        \n    }\n}",
         "difficulty": "Hard"
     },
@@ -513,8 +513,8 @@
             "Dynamic Programming"
         ],
         "url": "https://leetcode.com/problems/edit-distance/",
-        "givenPythonCode": "/**\n * @param {string} word1\n * @param {string} word2\n * @return {number}\n */\nvar minDistance = function(word1, word2) {\n    \n};",
-        "givenJsCode": "class Solution:\n    def minDistance(self, word1: str, word2: str) -> int:\n        ",
+        "givenPythonCode": "class Solution:\n    def minDistance(self, word1: str, word2: str) -> int:\n        ",
+        "givenJsCode": "/**\n * @param {string} word1\n * @param {string} word2\n * @return {number}\n */\nvar minDistance = function(word1, word2) {\n    \n};",
         "givenJavaCode": "class Solution {\n    public int minDistance(String word1, String word2) {\n        \n    }\n}",
         "difficulty": "Medium"
     },
@@ -539,8 +539,8 @@
         ],
         "url": "https://leetcode.com/problems/excel-sheet-column-number/",
         "difficulty": "Easy",
-        "givenPythonCode": "/**\n * @param {string} columnTitle\n * @return {number}\n */\nvar titleToNumber = function(columnTitle) {\n    \n};",
-        "givenJsCode": "class Solution:\n    def titleToNumber(self, columnTitle: str) -> int:\n        ",
+        "givenPythonCode": "class Solution:\n    def titleToNumber(self, columnTitle: str) -> int:\n        ",
+        "givenJsCode": "/**\n * @param {string} columnTitle\n * @return {number}\n */\nvar titleToNumber = function(columnTitle) {\n    \n};",
         "givenJavaCode": "class Solution {\n    public int titleToNumber(String columnTitle) {\n        \n    }\n}"
     },
     {
@@ -564,8 +564,8 @@
         ],
         "url": "https://leetcode.com/problems/expression-add-operators/",
         "givenPythonCode": "class Solution:\n    def addOperators(self, num: str, target: int) -> List[str]:\n        ",
-        "givenJsCode": "class Solution {\n    public List<String> addOperators(String num, int target) {\n        \n    }\n}",
-        "givenJavaCode": "/**\n * @param {string} num\n * @param {number} target\n * @return {string[]}\n */\nvar addOperators = function(num, target) {\n    \n};",
+        "givenJsCode": "/**\n * @param {string} num\n * @param {number} target\n * @return {string[]}\n */\nvar addOperators = function(num, target) {\n    \n};",
+        "givenJavaCode": "class Solution {\n    public List<String> addOperators(String num, int target) {\n        \n    }\n}",
         "difficulty": "Medium"
     },
     {
@@ -574,8 +574,8 @@
             "Math"
         ],
         "url": "https://leetcode.com/problems/factorial-trailing-zeroes/",
-        "givenPythonCode": "/**\n * @param {number} n\n * @return {number}\n */\nvar trailingZeroes = function(n) {\n    \n};",
-        "givenJsCode": "class Solution:\n    def trailingZeroes(self, n: int) -> int:\n        ",
+        "givenPythonCode": "class Solution:\n    def trailingZeroes(self, n: int) -> int:\n        ",
+        "givenJsCode": "/**\n * @param {number} n\n * @return {number}\n */\nvar trailingZeroes = function(n) {\n    \n};",
         "givenJavaCode": "class Solution {\n    public int trailingZeroes(int n) {\n        \n    }\n}",
         "difficulty": "Hard"
     },
@@ -587,8 +587,8 @@
             "Sliding Window"
         ],
         "url": "https://leetcode.com/problems/find-all-anagrams-in-a-string/",
-        "givenPythonCode": "/**\n * @param {string} s\n * @param {string} p\n * @return {number[]}\n */\nvar findAnagrams = function(s, p) {\n    \n};",
-        "givenJsCode": "class Solution:\n    def findAnagrams(self, s: str, p: str) -> List[int]:\n        ",
+        "givenPythonCode": "class Solution:\n    def findAnagrams(self, s: str, p: str) -> List[int]:\n        ",
+        "givenJsCode": "/**\n * @param {string} s\n * @param {string} p\n * @return {number[]}\n */\nvar findAnagrams = function(s, p) {\n    \n};",
         "givenJavaCode": "class Solution {\n    public List<Integer> findAnagrams(String s, String p) {\n        \n    }\n}",
         "difficulty": "Medium"
     },
@@ -600,8 +600,8 @@
             "String"
         ],
         "url": "https://leetcode.com/problems/find-duplicate-file-in-system/",
-        "givenPythonCode": "/**\n * @param {string[]} paths\n * @return {string[][]}\n */\nvar findDuplicate = function(paths) {\n    \n};",
-        "givenJsCode": "class Solution:\n    def findDuplicate(self, paths: List[str]) -> List[List[str]]:\n        ",
+        "givenPythonCode": "class Solution:\n    def findDuplicate(self, paths: List[str]) -> List[List[str]]:\n        ",
+        "givenJsCode": "/**\n * @param {string[]} paths\n * @return {string[][]}\n */\nvar findDuplicate = function(paths) {\n    \n};",
         "givenJavaCode": "class Solution {\n    public List<List<String>> findDuplicate(String[] paths) {\n        \n    }\n}",
         "difficulty": "Medium"
     },
@@ -624,8 +624,8 @@
             "Heap (Priority Queue)"
         ],
         "url": "https://leetcode.com/problems/find-k-pairs-with-smallest-sums/",
-        "givenPythonCode": "/**\n * @param {number[]} nums1\n * @param {number[]} nums2\n * @param {number} k\n * @return {number[][]}\n */\nvar kSmallestPairs = function(nums1, nums2, k) {\n    \n};",
-        "givenJsCode": "class Solution:\n    def kSmallestPairs(self, nums1: List[int], nums2: List[int], k: int) -> List[List[int]]:\n        ",
+        "givenPythonCode": "class Solution:\n    def kSmallestPairs(self, nums1: List[int], nums2: List[int], k: int) -> List[List[int]]:\n        ",
+        "givenJsCode": "/**\n * @param {number[]} nums1\n * @param {number[]} nums2\n * @param {number} k\n * @return {number[][]}\n */\nvar kSmallestPairs = function(nums1, nums2, k) {\n    \n};",
         "givenJavaCode": "class Solution {\n    public List<List<Integer>> kSmallestPairs(int[] nums1, int[] nums2, int k) {\n        \n    }\n}",
         "difficulty": "Medium"
     },
@@ -639,8 +639,8 @@
         ],
         "url": "https://leetcode.com/problems/find-k-th-smallest-pair-distance/",
         "givenPythonCode": "class Solution:\n    def smallestDistancePair(self, nums: List[int], k: int) -> int:\n        ",
-        "givenJsCode": "class Solution {\n    public int smallestDistancePair(int[] nums, int k) {\n        \n    }\n}",
-        "givenJavaCode": "/**\n * @param {number[]} nums\n * @param {number} k\n * @return {number}\n */\nvar smallestDistancePair = function(nums, k) {\n    \n};",
+        "givenJsCode": "/**\n * @param {number[]} nums\n * @param {number} k\n * @return {number}\n */\nvar smallestDistancePair = function(nums, k) {\n    \n};",
+        "givenJavaCode": "class Solution {\n    public int smallestDistancePair(int[] nums, int k) {\n        \n    }\n}",
         "difficulty": "Medium"
     },
     {
@@ -651,8 +651,8 @@
         ],
         "url": "https://leetcode.com/problems/find-minimum-in-rotated-sorted-array-ii/",
         "givenPythonCode": "class Solution:\n    def findMin(self, nums: List[int]) -> int:\n        ",
-        "givenJsCode": "class Solution {\n    public int findMin(int[] nums) {\n        \n    }\n}",
-        "givenJavaCode": "/**\n * @param {number[]} nums\n * @return {number}\n */\nvar findMin = function(nums) {\n    \n};",
+        "givenJsCode": "/**\n * @param {number[]} nums\n * @return {number}\n */\nvar findMin = function(nums) {\n    \n};",
+        "givenJavaCode": "class Solution {\n    public int findMin(int[] nums) {\n        \n    }\n}",
         "difficulty": "Hard"
     },
     {
@@ -662,8 +662,8 @@
             "Binary Search"
         ],
         "url": "https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/",
-        "givenPythonCode": "/**\n * @param {number[]} nums\n * @return {number}\n */\nvar findMin = function(nums) {\n    \n};",
-        "givenJsCode": "class Solution:\n    def findMin(self, nums: List[int]) -> int:\n        ",
+        "givenPythonCode": "class Solution:\n    def findMin(self, nums: List[int]) -> int:\n        ",
+        "givenJsCode": "/**\n * @param {number[]} nums\n * @return {number}\n */\nvar findMin = function(nums) {\n    \n};",
         "givenJavaCode": "class Solution {\n    public int findMin(int[] nums) {\n        \n    }\n}",
         "difficulty": "Hard"
     },
@@ -674,8 +674,8 @@
             "Binary Search"
         ],
         "url": "https://leetcode.com/problems/find-peak-element/",
-        "givenPythonCode": "/**\n * @param {number[]} nums\n * @return {number}\n */\nvar findPeakElement = function(nums) {\n    \n};",
-        "givenJsCode": "class Solution:\n    def findPeakElement(self, nums: List[int]) -> int:\n        ",
+        "givenPythonCode": "class Solution:\n    def findPeakElement(self, nums: List[int]) -> int:\n        ",
+        "givenJsCode": "/**\n * @param {number[]} nums\n * @return {number}\n */\nvar findPeakElement = function(nums) {\n    \n};",
         "givenJavaCode": "class Solution {\n    public int findPeakElement(int[] nums) {\n        \n    }\n}",
         "difficulty": "Medium"
     },
@@ -687,8 +687,8 @@
             "Sorting"
         ],
         "url": "https://leetcode.com/problems/find-right-interval/",
-        "givenPythonCode": "/**\n * @param {number[][]} intervals\n * @return {number[]}\n */\nvar findRightInterval = function(intervals) {\n    \n};",
-        "givenJsCode": "class Solution:\n    def findRightInterval(self, intervals: List[List[int]]) -> List[int]:\n        ",
+        "givenPythonCode": "class Solution:\n    def findRightInterval(self, intervals: List[List[int]]) -> List[int]:\n        ",
+        "givenJsCode": "/**\n * @param {number[][]} intervals\n * @return {number[]}\n */\nvar findRightInterval = function(intervals) {\n    \n};",
         "givenJavaCode": "class Solution {\n    public int[] findRightInterval(int[][] intervals) {\n        \n    }\n}",
         "difficulty": "Medium"
     },
@@ -702,8 +702,8 @@
         ],
         "url": "https://leetcode.com/problems/find-the-difference/",
         "difficulty": "Easy",
-        "givenPythonCode": "/**\n * @param {string} s\n * @param {string} t\n * @return {character}\n */\nvar findTheDifference = function(s, t) {\n    \n};",
-        "givenJsCode": "class Solution:\n    def findTheDifference(self, s: str, t: str) -> str:\n        ",
+        "givenPythonCode": "class Solution:\n    def findTheDifference(self, s: str, t: str) -> str:\n        ",
+        "givenJsCode": "/**\n * @param {string} s\n * @param {string} t\n * @return {character}\n */\nvar findTheDifference = function(s, t) {\n    \n};",
         "givenJavaCode": "class Solution {\n    public char findTheDifference(String s, String t) {\n        \n    }\n}"
     },
     {
@@ -715,8 +715,8 @@
             "Bit Manipulation"
         ],
         "url": "https://leetcode.com/problems/find-the-duplicate-number/",
-        "givenPythonCode": "/**\n * @param {number[]} nums\n * @return {number}\n */\nvar findDuplicate = function(nums) {\n    \n};",
-        "givenJsCode": "class Solution:\n    def findDuplicate(self, nums: List[int]) -> int:\n        ",
+        "givenPythonCode": "class Solution:\n    def findDuplicate(self, nums: List[int]) -> int:\n        ",
+        "givenJsCode": "/**\n * @param {number[]} nums\n * @return {number}\n */\nvar findDuplicate = function(nums) {\n    \n};",
         "givenJavaCode": "class Solution {\n    public int findDuplicate(int[] nums) {\n        \n    }\n}",
         "difficulty": "Medium"
     },
@@ -729,8 +729,8 @@
         ],
         "url": "https://leetcode.com/problems/fizz-buzz/",
         "difficulty": "Easy",
-        "givenPythonCode": "/**\n * @param {number} n\n * @return {string[]}\n */\nvar fizzBuzz = function(n) {\n    \n};",
-        "givenJsCode": "class Solution:\n    def fizzBuzz(self, n: int) -> List[str]:\n        ",
+        "givenPythonCode": "class Solution:\n    def fizzBuzz(self, n: int) -> List[str]:\n        ",
+        "givenJsCode": "/**\n * @param {number} n\n * @return {string[]}\n */\nvar fizzBuzz = function(n) {\n    \n};",
         "givenJavaCode": "class Solution {\n    public List<String> fizzBuzz(int n) {\n        \n    }\n}"
     },
     {
@@ -741,8 +741,8 @@
             "Simulation"
         ],
         "url": "https://leetcode.com/problems/fraction-addition-and-subtraction/",
-        "givenPythonCode": "/**\n * @param {string} expression\n * @return {string}\n */\nvar fractionAddition = function(expression) {\n    \n};",
-        "givenJsCode": "class Solution:\n    def fractionAddition(self, expression: str) -> str:\n        ",
+        "givenPythonCode": "class Solution:\n    def fractionAddition(self, expression: str) -> str:\n        ",
+        "givenJsCode": "/**\n * @param {string} expression\n * @return {string}\n */\nvar fractionAddition = function(expression) {\n    \n};",
         "givenJavaCode": "class Solution {\n    public String fractionAddition(String expression) {\n        \n    }\n}",
         "difficulty": "Hard"
     },
@@ -754,8 +754,8 @@
             "String"
         ],
         "url": "https://leetcode.com/problems/fraction-to-recurring-decimal/",
-        "givenPythonCode": "/**\n * @param {number} numerator\n * @param {number} denominator\n * @return {string}\n */\nvar fractionToDecimal = function(numerator, denominator) {\n    \n};",
-        "givenJsCode": "class Solution:\n    def fractionToDecimal(self, numerator: int, denominator: int) -> str:\n        ",
+        "givenPythonCode": "class Solution:\n    def fractionToDecimal(self, numerator: int, denominator: int) -> str:\n        ",
+        "givenJsCode": "/**\n * @param {number} numerator\n * @param {number} denominator\n * @return {string}\n */\nvar fractionToDecimal = function(numerator, denominator) {\n    \n};",
         "givenJavaCode": "class Solution {\n    public String fractionToDecimal(int numerator, int denominator) {\n        \n    }\n}",
         "difficulty": "Medium"
     },
@@ -767,8 +767,8 @@
         ],
         "url": "https://leetcode.com/problems/frog-jump/",
         "givenPythonCode": "class Solution:\n    def canCross(self, stones: List[int]) -> bool:\n        ",
-        "givenJsCode": "class Solution {\n    public boolean canCross(int[] stones) {\n        \n    }\n}",
-        "givenJavaCode": "/**\n * @param {number[]} stones\n * @return {boolean}\n */\nvar canCross = function(stones) {\n    \n};",
+        "givenJsCode": "/**\n * @param {number[]} stones\n * @return {boolean}\n */\nvar canCross = function(stones) {\n    \n};",
+        "givenJavaCode": "class Solution {\n    public boolean canCross(int[] stones) {\n        \n    }\n}",
         "difficulty": "Medium"
     },
     {
@@ -805,8 +805,8 @@
             "Sorting"
         ],
         "url": "https://leetcode.com/problems/group-anagrams/",
-        "givenPythonCode": "/**\n * @param {string[]} strs\n * @return {string[][]}\n */\nvar groupAnagrams = function(strs) {\n    \n};",
-        "givenJsCode": "class Solution:\n    def groupAnagrams(self, strs: List[str]) -> List[List[str]]:\n        ",
+        "givenPythonCode": "class Solution:\n    def groupAnagrams(self, strs: List[str]) -> List[List[str]]:\n        ",
+        "givenJsCode": "/**\n * @param {string[]} strs\n * @return {string[][]}\n */\nvar groupAnagrams = function(strs) {\n    \n};",
         "givenJavaCode": "class Solution {\n    public List<List<String>> groupAnagrams(String[] strs) {\n        \n    }\n}",
         "difficulty": "Medium"
     },
@@ -817,8 +817,8 @@
             "Binary Search"
         ],
         "url": "https://leetcode.com/problems/h-index-ii/",
-        "givenPythonCode": "/**\n * @param {number[]} citations\n * @return {number}\n */\nvar hIndex = function(citations) {\n    \n};",
-        "givenJsCode": "class Solution:\n    def hIndex(self, citations: List[int]) -> int:\n        ",
+        "givenPythonCode": "class Solution:\n    def hIndex(self, citations: List[int]) -> int:\n        ",
+        "givenJsCode": "/**\n * @param {number[]} citations\n * @return {number}\n */\nvar hIndex = function(citations) {\n    \n};",
         "givenJavaCode": "class Solution {\n    public int hIndex(int[] citations) {\n        \n    }\n}",
         "difficulty": "Medium"
     },
@@ -829,8 +829,8 @@
         ],
         "url": "https://leetcode.com/problems/hamming-distance/",
         "difficulty": "Easy",
-        "givenPythonCode": "/**\n * @param {number} x\n * @param {number} y\n * @return {number}\n */\nvar hammingDistance = function(x, y) {\n    \n};",
-        "givenJsCode": "class Solution:\n    def hammingDistance(self, x: int, y: int) -> int:\n        ",
+        "givenPythonCode": "class Solution:\n    def hammingDistance(self, x: int, y: int) -> int:\n        ",
+        "givenJsCode": "/**\n * @param {number} x\n * @param {number} y\n * @return {number}\n */\nvar hammingDistance = function(x, y) {\n    \n};",
         "givenJavaCode": "class Solution {\n    public int hammingDistance(int x, int y) {\n        \n    }\n}"
     },
     {
@@ -842,8 +842,8 @@
         ],
         "url": "https://leetcode.com/problems/happy-number/",
         "difficulty": "Easy",
-        "givenPythonCode": "/**\n * @param {number} n\n * @return {boolean}\n */\nvar isHappy = function(n) {\n    \n};",
-        "givenJsCode": "class Solution:\n    def isHappy(self, n: int) -> bool:\n        ",
+        "givenPythonCode": "class Solution:\n    def isHappy(self, n: int) -> bool:\n        ",
+        "givenJsCode": "/**\n * @param {number} n\n * @return {boolean}\n */\nvar isHappy = function(n) {\n    \n};",
         "givenJavaCode": "class Solution {\n    public boolean isHappy(int n) {\n        \n    }\n}"
     },
     {
@@ -889,8 +889,8 @@
             "Dynamic Programming"
         ],
         "url": "https://leetcode.com/problems/integer-break/",
-        "givenPythonCode": "/**\n * @param {number} n\n * @return {number}\n */\nvar integerBreak = function(n) {\n    \n};",
-        "givenJsCode": "class Solution:\n    def integerBreak(self, n: int) -> int:\n        ",
+        "givenPythonCode": "class Solution:\n    def integerBreak(self, n: int) -> int:\n        ",
+        "givenJsCode": "/**\n * @param {number} n\n * @return {number}\n */\nvar integerBreak = function(n) {\n    \n};",
         "givenJavaCode": "class Solution {\n    public int integerBreak(int n) {\n        \n    }\n}",
         "difficulty": "Medium"
     },
@@ -905,8 +905,8 @@
         ],
         "url": "https://leetcode.com/problems/intersection-of-two-arrays-ii/",
         "difficulty": "Easy",
-        "givenPythonCode": "/**\n * @param {number[]} nums1\n * @param {number[]} nums2\n * @return {number[]}\n */\nvar intersect = function(nums1, nums2) {\n    \n};",
-        "givenJsCode": "class Solution:\n    def intersect(self, nums1: List[int], nums2: List[int]) -> List[int]:\n        ",
+        "givenPythonCode": "class Solution:\n    def intersect(self, nums1: List[int], nums2: List[int]) -> List[int]:\n        ",
+        "givenJsCode": "/**\n * @param {number[]} nums1\n * @param {number[]} nums2\n * @return {number[]}\n */\nvar intersect = function(nums1, nums2) {\n    \n};",
         "givenJavaCode": "class Solution {\n    public int[] intersect(int[] nums1, int[] nums2) {\n        \n    }\n}"
     },
     {
@@ -920,8 +920,8 @@
         ],
         "url": "https://leetcode.com/problems/intersection-of-two-arrays/",
         "difficulty": "Easy",
-        "givenPythonCode": "/**\n * @param {number[]} nums1\n * @param {number[]} nums2\n * @return {number[]}\n */\nvar intersection = function(nums1, nums2) {\n    \n};",
-        "givenJsCode": "class Solution:\n    def intersection(self, nums1: List[int], nums2: List[int]) -> List[int]:\n        ",
+        "givenPythonCode": "class Solution:\n    def intersection(self, nums1: List[int], nums2: List[int]) -> List[int]:\n        ",
+        "givenJsCode": "/**\n * @param {number[]} nums1\n * @param {number[]} nums2\n * @return {number[]}\n */\nvar intersection = function(nums1, nums2) {\n    \n};",
         "givenJavaCode": "class Solution {\n    public int[] intersection(int[] nums1, int[] nums2) {\n        \n    }\n}"
     },
     {
@@ -934,8 +934,8 @@
         ],
         "url": "https://leetcode.com/problems/ipo/",
         "givenPythonCode": "class Solution:\n    def findMaximizedCapital(self, k: int, w: int, profits: List[int], capital: List[int]) -> int:\n        ",
-        "givenJsCode": "class Solution {\n    public int findMaximizedCapital(int k, int w, int[] profits, int[] capital) {\n        \n    }\n}",
-        "givenJavaCode": "/**\n * @param {number} k\n * @param {number} w\n * @param {number[]} profits\n * @param {number[]} capital\n * @return {number}\n */\nvar findMaximizedCapital = function(k, w, profits, capital) {\n    \n};",
+        "givenJsCode": "/**\n * @param {number} k\n * @param {number} w\n * @param {number[]} profits\n * @param {number[]} capital\n * @return {number}\n */\nvar findMaximizedCapital = function(k, w, profits, capital) {\n    \n};",
+        "givenJavaCode": "class Solution {\n    public int findMaximizedCapital(int k, int w, int[] profits, int[] capital) {\n        \n    }\n}",
         "difficulty": "Medium"
     },
     {
@@ -947,8 +947,8 @@
         ],
         "url": "https://leetcode.com/problems/is-subsequence/",
         "difficulty": "Easy",
-        "givenPythonCode": "/**\n * @param {string} s\n * @param {string} t\n * @return {boolean}\n */\nvar isSubsequence = function(s, t) {\n    \n};",
-        "givenJsCode": "class Solution:\n    def isSubsequence(self, s: str, t: str) -> bool:\n        ",
+        "givenPythonCode": "class Solution:\n    def isSubsequence(self, s: str, t: str) -> bool:\n        ",
+        "givenJsCode": "/**\n * @param {string} s\n * @param {string} t\n * @return {boolean}\n */\nvar isSubsequence = function(s, t) {\n    \n};",
         "givenJavaCode": "class Solution {\n    public boolean isSubsequence(String s, String t) {\n        \n    }\n}"
     },
     {
@@ -959,8 +959,8 @@
         ],
         "url": "https://leetcode.com/problems/isomorphic-strings/",
         "difficulty": "Easy",
-        "givenPythonCode": "/**\n * @param {string} s\n * @param {string} t\n * @return {boolean}\n */\nvar isIsomorphic = function(s, t) {\n    \n};",
-        "givenJsCode": "class Solution:\n    def isIsomorphic(self, s: str, t: str) -> bool:\n        ",
+        "givenPythonCode": "class Solution:\n    def isIsomorphic(self, s: str, t: str) -> bool:\n        ",
+        "givenJsCode": "/**\n * @param {string} s\n * @param {string} t\n * @return {boolean}\n */\nvar isIsomorphic = function(s, t) {\n    \n};",
         "givenJavaCode": "class Solution {\n    public boolean isIsomorphic(String s, String t) {\n        \n    }\n}"
     },
     {
@@ -971,8 +971,8 @@
             "Greedy"
         ],
         "url": "https://leetcode.com/problems/jump-game-ii/",
-        "givenPythonCode": "/**\n * @param {number[]} nums\n * @return {number}\n */\nvar jump = function(nums) {\n    \n};",
-        "givenJsCode": "class Solution:\n    def jump(self, nums: List[int]) -> int:\n        ",
+        "givenPythonCode": "class Solution:\n    def jump(self, nums: List[int]) -> int:\n        ",
+        "givenJsCode": "/**\n * @param {number[]} nums\n * @return {number}\n */\nvar jump = function(nums) {\n    \n};",
         "givenJavaCode": "class Solution {\n    public int jump(int[] nums) {\n        \n    }\n}",
         "difficulty": "Hard"
     },
@@ -984,8 +984,8 @@
             "Greedy"
         ],
         "url": "https://leetcode.com/problems/jump-game/",
-        "givenPythonCode": "/**\n * @param {number[]} nums\n * @return {boolean}\n */\nvar canJump = function(nums) {\n    \n};",
-        "givenJsCode": "class Solution:\n    def canJump(self, nums: List[int]) -> bool:\n        ",
+        "givenPythonCode": "class Solution:\n    def canJump(self, nums: List[int]) -> bool:\n        ",
+        "givenJsCode": "/**\n * @param {number[]} nums\n * @return {boolean}\n */\nvar canJump = function(nums) {\n    \n};",
         "givenJavaCode": "class Solution {\n    public boolean canJump(int[] nums) {\n        \n    }\n}",
         "difficulty": "Medium"
     },
@@ -999,8 +999,8 @@
             "Sorting"
         ],
         "url": "https://leetcode.com/problems/k-diff-pairs-in-an-array/",
-        "givenPythonCode": "/**\n * @param {number[]} nums\n * @param {number} k\n * @return {number}\n */\nvar findPairs = function(nums, k) {\n    \n};",
-        "givenJsCode": "class Solution:\n    def findPairs(self, nums: List[int], k: int) -> int:\n        ",
+        "givenPythonCode": "class Solution:\n    def findPairs(self, nums: List[int], k: int) -> int:\n        ",
+        "givenJsCode": "/**\n * @param {number[]} nums\n * @param {number} k\n * @return {number}\n */\nvar findPairs = function(nums, k) {\n    \n};",
         "givenJavaCode": "class Solution {\n    public int findPairs(int[] nums, int k) {\n        \n    }\n}",
         "difficulty": "Medium"
     },
@@ -1011,8 +1011,8 @@
         ],
         "url": "https://leetcode.com/problems/k-inverse-pairs-array/",
         "givenPythonCode": "class Solution:\n    def kInversePairs(self, n: int, k: int) -> int:\n        ",
-        "givenJsCode": "class Solution {\n    public int kInversePairs(int n, int k) {\n        \n    }\n}",
-        "givenJavaCode": "/**\n * @param {number} n\n * @param {number} k\n * @return {number}\n */\nvar kInversePairs = function(n, k) {\n    \n};",
+        "givenJsCode": "/**\n * @param {number} n\n * @param {number} k\n * @return {number}\n */\nvar kInversePairs = function(n, k) {\n    \n};",
+        "givenJavaCode": "class Solution {\n    public int kInversePairs(int n, int k) {\n        \n    }\n}",
         "difficulty": "Medium"
     },
     {
@@ -1024,8 +1024,8 @@
             "Sorting"
         ],
         "url": "https://leetcode.com/problems/largest-divisible-subset/",
-        "givenPythonCode": "/**\n * @param {number[]} nums\n * @return {number[]}\n */\nvar largestDivisibleSubset = function(nums) {\n    \n};",
-        "givenJsCode": "class Solution:\n    def largestDivisibleSubset(self, nums: List[int]) -> List[int]:\n        ",
+        "givenPythonCode": "class Solution:\n    def largestDivisibleSubset(self, nums: List[int]) -> List[int]:\n        ",
+        "givenJsCode": "/**\n * @param {number[]} nums\n * @return {number[]}\n */\nvar largestDivisibleSubset = function(nums) {\n    \n};",
         "givenJavaCode": "class Solution {\n    public List<Integer> largestDivisibleSubset(int[] nums) {\n        \n    }\n}",
         "difficulty": "Hard"
     },
@@ -1038,8 +1038,8 @@
             "Sorting"
         ],
         "url": "https://leetcode.com/problems/largest-number/",
-        "givenPythonCode": "/**\n * @param {number[]} nums\n * @return {string}\n */\nvar largestNumber = function(nums) {\n    \n};",
-        "givenJsCode": "class Solution:\n    def largestNumber(self, nums: List[int]) -> str:\n        ",
+        "givenPythonCode": "class Solution:\n    def largestNumber(self, nums: List[int]) -> str:\n        ",
+        "givenJsCode": "/**\n * @param {number[]} nums\n * @return {string}\n */\nvar largestNumber = function(nums) {\n    \n};",
         "givenJavaCode": "class Solution {\n    public String largestNumber(int[] nums) {\n        \n    }\n}",
         "difficulty": "Medium"
     },
@@ -1051,8 +1051,8 @@
         ],
         "url": "https://leetcode.com/problems/largest-palindrome-product/",
         "givenPythonCode": "class Solution:\n    def largestPalindrome(self, n: int) -> int:\n        ",
-        "givenJsCode": "class Solution {\n    public int largestPalindrome(int n) {\n        \n    }\n}",
-        "givenJavaCode": "/**\n * @param {number} n\n * @return {number}\n */\nvar largestPalindrome = function(n) {\n    \n};",
+        "givenJsCode": "/**\n * @param {number} n\n * @return {number}\n */\nvar largestPalindrome = function(n) {\n    \n};",
+        "givenJavaCode": "class Solution {\n    public int largestPalindrome(int n) {\n        \n    }\n}",
         "difficulty": "Medium"
     },
     {
@@ -1073,8 +1073,8 @@
         ],
         "url": "https://leetcode.com/problems/license-key-formatting/",
         "difficulty": "Easy",
-        "givenPythonCode": "/**\n * @param {string} s\n * @param {number} k\n * @return {string}\n */\nvar licenseKeyFormatting = function(s, k) {\n    \n};",
-        "givenJsCode": "class Solution:\n    def licenseKeyFormatting(self, s: str, k: int) -> str:\n        ",
+        "givenPythonCode": "class Solution:\n    def licenseKeyFormatting(self, s: str, k: int) -> str:\n        ",
+        "givenJsCode": "/**\n * @param {string} s\n * @param {number} k\n * @return {string}\n */\nvar licenseKeyFormatting = function(s, k) {\n    \n};",
         "givenJavaCode": "class Solution {\n    public String licenseKeyFormatting(String s, int k) {\n        \n    }\n}"
     },
     {
@@ -1085,8 +1085,8 @@
             "Dynamic Programming"
         ],
         "url": "https://leetcode.com/problems/longest-increasing-subsequence/",
-        "givenPythonCode": "/**\n * @param {number[]} nums\n * @return {number}\n */\nvar lengthOfLIS = function(nums) {\n    \n};",
-        "givenJsCode": "class Solution:\n    def lengthOfLIS(self, nums: List[int]) -> int:\n        ",
+        "givenPythonCode": "class Solution:\n    def lengthOfLIS(self, nums: List[int]) -> int:\n        ",
+        "givenJsCode": "/**\n * @param {number[]} nums\n * @return {number}\n */\nvar lengthOfLIS = function(nums) {\n    \n};",
         "givenJavaCode": "class Solution {\n    public int lengthOfLIS(int[] nums) {\n        \n    }\n}",
         "difficulty": "Hard"
     },
@@ -1110,8 +1110,8 @@
             "Dynamic Programming"
         ],
         "url": "https://leetcode.com/problems/longest-palindromic-subsequence/",
-        "givenPythonCode": "/**\n * @param {string} s\n * @return {number}\n */\nvar longestPalindromeSubseq = function(s) {\n    \n};",
-        "givenJsCode": "class Solution:\n    def longestPalindromeSubseq(self, s: str) -> int:\n        ",
+        "givenPythonCode": "class Solution:\n    def longestPalindromeSubseq(self, s: str) -> int:\n        ",
+        "givenJsCode": "/**\n * @param {string} s\n * @return {number}\n */\nvar longestPalindromeSubseq = function(s) {\n    \n};",
         "givenJavaCode": "class Solution {\n    public int longestPalindromeSubseq(String s) {\n        \n    }\n}",
         "difficulty": "Medium"
     },
@@ -1136,8 +1136,8 @@
             "Sliding Window"
         ],
         "url": "https://leetcode.com/problems/longest-repeating-character-replacement/",
-        "givenPythonCode": "/**\n * @param {string} s\n * @param {number} k\n * @return {number}\n */\nvar characterReplacement = function(s, k) {\n    \n};",
-        "givenJsCode": "class Solution:\n    def characterReplacement(self, s: str, k: int) -> int:\n        ",
+        "givenPythonCode": "class Solution:\n    def characterReplacement(self, s: str, k: int) -> int:\n        ",
+        "givenJsCode": "/**\n * @param {string} s\n * @param {number} k\n * @return {number}\n */\nvar characterReplacement = function(s, k) {\n    \n};",
         "givenJavaCode": "class Solution {\n    public int characterReplacement(String s, int k) {\n        \n    }\n}",
         "difficulty": "Medium"
     },
@@ -1175,8 +1175,8 @@
             "Sorting"
         ],
         "url": "https://leetcode.com/problems/longest-uncommon-subsequence-ii/",
-        "givenPythonCode": "/**\n * @param {string[]} strs\n * @return {number}\n */\nvar findLUSlength = function(strs) {\n    \n};",
-        "givenJsCode": "class Solution:\n    def findLUSlength(self, strs: List[str]) -> int:\n        ",
+        "givenPythonCode": "class Solution:\n    def findLUSlength(self, strs: List[str]) -> int:\n        ",
+        "givenJsCode": "/**\n * @param {string[]} strs\n * @return {number}\n */\nvar findLUSlength = function(strs) {\n    \n};",
         "givenJavaCode": "class Solution {\n    public int findLUSlength(String[] strs) {\n        \n    }\n}",
         "difficulty": "Medium"
     },
@@ -1188,8 +1188,8 @@
             "Stack"
         ],
         "url": "https://leetcode.com/problems/longest-valid-parentheses/",
-        "givenPythonCode": "/**\n * @param {string} s\n * @return {number}\n */\nvar longestValidParentheses = function(s) {\n    \n};",
-        "givenJsCode": "class Solution:\n    def longestValidParentheses(self, s: str) -> int:\n        ",
+        "givenPythonCode": "class Solution:\n    def longestValidParentheses(self, s: str) -> int:\n        ",
+        "givenJsCode": "/**\n * @param {string} s\n * @return {number}\n */\nvar longestValidParentheses = function(s) {\n    \n};",
         "givenJavaCode": "class Solution {\n    public int longestValidParentheses(String s) {\n        \n    }\n}",
         "difficulty": "Medium"
     },
@@ -1202,8 +1202,8 @@
             "Sorting"
         ],
         "url": "https://leetcode.com/problems/longest-word-in-dictionary-through-deleting/",
-        "givenPythonCode": "/**\n * @param {string} s\n * @param {string[]} dictionary\n * @return {string}\n */\nvar findLongestWord = function(s, dictionary) {\n    \n};",
-        "givenJsCode": "class Solution:\n    def findLongestWord(self, s: str, dictionary: List[str]) -> str:\n        ",
+        "givenPythonCode": "class Solution:\n    def findLongestWord(self, s: str, dictionary: List[str]) -> str:\n        ",
+        "givenJsCode": "/**\n * @param {string} s\n * @param {string[]} dictionary\n * @return {string}\n */\nvar findLongestWord = function(s, dictionary) {\n    \n};",
         "givenJavaCode": "class Solution {\n    public String findLongestWord(String s, List<String> dictionary) {\n        \n    }\n}",
         "difficulty": "Hard"
     },
@@ -1216,8 +1216,8 @@
             "Counting"
         ],
         "url": "https://leetcode.com/problems/majority-element-ii/",
-        "givenPythonCode": "/**\n * @param {number[]} nums\n * @return {number[]}\n */\nvar majorityElement = function(nums) {\n    \n};",
-        "givenJsCode": "class Solution:\n    def majorityElement(self, nums: List[int]) -> List[int]:\n        ",
+        "givenPythonCode": "class Solution:\n    def majorityElement(self, nums: List[int]) -> List[int]:\n        ",
+        "givenJsCode": "/**\n * @param {number[]} nums\n * @return {number[]}\n */\nvar majorityElement = function(nums) {\n    \n};",
         "givenJavaCode": "class Solution {\n    public List<Integer> majorityElement(int[] nums) {\n        \n    }\n}",
         "difficulty": "Medium"
     },
@@ -1229,8 +1229,8 @@
             "Bit Manipulation"
         ],
         "url": "https://leetcode.com/problems/maximum-product-of-word-lengths/",
-        "givenPythonCode": "/**\n * @param {string[]} words\n * @return {number}\n */\nvar maxProduct = function(words) {\n    \n};",
-        "givenJsCode": "class Solution:\n    def maxProduct(self, words: List[str]) -> int:\n        ",
+        "givenPythonCode": "class Solution:\n    def maxProduct(self, words: List[str]) -> int:\n        ",
+        "givenJsCode": "/**\n * @param {string[]} words\n * @return {number}\n */\nvar maxProduct = function(words) {\n    \n};",
         "givenJavaCode": "class Solution {\n    public int maxProduct(String[] words) {\n        \n    }\n}",
         "difficulty": "Medium"
     },
@@ -1241,8 +1241,8 @@
             "Dynamic Programming"
         ],
         "url": "https://leetcode.com/problems/maximum-product-subarray/",
-        "givenPythonCode": "/**\n * @param {number[]} nums\n * @return {number}\n */\nvar maxProduct = function(nums) {\n    \n};",
-        "givenJsCode": "class Solution:\n    def maxProduct(self, nums: List[int]) -> int:\n        ",
+        "givenPythonCode": "class Solution:\n    def maxProduct(self, nums: List[int]) -> int:\n        ",
+        "givenJsCode": "/**\n * @param {number[]} nums\n * @return {number}\n */\nvar maxProduct = function(nums) {\n    \n};",
         "givenJavaCode": "class Solution {\n    public int maxProduct(int[] nums) {\n        \n    }\n}",
         "difficulty": "Medium"
     },
@@ -1254,8 +1254,8 @@
         ],
         "url": "https://leetcode.com/problems/maximum-sum-of-3-non-overlapping-subarrays/",
         "givenPythonCode": "class Solution:\n    def maxSumOfThreeSubarrays(self, nums: List[int], k: int) -> List[int]:\n        ",
-        "givenJsCode": "class Solution {\n    public int[] maxSumOfThreeSubarrays(int[] nums, int k) {\n        \n    }\n}",
-        "givenJavaCode": "/**\n * @param {number[]} nums\n * @param {number} k\n * @return {number[]}\n */\nvar maxSumOfThreeSubarrays = function(nums, k) {\n    \n};",
+        "givenJsCode": "/**\n * @param {number[]} nums\n * @param {number} k\n * @return {number[]}\n */\nvar maxSumOfThreeSubarrays = function(nums, k) {\n    \n};",
+        "givenJavaCode": "class Solution {\n    public int[] maxSumOfThreeSubarrays(int[] nums, int k) {\n        \n    }\n}",
         "difficulty": "Medium"
     },
     {
@@ -1265,8 +1265,8 @@
             "Sorting"
         ],
         "url": "https://leetcode.com/problems/merge-intervals/",
-        "givenPythonCode": "/**\n * @param {number[][]} intervals\n * @return {number[][]}\n */\nvar merge = function(intervals) {\n    \n};",
-        "givenJsCode": "class Solution:\n    def merge(self, intervals: List[List[int]]) -> List[List[int]]:\n        ",
+        "givenPythonCode": "class Solution:\n    def merge(self, intervals: List[List[int]]) -> List[List[int]]:\n        ",
+        "givenJsCode": "/**\n * @param {number[][]} intervals\n * @return {number[][]}\n */\nvar merge = function(intervals) {\n    \n};",
         "givenJavaCode": "class Solution {\n    public int[][] merge(int[][] intervals) {\n        \n    }\n}",
         "difficulty": "Hard"
     },
@@ -1279,8 +1279,8 @@
         ],
         "url": "https://leetcode.com/problems/merge-sorted-array/",
         "difficulty": "Easy",
-        "givenPythonCode": "/**\n * @param {number[]} nums1\n * @param {number} m\n * @param {number[]} nums2\n * @param {number} n\n * @return {void} Do not return anything, modify nums1 in-place instead.\n */\nvar merge = function(nums1, m, nums2, n) {\n    \n};",
-        "givenJsCode": "class Solution:\n    def merge(self, nums1: List[int], m: int, nums2: List[int], n: int) -> None:\n        \"\"\"\n        Do not return anything, modify nums1 in-place instead.\n        \"\"\"\n        ",
+        "givenPythonCode": "class Solution:\n    def merge(self, nums1: List[int], m: int, nums2: List[int], n: int) -> None:\n        \"\"\"\n        Do not return anything, modify nums1 in-place instead.\n        \"\"\"\n        ",
+        "givenJsCode": "/**\n * @param {number[]} nums1\n * @param {number} m\n * @param {number[]} nums2\n * @param {number} n\n * @return {void} Do not return anything, modify nums1 in-place instead.\n */\nvar merge = function(nums1, m, nums2, n) {\n    \n};",
         "givenJavaCode": "class Solution {\n    public void merge(int[] nums1, int m, int[] nums2, int n) {\n        \n    }\n}"
     },
     {
@@ -1293,8 +1293,8 @@
         ],
         "url": "https://leetcode.com/problems/minimum-cost-to-hire-k-workers/",
         "givenPythonCode": "class Solution:\n    def mincostToHireWorkers(self, quality: List[int], wage: List[int], k: int) -> float:\n        ",
-        "givenJsCode": "class Solution {\n    public double mincostToHireWorkers(int[] quality, int[] wage, int k) {\n        \n    }\n}",
-        "givenJavaCode": "/**\n * @param {number[]} quality\n * @param {number[]} wage\n * @param {number} k\n * @return {number}\n */\nvar mincostToHireWorkers = function(quality, wage, k) {\n    \n};",
+        "givenJsCode": "/**\n * @param {number[]} quality\n * @param {number[]} wage\n * @param {number} k\n * @return {number}\n */\nvar mincostToHireWorkers = function(quality, wage, k) {\n    \n};",
+        "givenJavaCode": "class Solution {\n    public double mincostToHireWorkers(int[] quality, int[] wage, int k) {\n        \n    }\n}",
         "difficulty": "Medium"
     },
     {
@@ -1305,8 +1305,8 @@
             "Breadth-First Search"
         ],
         "url": "https://leetcode.com/problems/minimum-genetic-mutation/",
-        "givenPythonCode": "/**\n * @param {string} startGene\n * @param {string} endGene\n * @param {string[]} bank\n * @return {number}\n */\nvar minMutation = function(startGene, endGene, bank) {\n    \n};",
-        "givenJsCode": "class Solution:\n    def minMutation(self, startGene: str, endGene: str, bank: List[str]) -> int:\n        ",
+        "givenPythonCode": "class Solution:\n    def minMutation(self, startGene: str, endGene: str, bank: List[str]) -> int:\n        ",
+        "givenJsCode": "/**\n * @param {string} startGene\n * @param {string} endGene\n * @param {string[]} bank\n * @return {number}\n */\nvar minMutation = function(startGene, endGene, bank) {\n    \n};",
         "givenJavaCode": "class Solution {\n    public int minMutation(String startGene, String endGene, String[] bank) {\n        \n    }\n}",
         "difficulty": "Hard"
     },
@@ -1330,8 +1330,8 @@
             "Math"
         ],
         "url": "https://leetcode.com/problems/minimum-moves-to-equal-array-elements/",
-        "givenPythonCode": "/**\n * @param {number[]} nums\n * @return {number}\n */\nvar minMoves = function(nums) {\n    \n};",
-        "givenJsCode": "class Solution:\n    def minMoves(self, nums: List[int]) -> int:\n        ",
+        "givenPythonCode": "class Solution:\n    def minMoves(self, nums: List[int]) -> int:\n        ",
+        "givenJsCode": "/**\n * @param {number[]} nums\n * @return {number}\n */\nvar minMoves = function(nums) {\n    \n};",
         "givenJavaCode": "class Solution {\n    public int minMoves(int[] nums) {\n        \n    }\n}",
         "difficulty": "Medium"
     },
@@ -1343,8 +1343,8 @@
             "Sorting"
         ],
         "url": "https://leetcode.com/problems/minimum-number-of-arrows-to-burst-balloons/",
-        "givenPythonCode": "/**\n * @param {number[][]} points\n * @return {number}\n */\nvar findMinArrowShots = function(points) {\n    \n};",
-        "givenJsCode": "class Solution:\n    def findMinArrowShots(self, points: List[List[int]]) -> int:\n        ",
+        "givenPythonCode": "class Solution:\n    def findMinArrowShots(self, points: List[List[int]]) -> int:\n        ",
+        "givenJsCode": "/**\n * @param {number[][]} points\n * @return {number}\n */\nvar findMinArrowShots = function(points) {\n    \n};",
         "givenJavaCode": "class Solution {\n    public int findMinArrowShots(int[][] points) {\n        \n    }\n}",
         "difficulty": "Medium"
     },
@@ -1358,8 +1358,8 @@
         ],
         "url": "https://leetcode.com/problems/minimum-number-of-refueling-stops/",
         "givenPythonCode": "class Solution:\n    def minRefuelStops(self, target: int, startFuel: int, stations: List[List[int]]) -> int:\n        ",
-        "givenJsCode": "class Solution {\n    public int minRefuelStops(int target, int startFuel, int[][] stations) {\n        \n    }\n}",
-        "givenJavaCode": "/**\n * @param {number} target\n * @param {number} startFuel\n * @param {number[][]} stations\n * @return {number}\n */\nvar minRefuelStops = function(target, startFuel, stations) {\n    \n};",
+        "givenJsCode": "/**\n * @param {number} target\n * @param {number} startFuel\n * @param {number[][]} stations\n * @return {number}\n */\nvar minRefuelStops = function(target, startFuel, stations) {\n    \n};",
+        "givenJavaCode": "class Solution {\n    public int minRefuelStops(int target, int startFuel, int[][] stations) {\n        \n    }\n}",
         "difficulty": "Medium"
     },
     {
@@ -1371,8 +1371,8 @@
             "Prefix Sum"
         ],
         "url": "https://leetcode.com/problems/minimum-size-subarray-sum/",
-        "givenPythonCode": "/**\n * @param {number} target\n * @param {number[]} nums\n * @return {number}\n */\nvar minSubArrayLen = function(target, nums) {\n    \n};",
-        "givenJsCode": "class Solution:\n    def minSubArrayLen(self, target: int, nums: List[int]) -> int:\n        ",
+        "givenPythonCode": "class Solution:\n    def minSubArrayLen(self, target: int, nums: List[int]) -> int:\n        ",
+        "givenJsCode": "/**\n * @param {number} target\n * @param {number[]} nums\n * @return {number}\n */\nvar minSubArrayLen = function(target, nums) {\n    \n};",
         "givenJavaCode": "class Solution {\n    public int minSubArrayLen(int target, int[] nums) {\n        \n    }\n}",
         "difficulty": "Hard"
     },
@@ -1385,8 +1385,8 @@
             "Sorting"
         ],
         "url": "https://leetcode.com/problems/minimum-time-difference/",
-        "givenPythonCode": "/**\n * @param {string[]} timePoints\n * @return {number}\n */\nvar findMinDifference = function(timePoints) {\n    \n};",
-        "givenJsCode": "class Solution:\n    def findMinDifference(self, timePoints: List[str]) -> int:\n        ",
+        "givenPythonCode": "class Solution:\n    def findMinDifference(self, timePoints: List[str]) -> int:\n        ",
+        "givenJsCode": "/**\n * @param {string[]} timePoints\n * @return {number}\n */\nvar findMinDifference = function(timePoints) {\n    \n};",
         "givenJavaCode": "class Solution {\n    public int findMinDifference(List<String> timePoints) {\n        \n    }\n}",
         "difficulty": "Medium"
     },
@@ -1399,8 +1399,8 @@
         ],
         "url": "https://leetcode.com/problems/minimum-window-substring/",
         "givenPythonCode": "class Solution:\n    def minWindow(self, s: str, t: str) -> str:\n        ",
-        "givenJsCode": "class Solution {\n    public String minWindow(String s, String t) {\n        \n    }\n}",
-        "givenJavaCode": "/**\n * @param {string} s\n * @param {string} t\n * @return {string}\n */\nvar minWindow = function(s, t) {\n    \n};",
+        "givenJsCode": "/**\n * @param {string} s\n * @param {string} t\n * @return {string}\n */\nvar minWindow = function(s, t) {\n    \n};",
+        "givenJavaCode": "class Solution {\n    public String minWindow(String s, String t) {\n        \n    }\n}",
         "difficulty": "Medium"
     },
     {
@@ -1415,8 +1415,8 @@
         ],
         "url": "https://leetcode.com/problems/missing-number/",
         "difficulty": "Easy",
-        "givenPythonCode": "/**\n * @param {number[]} nums\n * @return {number}\n */\nvar missingNumber = function(nums) {\n    \n};",
-        "givenJsCode": "class Solution:\n    def missingNumber(self, nums: List[int]) -> int:\n        ",
+        "givenPythonCode": "class Solution:\n    def missingNumber(self, nums: List[int]) -> int:\n        ",
+        "givenJsCode": "/**\n * @param {number[]} nums\n * @return {number}\n */\nvar missingNumber = function(nums) {\n    \n};",
         "givenJavaCode": "class Solution {\n    public int missingNumber(int[] nums) {\n        \n    }\n}"
     },
     {
@@ -1427,8 +1427,8 @@
         ],
         "url": "https://leetcode.com/problems/move-zeroes/",
         "difficulty": "Easy",
-        "givenPythonCode": "/**\n * @param {number[]} nums\n * @return {void} Do not return anything, modify nums in-place instead.\n */\nvar moveZeroes = function(nums) {\n    \n};",
-        "givenJsCode": "class Solution:\n    def moveZeroes(self, nums: List[int]) -> None:\n        \"\"\"\n        Do not return anything, modify nums in-place instead.\n        \"\"\"\n        ",
+        "givenPythonCode": "class Solution:\n    def moveZeroes(self, nums: List[int]) -> None:\n        \"\"\"\n        Do not return anything, modify nums in-place instead.\n        \"\"\"\n        ",
+        "givenJsCode": "/**\n * @param {number[]} nums\n * @return {void} Do not return anything, modify nums in-place instead.\n */\nvar moveZeroes = function(nums) {\n    \n};",
         "givenJavaCode": "class Solution {\n    public void moveZeroes(int[] nums) {\n        \n    }\n}"
     },
     {
@@ -1439,8 +1439,8 @@
             "Simulation"
         ],
         "url": "https://leetcode.com/problems/multiply-strings/",
-        "givenPythonCode": "/**\n * @param {string} num1\n * @param {string} num2\n * @return {string}\n */\nvar multiply = function(num1, num2) {\n    \n};",
-        "givenJsCode": "class Solution:\n    def multiply(self, num1: str, num2: str) -> str:\n        ",
+        "givenPythonCode": "class Solution:\n    def multiply(self, num1: str, num2: str) -> str:\n        ",
+        "givenJsCode": "/**\n * @param {string} num1\n * @param {string} num2\n * @return {string}\n */\nvar multiply = function(num1, num2) {\n    \n};",
         "givenJavaCode": "class Solution {\n    public String multiply(String num1, String num2) {\n        \n    }\n}",
         "difficulty": "Hard"
     },
@@ -1452,8 +1452,8 @@
             "String"
         ],
         "url": "https://leetcode.com/problems/next-greater-element-iii/",
-        "givenPythonCode": "/**\n * @param {number} n\n * @return {number}\n */\nvar nextGreaterElement = function(n) {\n    \n};",
-        "givenJsCode": "class Solution:\n    def nextGreaterElement(self, n: int) -> int:\n        ",
+        "givenPythonCode": "class Solution:\n    def nextGreaterElement(self, n: int) -> int:\n        ",
+        "givenJsCode": "/**\n * @param {number} n\n * @return {number}\n */\nvar nextGreaterElement = function(n) {\n    \n};",
         "givenJavaCode": "class Solution {\n    public int nextGreaterElement(int n) {\n        \n    }\n}",
         "difficulty": "Medium"
     },
@@ -1464,8 +1464,8 @@
             "Two Pointers"
         ],
         "url": "https://leetcode.com/problems/next-permutation/",
-        "givenPythonCode": "/**\n * @param {number[]} nums\n * @return {void} Do not return anything, modify nums in-place instead.\n */\nvar nextPermutation = function(nums) {\n    \n};",
-        "givenJsCode": "class Solution:\n    def nextPermutation(self, nums: List[int]) -> None:\n        \"\"\"\n        Do not return anything, modify nums in-place instead.\n        \"\"\"\n        ",
+        "givenPythonCode": "class Solution:\n    def nextPermutation(self, nums: List[int]) -> None:\n        \"\"\"\n        Do not return anything, modify nums in-place instead.\n        \"\"\"\n        ",
+        "givenJsCode": "/**\n * @param {number[]} nums\n * @return {void} Do not return anything, modify nums in-place instead.\n */\nvar nextPermutation = function(nums) {\n    \n};",
         "givenJavaCode": "class Solution {\n    public void nextPermutation(int[] nums) {\n        \n    }\n}",
         "difficulty": "Medium"
     },
@@ -1478,8 +1478,8 @@
             "Bit Manipulation"
         ],
         "url": "https://leetcode.com/problems/non-decreasing-subsequences/",
-        "givenPythonCode": "/**\n * @param {number[]} nums\n * @return {number[][]}\n */\nvar findSubsequences = function(nums) {\n    \n};",
-        "givenJsCode": "class Solution:\n    def findSubsequences(self, nums: List[int]) -> List[List[int]]:\n        ",
+        "givenPythonCode": "class Solution:\n    def findSubsequences(self, nums: List[int]) -> List[List[int]]:\n        ",
+        "givenJsCode": "/**\n * @param {number[]} nums\n * @return {number[][]}\n */\nvar findSubsequences = function(nums) {\n    \n};",
         "givenJavaCode": "class Solution {\n    public List<List<Integer>> findSubsequences(int[] nums) {\n        \n    }\n}",
         "difficulty": "Medium"
     },
@@ -1490,8 +1490,8 @@
         ],
         "url": "https://leetcode.com/problems/non-negative-integers-without-consecutive-ones/",
         "givenPythonCode": "class Solution:\n    def findIntegers(self, n: int) -> int:\n        ",
-        "givenJsCode": "class Solution {\n    public int findIntegers(int n) {\n        \n    }\n}",
-        "givenJavaCode": "/**\n * @param {number} n\n * @return {number}\n */\nvar findIntegers = function(n) {\n    \n};",
+        "givenJsCode": "/**\n * @param {number} n\n * @return {number}\n */\nvar findIntegers = function(n) {\n    \n};",
+        "givenJavaCode": "class Solution {\n    public int findIntegers(int n) {\n        \n    }\n}",
         "difficulty": "Medium"
     },
     {
@@ -1502,8 +1502,8 @@
         ],
         "url": "https://leetcode.com/problems/nth-magical-number/",
         "givenPythonCode": "class Solution:\n    def nthMagicalNumber(self, n: int, a: int, b: int) -> int:\n        ",
-        "givenJsCode": "class Solution {\n    public int nthMagicalNumber(int n, int a, int b) {\n        \n    }\n}",
-        "givenJavaCode": "/**\n * @param {number} n\n * @param {number} a\n * @param {number} b\n * @return {number}\n */\nvar nthMagicalNumber = function(n, a, b) {\n    \n};",
+        "givenJsCode": "/**\n * @param {number} n\n * @param {number} a\n * @param {number} b\n * @return {number}\n */\nvar nthMagicalNumber = function(n, a, b) {\n    \n};",
+        "givenJavaCode": "class Solution {\n    public int nthMagicalNumber(int n, int a, int b) {\n        \n    }\n}",
         "difficulty": "Hard"
     },
     {
@@ -1513,8 +1513,8 @@
         ],
         "url": "https://leetcode.com/problems/number-complement/",
         "difficulty": "Easy",
-        "givenPythonCode": "/**\n * @param {number} num\n * @return {number}\n */\nvar findComplement = function(num) {\n    \n};",
-        "givenJsCode": "class Solution:\n    def findComplement(self, num: int) -> int:\n        ",
+        "givenPythonCode": "class Solution:\n    def findComplement(self, num: int) -> int:\n        ",
+        "givenJsCode": "/**\n * @param {number} num\n * @return {number}\n */\nvar findComplement = function(num) {\n    \n};",
         "givenJavaCode": "class Solution {\n    public int findComplement(int num) {\n        \n    }\n}"
     },
     {
@@ -1538,8 +1538,8 @@
         ],
         "url": "https://leetcode.com/problems/number-of-segments-in-a-string/",
         "difficulty": "Easy",
-        "givenPythonCode": "/**\n * @param {string} s\n * @return {number}\n */\nvar countSegments = function(s) {\n    \n};",
-        "givenJsCode": "class Solution:\n    def countSegments(self, s: str) -> int:\n        ",
+        "givenPythonCode": "class Solution:\n    def countSegments(self, s: str) -> int:\n        ",
+        "givenJsCode": "/**\n * @param {string} s\n * @return {number}\n */\nvar countSegments = function(s) {\n    \n};",
         "givenJavaCode": "class Solution {\n    public int countSegments(String s) {\n        \n    }\n}"
     },
     {
@@ -1550,8 +1550,8 @@
             "Dynamic Programming"
         ],
         "url": "https://leetcode.com/problems/ones-and-zeroes/",
-        "givenPythonCode": "/**\n * @param {string[]} strs\n * @param {number} m\n * @param {number} n\n * @return {number}\n */\nvar findMaxForm = function(strs, m, n) {\n    \n};",
-        "givenJsCode": "class Solution:\n    def findMaxForm(self, strs: List[str], m: int, n: int) -> int:\n        ",
+        "givenPythonCode": "class Solution:\n    def findMaxForm(self, strs: List[str], m: int, n: int) -> int:\n        ",
+        "givenJsCode": "/**\n * @param {string[]} strs\n * @param {number} m\n * @param {number} n\n * @return {number}\n */\nvar findMaxForm = function(strs, m, n) {\n    \n};",
         "givenJavaCode": "class Solution {\n    public int findMaxForm(String[] strs, int m, int n) {\n        \n    }\n}",
         "difficulty": "Hard"
     },
@@ -1562,8 +1562,8 @@
         ],
         "url": "https://leetcode.com/problems/palindrome-number/",
         "difficulty": "Easy",
-        "givenPythonCode": "/**\n * @param {number} x\n * @return {boolean}\n */\nvar isPalindrome = function(x) {\n    \n};",
-        "givenJsCode": "class Solution:\n    def isPalindrome(self, x: int) -> bool:\n        ",
+        "givenPythonCode": "class Solution:\n    def isPalindrome(self, x: int) -> bool:\n        ",
+        "givenJsCode": "/**\n * @param {number} x\n * @return {boolean}\n */\nvar isPalindrome = function(x) {\n    \n};",
         "givenJavaCode": "class Solution {\n    public boolean isPalindrome(int x) {\n        \n    }\n}"
     },
     {
@@ -1574,8 +1574,8 @@
         ],
         "url": "https://leetcode.com/problems/palindrome-partitioning-ii/",
         "givenPythonCode": "class Solution:\n    def minCut(self, s: str) -> int:\n        ",
-        "givenJsCode": "class Solution {\n    public int minCut(String s) {\n        \n    }\n}",
-        "givenJavaCode": "/**\n * @param {string} s\n * @return {number}\n */\nvar minCut = function(s) {\n    \n};",
+        "givenJsCode": "/**\n * @param {string} s\n * @return {number}\n */\nvar minCut = function(s) {\n    \n};",
+        "givenJavaCode": "class Solution {\n    public int minCut(String s) {\n        \n    }\n}",
         "difficulty": "Medium"
     },
     {
@@ -1585,8 +1585,8 @@
             "Dynamic Programming"
         ],
         "url": "https://leetcode.com/problems/partition-equal-subset-sum/",
-        "givenPythonCode": "/**\n * @param {number[]} nums\n * @return {boolean}\n */\nvar canPartition = function(nums) {\n    \n};",
-        "givenJsCode": "class Solution:\n    def canPartition(self, nums: List[int]) -> bool:\n        ",
+        "givenPythonCode": "class Solution:\n    def canPartition(self, nums: List[int]) -> bool:\n        ",
+        "givenJsCode": "/**\n * @param {number[]} nums\n * @return {boolean}\n */\nvar canPartition = function(nums) {\n    \n};",
         "givenJavaCode": "class Solution {\n    public boolean canPartition(int[] nums) {\n        \n    }\n}",
         "difficulty": "Medium"
     },
@@ -1598,8 +1598,8 @@
         ],
         "url": "https://leetcode.com/problems/patching-array/",
         "givenPythonCode": "class Solution:\n    def minPatches(self, nums: List[int], n: int) -> int:\n        ",
-        "givenJsCode": "class Solution {\n    public int minPatches(int[] nums, int n) {\n        \n    }\n}",
-        "givenJavaCode": "/**\n * @param {number[]} nums\n * @param {number} n\n * @return {number}\n */\nvar minPatches = function(nums, n) {\n    \n};",
+        "givenJsCode": "/**\n * @param {number[]} nums\n * @param {number} n\n * @return {number}\n */\nvar minPatches = function(nums, n) {\n    \n};",
+        "givenJavaCode": "class Solution {\n    public int minPatches(int[] nums, int n) {\n        \n    }\n}",
         "difficulty": "Medium"
     },
     {
@@ -1609,8 +1609,8 @@
         ],
         "url": "https://leetcode.com/problems/perfect-number/",
         "difficulty": "Easy",
-        "givenPythonCode": "/**\n * @param {number} num\n * @return {boolean}\n */\nvar checkPerfectNumber = function(num) {\n    \n};",
-        "givenJsCode": "class Solution:\n    def checkPerfectNumber(self, num: int) -> bool:\n        ",
+        "givenPythonCode": "class Solution:\n    def checkPerfectNumber(self, num: int) -> bool:\n        ",
+        "givenJsCode": "/**\n * @param {number} num\n * @return {boolean}\n */\nvar checkPerfectNumber = function(num) {\n    \n};",
         "givenJavaCode": "class Solution {\n    public boolean checkPerfectNumber(int num) {\n        \n    }\n}"
     },
     {
@@ -1635,8 +1635,8 @@
             "Sliding Window"
         ],
         "url": "https://leetcode.com/problems/permutation-in-string/",
-        "givenPythonCode": "/**\n * @param {string} s1\n * @param {string} s2\n * @return {boolean}\n */\nvar checkInclusion = function(s1, s2) {\n    \n};",
-        "givenJsCode": "class Solution:\n    def checkInclusion(self, s1: str, s2: str) -> bool:\n        ",
+        "givenPythonCode": "class Solution:\n    def checkInclusion(self, s1: str, s2: str) -> bool:\n        ",
+        "givenJsCode": "/**\n * @param {string} s1\n * @param {string} s2\n * @return {boolean}\n */\nvar checkInclusion = function(s1, s2) {\n    \n};",
         "givenJavaCode": "class Solution {\n    public boolean checkInclusion(String s1, String s2) {\n        \n    }\n}",
         "difficulty": "Medium"
     },
@@ -1647,8 +1647,8 @@
             "Backtracking"
         ],
         "url": "https://leetcode.com/problems/permutations-ii/",
-        "givenPythonCode": "/**\n * @param {number[]} nums\n * @return {number[][]}\n */\nvar permuteUnique = function(nums) {\n    \n};",
-        "givenJsCode": "class Solution:\n    def permuteUnique(self, nums: List[int]) -> List[List[int]]:\n        ",
+        "givenPythonCode": "class Solution:\n    def permuteUnique(self, nums: List[int]) -> List[List[int]]:\n        ",
+        "givenJsCode": "/**\n * @param {number[]} nums\n * @return {number[][]}\n */\nvar permuteUnique = function(nums) {\n    \n};",
         "givenJavaCode": "class Solution {\n    public List<List<Integer>> permuteUnique(int[] nums) {\n        \n    }\n}",
         "difficulty": "Medium"
     },
@@ -1659,8 +1659,8 @@
             "Backtracking"
         ],
         "url": "https://leetcode.com/problems/permutations/",
-        "givenPythonCode": "/**\n * @param {number[]} nums\n * @return {number[][]}\n */\nvar permute = function(nums) {\n    \n};",
-        "givenJsCode": "class Solution:\n    def permute(self, nums: List[int]) -> List[List[int]]:\n        ",
+        "givenPythonCode": "class Solution:\n    def permute(self, nums: List[int]) -> List[List[int]]:\n        ",
+        "givenJsCode": "/**\n * @param {number[]} nums\n * @return {number[][]}\n */\nvar permute = function(nums) {\n    \n};",
         "givenJavaCode": "class Solution {\n    public List<List<Integer>> permute(int[] nums) {\n        \n    }\n}",
         "difficulty": "Medium"
     },
@@ -1672,8 +1672,8 @@
         ],
         "url": "https://leetcode.com/problems/plus-one/",
         "difficulty": "Easy",
-        "givenPythonCode": "/**\n * @param {number[]} digits\n * @return {number[]}\n */\nvar plusOne = function(digits) {\n    \n};",
-        "givenJsCode": "class Solution:\n    def plusOne(self, digits: List[int]) -> List[int]:\n        ",
+        "givenPythonCode": "class Solution:\n    def plusOne(self, digits: List[int]) -> List[int]:\n        ",
+        "givenJsCode": "/**\n * @param {number[]} digits\n * @return {number[]}\n */\nvar plusOne = function(digits) {\n    \n};",
         "givenJavaCode": "class Solution {\n    public int[] plusOne(int[] digits) {\n        \n    }\n}"
     },
     {
@@ -1697,8 +1697,8 @@
         ],
         "url": "https://leetcode.com/problems/ransom-note/",
         "difficulty": "Easy",
-        "givenPythonCode": "/**\n * @param {string} ransomNote\n * @param {string} magazine\n * @return {boolean}\n */\nvar canConstruct = function(ransomNote, magazine) {\n    \n};",
-        "givenJsCode": "class Solution:\n    def canConstruct(self, ransomNote: str, magazine: str) -> bool:\n        ",
+        "givenPythonCode": "class Solution:\n    def canConstruct(self, ransomNote: str, magazine: str) -> bool:\n        ",
+        "givenJsCode": "/**\n * @param {string} ransomNote\n * @param {string} magazine\n * @return {boolean}\n */\nvar canConstruct = function(ransomNote, magazine) {\n    \n};",
         "givenJavaCode": "class Solution {\n    public boolean canConstruct(String ransomNote, String magazine) {\n        \n    }\n}"
     },
     {
@@ -1708,8 +1708,8 @@
         ],
         "url": "https://leetcode.com/problems/reaching-points/",
         "givenPythonCode": "class Solution:\n    def reachingPoints(self, sx: int, sy: int, tx: int, ty: int) -> bool:\n        ",
-        "givenJsCode": "class Solution {\n    public boolean reachingPoints(int sx, int sy, int tx, int ty) {\n        \n    }\n}",
-        "givenJavaCode": "/**\n * @param {number} sx\n * @param {number} sy\n * @param {number} tx\n * @param {number} ty\n * @return {boolean}\n */\nvar reachingPoints = function(sx, sy, tx, ty) {\n    \n};",
+        "givenJsCode": "/**\n * @param {number} sx\n * @param {number} sy\n * @param {number} tx\n * @param {number} ty\n * @return {boolean}\n */\nvar reachingPoints = function(sx, sy, tx, ty) {\n    \n};",
+        "givenJavaCode": "class Solution {\n    public boolean reachingPoints(int sx, int sy, int tx, int ty) {\n        \n    }\n}",
         "difficulty": "Medium"
     },
     {
@@ -1732,8 +1732,8 @@
             "Two Pointers"
         ],
         "url": "https://leetcode.com/problems/remove-duplicates-from-sorted-array-ii/",
-        "givenPythonCode": "/**\n * @param {number[]} nums\n * @return {number}\n */\nvar removeDuplicates = function(nums) {\n    \n};",
-        "givenJsCode": "class Solution:\n    def removeDuplicates(self, nums: List[int]) -> int:\n        ",
+        "givenPythonCode": "class Solution:\n    def removeDuplicates(self, nums: List[int]) -> int:\n        ",
+        "givenJsCode": "/**\n * @param {number[]} nums\n * @return {number}\n */\nvar removeDuplicates = function(nums) {\n    \n};",
         "givenJavaCode": "class Solution {\n    public int removeDuplicates(int[] nums) {\n        \n    }\n}",
         "difficulty": "Medium"
     },
@@ -1745,8 +1745,8 @@
         ],
         "url": "https://leetcode.com/problems/remove-duplicates-from-sorted-array/",
         "difficulty": "Easy",
-        "givenPythonCode": "/**\n * @param {number[]} nums\n * @return {number}\n */\nvar removeDuplicates = function(nums) {\n    \n};",
-        "givenJsCode": "class Solution:\n    def removeDuplicates(self, nums: List[int]) -> int:\n        ",
+        "givenPythonCode": "class Solution:\n    def removeDuplicates(self, nums: List[int]) -> int:\n        ",
+        "givenJsCode": "/**\n * @param {number[]} nums\n * @return {number}\n */\nvar removeDuplicates = function(nums) {\n    \n};",
         "givenJavaCode": "class Solution {\n    public int removeDuplicates(int[] nums) {\n        \n    }\n}"
     },
     {
@@ -1757,8 +1757,8 @@
         ],
         "url": "https://leetcode.com/problems/remove-element/",
         "difficulty": "Easy",
-        "givenPythonCode": "/**\n * @param {number[]} nums\n * @param {number} val\n * @return {number}\n */\nvar removeElement = function(nums, val) {\n    \n};",
-        "givenJsCode": "class Solution:\n    def removeElement(self, nums: List[int], val: int) -> int:\n        ",
+        "givenPythonCode": "class Solution:\n    def removeElement(self, nums: List[int], val: int) -> int:\n        ",
+        "givenJsCode": "/**\n * @param {number[]} nums\n * @param {number} val\n * @return {number}\n */\nvar removeElement = function(nums, val) {\n    \n};",
         "givenJavaCode": "class Solution {\n    public int removeElement(int[] nums, int val) {\n        \n    }\n}"
     },
     {
@@ -1770,8 +1770,8 @@
         ],
         "url": "https://leetcode.com/problems/remove-invalid-parentheses/",
         "givenPythonCode": "class Solution:\n    def removeInvalidParentheses(self, s: str) -> List[str]:\n        ",
-        "givenJsCode": "class Solution {\n    public List<String> removeInvalidParentheses(String s) {\n        \n    }\n}",
-        "givenJavaCode": "/**\n * @param {string} s\n * @return {string[]}\n */\nvar removeInvalidParentheses = function(s) {\n    \n};",
+        "givenJsCode": "/**\n * @param {string} s\n * @return {string[]}\n */\nvar removeInvalidParentheses = function(s) {\n    \n};",
+        "givenJavaCode": "class Solution {\n    public List<String> removeInvalidParentheses(String s) {\n        \n    }\n}",
         "difficulty": "Medium"
     },
     {
@@ -1781,8 +1781,8 @@
             "Backtracking"
         ],
         "url": "https://leetcode.com/problems/restore-ip-addresses/",
-        "givenPythonCode": "/**\n * @param {string} s\n * @return {string[]}\n */\nvar restoreIpAddresses = function(s) {\n    \n};",
-        "givenJsCode": "class Solution:\n    def restoreIpAddresses(self, s: str) -> List[str]:\n        ",
+        "givenPythonCode": "class Solution:\n    def restoreIpAddresses(self, s: str) -> List[str]:\n        ",
+        "givenJsCode": "/**\n * @param {string} s\n * @return {string[]}\n */\nvar restoreIpAddresses = function(s) {\n    \n};",
         "givenJavaCode": "class Solution {\n    public List<String> restoreIpAddresses(String s) {\n        \n    }\n}",
         "difficulty": "Hard"
     },
@@ -1792,8 +1792,8 @@
             "Math"
         ],
         "url": "https://leetcode.com/problems/reverse-integer/",
-        "givenPythonCode": "/**\n * @param {number} x\n * @return {number}\n */\nvar reverse = function(x) {\n    \n};",
-        "givenJsCode": "class Solution:\n    def reverse(self, x: int) -> int:\n        ",
+        "givenPythonCode": "class Solution:\n    def reverse(self, x: int) -> int:\n        ",
+        "givenJsCode": "/**\n * @param {number} x\n * @return {number}\n */\nvar reverse = function(x) {\n    \n};",
         "givenJavaCode": "class Solution {\n    public int reverse(int x) {\n        \n    }\n}",
         "difficulty": "Medium"
     },
@@ -1805,8 +1805,8 @@
         ],
         "url": "https://leetcode.com/problems/reverse-string-ii/",
         "difficulty": "Easy",
-        "givenPythonCode": "/**\n * @param {string} s\n * @param {number} k\n * @return {string}\n */\nvar reverseStr = function(s, k) {\n    \n};",
-        "givenJsCode": "class Solution:\n    def reverseStr(self, s: str, k: int) -> str:\n        ",
+        "givenPythonCode": "class Solution:\n    def reverseStr(self, s: str, k: int) -> str:\n        ",
+        "givenJsCode": "/**\n * @param {string} s\n * @param {number} k\n * @return {string}\n */\nvar reverseStr = function(s, k) {\n    \n};",
         "givenJavaCode": "class Solution {\n    public String reverseStr(String s, int k) {\n        \n    }\n}"
     },
     {
@@ -1817,8 +1817,8 @@
         ],
         "url": "https://leetcode.com/problems/reverse-string/",
         "difficulty": "Easy",
-        "givenPythonCode": "/**\n * @param {character[]} s\n * @return {void} Do not return anything, modify s in-place instead.\n */\nvar reverseString = function(s) {\n    \n};",
-        "givenJsCode": "class Solution:\n    def reverseString(self, s: List[str]) -> None:\n        \"\"\"\n        Do not return anything, modify s in-place instead.\n        \"\"\"\n        ",
+        "givenPythonCode": "class Solution:\n    def reverseString(self, s: List[str]) -> None:\n        \"\"\"\n        Do not return anything, modify s in-place instead.\n        \"\"\"\n        ",
+        "givenJsCode": "/**\n * @param {character[]} s\n * @return {void} Do not return anything, modify s in-place instead.\n */\nvar reverseString = function(s) {\n    \n};",
         "givenJavaCode": "class Solution {\n    public void reverseString(char[] s) {\n        \n    }\n}"
     },
     {
@@ -1829,8 +1829,8 @@
         ],
         "url": "https://leetcode.com/problems/reverse-vowels-of-a-string/",
         "difficulty": "Easy",
-        "givenPythonCode": "/**\n * @param {string} s\n * @return {string}\n */\nvar reverseVowels = function(s) {\n    \n};",
-        "givenJsCode": "class Solution:\n    def reverseVowels(self, s: str) -> str:\n        ",
+        "givenPythonCode": "class Solution:\n    def reverseVowels(self, s: str) -> str:\n        ",
+        "givenJsCode": "/**\n * @param {string} s\n * @return {string}\n */\nvar reverseVowels = function(s) {\n    \n};",
         "givenJavaCode": "class Solution {\n    public String reverseVowels(String s) {\n        \n    }\n}"
     },
     {
@@ -1840,8 +1840,8 @@
             "String"
         ],
         "url": "https://leetcode.com/problems/reverse-words-in-a-string/",
-        "givenPythonCode": "/**\n * @param {string} s\n * @return {string}\n */\nvar reverseWords = function(s) {\n    \n};",
-        "givenJsCode": "class Solution:\n    def reverseWords(self, s: str) -> str:\n        ",
+        "givenPythonCode": "class Solution:\n    def reverseWords(self, s: str) -> str:\n        ",
+        "givenJsCode": "/**\n * @param {string} s\n * @return {string}\n */\nvar reverseWords = function(s) {\n    \n};",
         "givenJavaCode": "class Solution {\n    public String reverseWords(String s) {\n        \n    }\n}",
         "difficulty": "Medium"
     },
@@ -1854,8 +1854,8 @@
         ],
         "url": "https://leetcode.com/problems/roman-to-integer/",
         "difficulty": "Easy",
-        "givenPythonCode": "/**\n * @param {string} s\n * @return {number}\n */\nvar romanToInt = function(s) {\n    \n};",
-        "givenJsCode": "class Solution:\n    def romanToInt(self, s: str) -> int:\n        ",
+        "givenPythonCode": "class Solution:\n    def romanToInt(self, s: str) -> int:\n        ",
+        "givenJsCode": "/**\n * @param {string} s\n * @return {number}\n */\nvar romanToInt = function(s) {\n    \n};",
         "givenJavaCode": "class Solution {\n    public int romanToInt(String s) {\n        \n    }\n}"
     },
     {
@@ -1866,8 +1866,8 @@
             "Two Pointers"
         ],
         "url": "https://leetcode.com/problems/rotate-array/",
-        "givenPythonCode": "/**\n * @param {number[]} nums\n * @param {number} k\n * @return {void} Do not return anything, modify nums in-place instead.\n */\nvar rotate = function(nums, k) {\n    \n};",
-        "givenJsCode": "class Solution:\n    def rotate(self, nums: List[int], k: int) -> None:\n        \"\"\"\n        Do not return anything, modify nums in-place instead.\n        \"\"\"\n        ",
+        "givenPythonCode": "class Solution:\n    def rotate(self, nums: List[int], k: int) -> None:\n        \"\"\"\n        Do not return anything, modify nums in-place instead.\n        \"\"\"\n        ",
+        "givenJsCode": "/**\n * @param {number[]} nums\n * @param {number} k\n * @return {void} Do not return anything, modify nums in-place instead.\n */\nvar rotate = function(nums, k) {\n    \n};",
         "givenJavaCode": "class Solution {\n    public void rotate(int[] nums, int k) {\n        \n    }\n}",
         "difficulty": "Medium"
     },
@@ -1881,8 +1881,8 @@
         ],
         "url": "https://leetcode.com/problems/russian-doll-envelopes/",
         "givenPythonCode": "class Solution:\n    def maxEnvelopes(self, envelopes: List[List[int]]) -> int:\n        ",
-        "givenJsCode": "class Solution {\n    public int maxEnvelopes(int[][] envelopes) {\n        \n    }\n}",
-        "givenJavaCode": "/**\n * @param {number[][]} envelopes\n * @return {number}\n */\nvar maxEnvelopes = function(envelopes) {\n    \n};",
+        "givenJsCode": "/**\n * @param {number[][]} envelopes\n * @return {number}\n */\nvar maxEnvelopes = function(envelopes) {\n    \n};",
+        "givenJavaCode": "class Solution {\n    public int maxEnvelopes(int[][] envelopes) {\n        \n    }\n}",
         "difficulty": "Medium"
     },
     {
@@ -1893,8 +1893,8 @@
         ],
         "url": "https://leetcode.com/problems/scramble-string/",
         "givenPythonCode": "class Solution:\n    def isScramble(self, s1: str, s2: str) -> bool:\n        ",
-        "givenJsCode": "class Solution {\n    public boolean isScramble(String s1, String s2) {\n        \n    }\n}",
-        "givenJavaCode": "/**\n * @param {string} s1\n * @param {string} s2\n * @return {boolean}\n */\nvar isScramble = function(s1, s2) {\n    \n};",
+        "givenJsCode": "/**\n * @param {string} s1\n * @param {string} s2\n * @return {boolean}\n */\nvar isScramble = function(s1, s2) {\n    \n};",
+        "givenJavaCode": "class Solution {\n    public boolean isScramble(String s1, String s2) {\n        \n    }\n}",
         "difficulty": "Hard"
     },
     {
@@ -1904,8 +1904,8 @@
             "Binary Search"
         ],
         "url": "https://leetcode.com/problems/search-in-rotated-sorted-array-ii/",
-        "givenPythonCode": "/**\n * @param {number[]} nums\n * @param {number} target\n * @return {boolean}\n */\nvar search = function(nums, target) {\n    \n};",
-        "givenJsCode": "class Solution:\n    def search(self, nums: List[int], target: int) -> bool:\n        ",
+        "givenPythonCode": "class Solution:\n    def search(self, nums: List[int], target: int) -> bool:\n        ",
+        "givenJsCode": "/**\n * @param {number[]} nums\n * @param {number} target\n * @return {boolean}\n */\nvar search = function(nums, target) {\n    \n};",
         "givenJavaCode": "class Solution {\n    public boolean search(int[] nums, int target) {\n        \n    }\n}",
         "difficulty": "Hard"
     },
@@ -1929,8 +1929,8 @@
         ],
         "url": "https://leetcode.com/problems/search-insert-position/",
         "difficulty": "Easy",
-        "givenPythonCode": "/**\n * @param {number[]} nums\n * @param {number} target\n * @return {number}\n */\nvar searchInsert = function(nums, target) {\n    \n};",
-        "givenJsCode": "class Solution:\n    def searchInsert(self, nums: List[int], target: int) -> int:\n        ",
+        "givenPythonCode": "class Solution:\n    def searchInsert(self, nums: List[int], target: int) -> int:\n        ",
+        "givenJsCode": "/**\n * @param {number[]} nums\n * @param {number} target\n * @return {number}\n */\nvar searchInsert = function(nums, target) {\n    \n};",
         "givenJavaCode": "class Solution {\n    public int searchInsert(int[] nums, int target) {\n        \n    }\n}"
     },
     {
@@ -1940,8 +1940,8 @@
             "Stack"
         ],
         "url": "https://leetcode.com/problems/simplify-path/",
-        "givenPythonCode": "/**\n * @param {string} path\n * @return {string}\n */\nvar simplifyPath = function(path) {\n    \n};",
-        "givenJsCode": "class Solution:\n    def simplifyPath(self, path: str) -> str:\n        ",
+        "givenPythonCode": "class Solution:\n    def simplifyPath(self, path: str) -> str:\n        ",
+        "givenJsCode": "/**\n * @param {string} path\n * @return {string}\n */\nvar simplifyPath = function(path) {\n    \n};",
         "givenJavaCode": "class Solution {\n    public String simplifyPath(String path) {\n        \n    }\n}",
         "difficulty": "Medium"
     },
@@ -1952,8 +1952,8 @@
             "Binary Search"
         ],
         "url": "https://leetcode.com/problems/single-element-in-a-sorted-array/",
-        "givenPythonCode": "/**\n * @param {number[]} nums\n * @return {number}\n */\nvar singleNonDuplicate = function(nums) {\n    \n};",
-        "givenJsCode": "class Solution:\n    def singleNonDuplicate(self, nums: List[int]) -> int:\n        ",
+        "givenPythonCode": "class Solution:\n    def singleNonDuplicate(self, nums: List[int]) -> int:\n        ",
+        "givenJsCode": "/**\n * @param {number[]} nums\n * @return {number}\n */\nvar singleNonDuplicate = function(nums) {\n    \n};",
         "givenJavaCode": "class Solution {\n    public int singleNonDuplicate(int[] nums) {\n        \n    }\n}",
         "difficulty": "Medium"
     },
@@ -1964,8 +1964,8 @@
             "Bit Manipulation"
         ],
         "url": "https://leetcode.com/problems/single-number-ii/",
-        "givenPythonCode": "/**\n * @param {number[]} nums\n * @return {number}\n */\nvar singleNumber = function(nums) {\n    \n};",
-        "givenJsCode": "class Solution:\n    def singleNumber(self, nums: List[int]) -> int:\n        ",
+        "givenPythonCode": "class Solution:\n    def singleNumber(self, nums: List[int]) -> int:\n        ",
+        "givenJsCode": "/**\n * @param {number[]} nums\n * @return {number}\n */\nvar singleNumber = function(nums) {\n    \n};",
         "givenJavaCode": "class Solution {\n    public int singleNumber(int[] nums) {\n        \n    }\n}",
         "difficulty": "Medium"
     },
@@ -1976,8 +1976,8 @@
             "Bit Manipulation"
         ],
         "url": "https://leetcode.com/problems/single-number-iii/",
-        "givenPythonCode": "/**\n * @param {number[]} nums\n * @return {number[]}\n */\nvar singleNumber = function(nums) {\n    \n};",
-        "givenJsCode": "class Solution:\n    def singleNumber(self, nums: List[int]) -> List[int]:\n        ",
+        "givenPythonCode": "class Solution:\n    def singleNumber(self, nums: List[int]) -> List[int]:\n        ",
+        "givenJsCode": "/**\n * @param {number[]} nums\n * @return {number[]}\n */\nvar singleNumber = function(nums) {\n    \n};",
         "givenJavaCode": "class Solution {\n    public int[] singleNumber(int[] nums) {\n        \n    }\n}",
         "difficulty": "Medium"
     },
@@ -1991,8 +1991,8 @@
         ],
         "url": "https://leetcode.com/problems/sliding-window-median/",
         "givenPythonCode": "class Solution:\n    def medianSlidingWindow(self, nums: List[int], k: int) -> List[float]:\n        ",
-        "givenJsCode": "class Solution {\n    public double[] medianSlidingWindow(int[] nums, int k) {\n        \n    }\n}",
-        "givenJavaCode": "/**\n * @param {number[]} nums\n * @param {number} k\n * @return {number[]}\n */\nvar medianSlidingWindow = function(nums, k) {\n    \n};",
+        "givenJsCode": "/**\n * @param {number[]} nums\n * @param {number} k\n * @return {number[]}\n */\nvar medianSlidingWindow = function(nums, k) {\n    \n};",
+        "givenJavaCode": "class Solution {\n    public double[] medianSlidingWindow(int[] nums, int k) {\n        \n    }\n}",
         "difficulty": "Medium"
     },
     {
@@ -2003,8 +2003,8 @@
         ],
         "url": "https://leetcode.com/problems/smallest-good-base/",
         "givenPythonCode": "class Solution:\n    def smallestGoodBase(self, n: str) -> str:\n        ",
-        "givenJsCode": "class Solution {\n    public String smallestGoodBase(String n) {\n        \n    }\n}",
-        "givenJavaCode": "/**\n * @param {string} n\n * @return {string}\n */\nvar smallestGoodBase = function(n) {\n    \n};",
+        "givenJsCode": "/**\n * @param {string} n\n * @return {string}\n */\nvar smallestGoodBase = function(n) {\n    \n};",
+        "givenJavaCode": "class Solution {\n    public String smallestGoodBase(String n) {\n        \n    }\n}",
         "difficulty": "Hard"
     },
     {
@@ -2019,8 +2019,8 @@
         ],
         "url": "https://leetcode.com/problems/smallest-range-covering-elements-from-k-lists/",
         "givenPythonCode": "class Solution:\n    def smallestRange(self, nums: List[List[int]]) -> List[int]:\n        ",
-        "givenJsCode": "class Solution {\n    public int[] smallestRange(List<List<Integer>> nums) {\n        \n    }\n}",
-        "givenJavaCode": "/**\n * @param {number[][]} nums\n * @return {number[]}\n */\nvar smallestRange = function(nums) {\n    \n};",
+        "givenJsCode": "/**\n * @param {number[][]} nums\n * @return {number[]}\n */\nvar smallestRange = function(nums) {\n    \n};",
+        "givenJavaCode": "class Solution {\n    public int[] smallestRange(List<List<Integer>> nums) {\n        \n    }\n}",
         "difficulty": "Hard"
     },
     {
@@ -2031,8 +2031,8 @@
             "Sorting"
         ],
         "url": "https://leetcode.com/problems/sort-colors/",
-        "givenPythonCode": "/**\n * @param {number[]} nums\n * @return {void} Do not return anything, modify nums in-place instead.\n */\nvar sortColors = function(nums) {\n    \n};",
-        "givenJsCode": "class Solution:\n    def sortColors(self, nums: List[int]) -> None:\n        \"\"\"\n        Do not return anything, modify nums in-place instead.\n        \"\"\"\n        ",
+        "givenPythonCode": "class Solution:\n    def sortColors(self, nums: List[int]) -> None:\n        \"\"\"\n        Do not return anything, modify nums in-place instead.\n        \"\"\"\n        ",
+        "givenJsCode": "/**\n * @param {number[]} nums\n * @return {void} Do not return anything, modify nums in-place instead.\n */\nvar sortColors = function(nums) {\n    \n};",
         "givenJavaCode": "class Solution {\n    public void sortColors(int[] nums) {\n        \n    }\n}",
         "difficulty": "Hard"
     },
@@ -2059,8 +2059,8 @@
         ],
         "url": "https://leetcode.com/problems/sqrtx/",
         "difficulty": "Easy",
-        "givenPythonCode": "/**\n * @param {number} x\n * @return {number}\n */\nvar mySqrt = function(x) {\n    \n};",
-        "givenJsCode": "class Solution:\n    def mySqrt(self, x: int) -> int:\n        ",
+        "givenPythonCode": "class Solution:\n    def mySqrt(self, x: int) -> int:\n        ",
+        "givenJsCode": "/**\n * @param {number} x\n * @return {number}\n */\nvar mySqrt = function(x) {\n    \n};",
         "givenJavaCode": "class Solution {\n    public int mySqrt(int x) {\n        \n    }\n}"
     },
     {
@@ -2071,8 +2071,8 @@
         ],
         "url": "https://leetcode.com/problems/strange-printer/",
         "givenPythonCode": "class Solution:\n    def strangePrinter(self, s: str) -> int:\n        ",
-        "givenJsCode": "class Solution {\n    public int strangePrinter(String s) {\n        \n    }\n}",
-        "givenJavaCode": "/**\n * @param {string} s\n * @return {number}\n */\nvar strangePrinter = function(s) {\n    \n};",
+        "givenJsCode": "/**\n * @param {string} s\n * @return {number}\n */\nvar strangePrinter = function(s) {\n    \n};",
+        "givenJavaCode": "class Solution {\n    public int strangePrinter(String s) {\n        \n    }\n}",
         "difficulty": "Hard"
     },
     {
@@ -2082,8 +2082,8 @@
             "String"
         ],
         "url": "https://leetcode.com/problems/string-compression/",
-        "givenPythonCode": "/**\n * @param {character[]} chars\n * @return {number}\n */\nvar compress = function(chars) {\n    \n};",
-        "givenJsCode": "class Solution:\n    def compress(self, chars: List[str]) -> int:\n        ",
+        "givenPythonCode": "class Solution:\n    def compress(self, chars: List[str]) -> int:\n        ",
+        "givenJsCode": "/**\n * @param {character[]} chars\n * @return {number}\n */\nvar compress = function(chars) {\n    \n};",
         "givenJavaCode": "class Solution {\n    public int compress(char[] chars) {\n        \n    }\n}",
         "difficulty": "Hard"
     },
@@ -2094,8 +2094,8 @@
         ],
         "url": "https://leetcode.com/problems/student-attendance-record-i/",
         "difficulty": "Easy",
-        "givenPythonCode": "/**\n * @param {string} s\n * @return {boolean}\n */\nvar checkRecord = function(s) {\n    \n};",
-        "givenJsCode": "class Solution:\n    def checkRecord(self, s: str) -> bool:\n        ",
+        "givenPythonCode": "class Solution:\n    def checkRecord(self, s: str) -> bool:\n        ",
+        "givenJsCode": "/**\n * @param {string} s\n * @return {boolean}\n */\nvar checkRecord = function(s) {\n    \n};",
         "givenJavaCode": "class Solution {\n    public boolean checkRecord(String s) {\n        \n    }\n}"
     },
     {
@@ -2105,8 +2105,8 @@
         ],
         "url": "https://leetcode.com/problems/student-attendance-record-ii/",
         "givenPythonCode": "class Solution:\n    def checkRecord(self, n: int) -> int:\n        ",
-        "givenJsCode": "class Solution {\n    public int checkRecord(int n) {\n        \n    }\n}",
-        "givenJavaCode": "/**\n * @param {number} n\n * @return {number}\n */\nvar checkRecord = function(n) {\n    \n};",
+        "givenJsCode": "/**\n * @param {number} n\n * @return {number}\n */\nvar checkRecord = function(n) {\n    \n};",
+        "givenJavaCode": "class Solution {\n    public int checkRecord(int n) {\n        \n    }\n}",
         "difficulty": "Medium"
     },
     {
@@ -2117,8 +2117,8 @@
             "Prefix Sum"
         ],
         "url": "https://leetcode.com/problems/subarray-sum-equals-k/",
-        "givenPythonCode": "/**\n * @param {number[]} nums\n * @param {number} k\n * @return {number}\n */\nvar subarraySum = function(nums, k) {\n    \n};",
-        "givenJsCode": "class Solution:\n    def subarraySum(self, nums: List[int], k: int) -> int:\n        ",
+        "givenPythonCode": "class Solution:\n    def subarraySum(self, nums: List[int], k: int) -> int:\n        ",
+        "givenJsCode": "/**\n * @param {number[]} nums\n * @param {number} k\n * @return {number}\n */\nvar subarraySum = function(nums, k) {\n    \n};",
         "givenJavaCode": "class Solution {\n    public int subarraySum(int[] nums, int k) {\n        \n    }\n}",
         "difficulty": "Hard"
     },
@@ -2130,8 +2130,8 @@
             "Bit Manipulation"
         ],
         "url": "https://leetcode.com/problems/subsets-ii/",
-        "givenPythonCode": "/**\n * @param {number[]} nums\n * @return {number[][]}\n */\nvar subsetsWithDup = function(nums) {\n    \n};",
-        "givenJsCode": "class Solution:\n    def subsetsWithDup(self, nums: List[int]) -> List[List[int]]:\n        ",
+        "givenPythonCode": "class Solution:\n    def subsetsWithDup(self, nums: List[int]) -> List[List[int]]:\n        ",
+        "givenJsCode": "/**\n * @param {number[]} nums\n * @return {number[][]}\n */\nvar subsetsWithDup = function(nums) {\n    \n};",
         "givenJavaCode": "class Solution {\n    public List<List<Integer>> subsetsWithDup(int[] nums) {\n        \n    }\n}",
         "difficulty": "Medium"
     },
@@ -2143,8 +2143,8 @@
             "Bit Manipulation"
         ],
         "url": "https://leetcode.com/problems/subsets/",
-        "givenPythonCode": "/**\n * @param {number[]} nums\n * @return {number[][]}\n */\nvar subsets = function(nums) {\n    \n};",
-        "givenJsCode": "class Solution:\n    def subsets(self, nums: List[int]) -> List[List[int]]:\n        ",
+        "givenPythonCode": "class Solution:\n    def subsets(self, nums: List[int]) -> List[List[int]]:\n        ",
+        "givenJsCode": "/**\n * @param {number[]} nums\n * @return {number[][]}\n */\nvar subsets = function(nums) {\n    \n};",
         "givenJavaCode": "class Solution {\n    public List<List<Integer>> subsets(int[] nums) {\n        \n    }\n}",
         "difficulty": "Medium"
     },
@@ -2168,8 +2168,8 @@
             "Bit Manipulation"
         ],
         "url": "https://leetcode.com/problems/sum-of-two-integers/",
-        "givenPythonCode": "/**\n * @param {number} a\n * @param {number} b\n * @return {number}\n */\nvar getSum = function(a, b) {\n    \n};",
-        "givenJsCode": "class Solution:\n    def getSum(self, a: int, b: int) -> int:\n        ",
+        "givenPythonCode": "class Solution:\n    def getSum(self, a: int, b: int) -> int:\n        ",
+        "givenJsCode": "/**\n * @param {number} a\n * @param {number} b\n * @return {number}\n */\nvar getSum = function(a, b) {\n    \n};",
         "givenJavaCode": "class Solution {\n    public int getSum(int a, int b) {\n        \n    }\n}",
         "difficulty": "Hard"
     },
@@ -2181,8 +2181,8 @@
             "Dynamic Programming"
         ],
         "url": "https://leetcode.com/problems/super-ugly-number/",
-        "givenPythonCode": "/**\n * @param {number} n\n * @param {number[]} primes\n * @return {number}\n */\nvar nthSuperUglyNumber = function(n, primes) {\n    \n};",
-        "givenJsCode": "class Solution:\n    def nthSuperUglyNumber(self, n: int, primes: List[int]) -> int:\n        ",
+        "givenPythonCode": "class Solution:\n    def nthSuperUglyNumber(self, n: int, primes: List[int]) -> int:\n        ",
+        "givenJsCode": "/**\n * @param {number} n\n * @param {number[]} primes\n * @return {number}\n */\nvar nthSuperUglyNumber = function(n, primes) {\n    \n};",
         "givenJavaCode": "class Solution {\n    public int nthSuperUglyNumber(int n, int[] primes) {\n        \n    }\n}",
         "difficulty": "Medium"
     },
@@ -2194,8 +2194,8 @@
         ],
         "url": "https://leetcode.com/problems/super-washing-machines/",
         "givenPythonCode": "class Solution:\n    def findMinMoves(self, machines: List[int]) -> int:\n        ",
-        "givenJsCode": "class Solution {\n    public int findMinMoves(int[] machines) {\n        \n    }\n}",
-        "givenJavaCode": "/**\n * @param {number[]} machines\n * @return {number}\n */\nvar findMinMoves = function(machines) {\n    \n};",
+        "givenJsCode": "/**\n * @param {number[]} machines\n * @return {number}\n */\nvar findMinMoves = function(machines) {\n    \n};",
+        "givenJavaCode": "class Solution {\n    public int findMinMoves(int[] machines) {\n        \n    }\n}",
         "difficulty": "Medium"
     },
     {
@@ -2206,8 +2206,8 @@
         ],
         "url": "https://leetcode.com/problems/tag-validator/",
         "givenPythonCode": "class Solution:\n    def isValid(self, code: str) -> bool:\n        ",
-        "givenJsCode": "class Solution {\n    public boolean isValid(String code) {\n        \n    }\n}",
-        "givenJavaCode": "/**\n * @param {string} code\n * @return {boolean}\n */\nvar isValid = function(code) {\n    \n};",
+        "givenJsCode": "/**\n * @param {string} code\n * @return {boolean}\n */\nvar isValid = function(code) {\n    \n};",
+        "givenJavaCode": "class Solution {\n    public boolean isValid(String code) {\n        \n    }\n}",
         "difficulty": "Hard"
     },
     {
@@ -2218,8 +2218,8 @@
             "Backtracking"
         ],
         "url": "https://leetcode.com/problems/target-sum/",
-        "givenPythonCode": "/**\n * @param {number[]} nums\n * @param {number} target\n * @return {number}\n */\nvar findTargetSumWays = function(nums, target) {\n    \n};",
-        "givenJsCode": "class Solution:\n    def findTargetSumWays(self, nums: List[int], target: int) -> int:\n        ",
+        "givenPythonCode": "class Solution:\n    def findTargetSumWays(self, nums: List[int], target: int) -> int:\n        ",
+        "givenJsCode": "/**\n * @param {number[]} nums\n * @param {number} target\n * @return {number}\n */\nvar findTargetSumWays = function(nums, target) {\n    \n};",
         "givenJavaCode": "class Solution {\n    public int findTargetSumWays(int[] nums, int target) {\n        \n    }\n}",
         "difficulty": "Hard"
     },
@@ -2231,8 +2231,8 @@
         ],
         "url": "https://leetcode.com/problems/teemo-attacking/",
         "difficulty": "Easy",
-        "givenPythonCode": "/**\n * @param {number[]} timeSeries\n * @param {number} duration\n * @return {number}\n */\nvar findPoisonedDuration = function(timeSeries, duration) {\n    \n};",
-        "givenJsCode": "class Solution:\n    def findPoisonedDuration(self, timeSeries: List[int], duration: int) -> int:\n        ",
+        "givenPythonCode": "class Solution:\n    def findPoisonedDuration(self, timeSeries: List[int], duration: int) -> int:\n        ",
+        "givenJsCode": "/**\n * @param {number[]} timeSeries\n * @param {number} duration\n * @return {number}\n */\nvar findPoisonedDuration = function(timeSeries, duration) {\n    \n};",
         "givenJavaCode": "class Solution {\n    public int findPoisonedDuration(int[] timeSeries, int duration) {\n        \n    }\n}"
     },
     {
@@ -2244,8 +2244,8 @@
         ],
         "url": "https://leetcode.com/problems/text-justification/",
         "givenPythonCode": "class Solution:\n    def fullJustify(self, words: List[str], maxWidth: int) -> List[str]:\n        ",
-        "givenJsCode": "class Solution {\n    public List<String> fullJustify(String[] words, int maxWidth) {\n        \n    }\n}",
-        "givenJavaCode": "/**\n * @param {string[]} words\n * @param {number} maxWidth\n * @return {string[]}\n */\nvar fullJustify = function(words, maxWidth) {\n    \n};",
+        "givenJsCode": "/**\n * @param {string[]} words\n * @param {number} maxWidth\n * @return {string[]}\n */\nvar fullJustify = function(words, maxWidth) {\n    \n};",
+        "givenJavaCode": "class Solution {\n    public List<String> fullJustify(String[] words, int maxWidth) {\n        \n    }\n}",
         "difficulty": "Medium"
     },
     {
@@ -2256,8 +2256,8 @@
         ],
         "url": "https://leetcode.com/problems/third-maximum-number/",
         "difficulty": "Easy",
-        "givenPythonCode": "/**\n * @param {number[]} nums\n * @return {number}\n */\nvar thirdMax = function(nums) {\n    \n};",
-        "givenJsCode": "class Solution:\n    def thirdMax(self, nums: List[int]) -> int:\n        ",
+        "givenPythonCode": "class Solution:\n    def thirdMax(self, nums: List[int]) -> int:\n        ",
+        "givenJsCode": "/**\n * @param {number[]} nums\n * @return {number}\n */\nvar thirdMax = function(nums) {\n    \n};",
         "givenJavaCode": "class Solution {\n    public int thirdMax(int[] nums) {\n        \n    }\n}"
     },
     {
@@ -2268,8 +2268,8 @@
             "Bit Manipulation"
         ],
         "url": "https://leetcode.com/problems/total-hamming-distance/",
-        "givenPythonCode": "/**\n * @param {number[]} nums\n * @return {number}\n */\nvar totalHammingDistance = function(nums) {\n    \n};",
-        "givenJsCode": "class Solution:\n    def totalHammingDistance(self, nums: List[int]) -> int:\n        ",
+        "givenPythonCode": "class Solution:\n    def totalHammingDistance(self, nums: List[int]) -> int:\n        ",
+        "givenJsCode": "/**\n * @param {number[]} nums\n * @return {number}\n */\nvar totalHammingDistance = function(nums) {\n    \n};",
         "givenJavaCode": "class Solution {\n    public int totalHammingDistance(int[] nums) {\n        \n    }\n}",
         "difficulty": "Hard"
     },
@@ -2280,8 +2280,8 @@
             "Dynamic Programming"
         ],
         "url": "https://leetcode.com/problems/triangle/",
-        "givenPythonCode": "/**\n * @param {number[][]} triangle\n * @return {number}\n */\nvar minimumTotal = function(triangle) {\n    \n};",
-        "givenJsCode": "class Solution:\n    def minimumTotal(self, triangle: List[List[int]]) -> int:\n        ",
+        "givenPythonCode": "class Solution:\n    def minimumTotal(self, triangle: List[List[int]]) -> int:\n        ",
+        "givenJsCode": "/**\n * @param {number[][]} triangle\n * @return {number}\n */\nvar minimumTotal = function(triangle) {\n    \n};",
         "givenJavaCode": "class Solution {\n    public int minimumTotal(List<List<Integer>> triangle) {\n        \n    }\n}",
         "difficulty": "Medium"
     },
@@ -2293,8 +2293,8 @@
             "Binary Search"
         ],
         "url": "https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/",
-        "givenPythonCode": "/**\n * @param {number[]} numbers\n * @param {number} target\n * @return {number[]}\n */\nvar twoSum = function(numbers, target) {\n    \n};",
-        "givenJsCode": "class Solution:\n    def twoSum(self, numbers: List[int], target: int) -> List[int]:\n        ",
+        "givenPythonCode": "class Solution:\n    def twoSum(self, numbers: List[int], target: int) -> List[int]:\n        ",
+        "givenJsCode": "/**\n * @param {number[]} numbers\n * @param {number} target\n * @return {number[]}\n */\nvar twoSum = function(numbers, target) {\n    \n};",
         "givenJavaCode": "class Solution {\n    public int[] twoSum(int[] numbers, int target) {\n        \n    }\n}",
         "difficulty": "Medium"
     },
@@ -2307,8 +2307,8 @@
             "Heap (Priority Queue)"
         ],
         "url": "https://leetcode.com/problems/ugly-number-ii/",
-        "givenPythonCode": "/**\n * @param {number} n\n * @return {number}\n */\nvar nthUglyNumber = function(n) {\n    \n};",
-        "givenJsCode": "class Solution:\n    def nthUglyNumber(self, n: int) -> int:\n        ",
+        "givenPythonCode": "class Solution:\n    def nthUglyNumber(self, n: int) -> int:\n        ",
+        "givenJsCode": "/**\n * @param {number} n\n * @return {number}\n */\nvar nthUglyNumber = function(n) {\n    \n};",
         "givenJavaCode": "class Solution {\n    public int nthUglyNumber(int n) {\n        \n    }\n}",
         "difficulty": "Medium"
     },
@@ -2332,8 +2332,8 @@
         ],
         "url": "https://leetcode.com/problems/valid-anagram/",
         "difficulty": "Easy",
-        "givenPythonCode": "/**\n * @param {string} s\n * @param {string} t\n * @return {boolean}\n */\nvar isAnagram = function(s, t) {\n    \n};",
-        "givenJsCode": "class Solution:\n    def isAnagram(self, s: str, t: str) -> bool:\n        ",
+        "givenPythonCode": "class Solution:\n    def isAnagram(self, s: str, t: str) -> bool:\n        ",
+        "givenJsCode": "/**\n * @param {string} s\n * @param {string} t\n * @return {boolean}\n */\nvar isAnagram = function(s, t) {\n    \n};",
         "givenJavaCode": "class Solution {\n    public boolean isAnagram(String s, String t) {\n        \n    }\n}"
     },
     {
@@ -2343,8 +2343,8 @@
         ],
         "url": "https://leetcode.com/problems/valid-number/",
         "givenPythonCode": "class Solution:\n    def isNumber(self, s: str) -> bool:\n        ",
-        "givenJsCode": "class Solution {\n    public boolean isNumber(String s) {\n        \n    }\n}",
-        "givenJavaCode": "/**\n * @param {string} s\n * @return {boolean}\n */\nvar isNumber = function(s) {\n    \n};",
+        "givenJsCode": "/**\n * @param {string} s\n * @return {boolean}\n */\nvar isNumber = function(s) {\n    \n};",
+        "givenJavaCode": "class Solution {\n    public boolean isNumber(String s) {\n        \n    }\n}",
         "difficulty": "Medium"
     },
     {
@@ -2355,8 +2355,8 @@
         ],
         "url": "https://leetcode.com/problems/valid-parentheses/",
         "difficulty": "Easy",
-        "givenPythonCode": "/**\n * @param {string} s\n * @return {boolean}\n */\nvar isValid = function(s) {\n    \n};",
-        "givenJsCode": "class Solution:\n    def isValid(self, s: str) -> bool:\n        ",
+        "givenPythonCode": "class Solution:\n    def isValid(self, s: str) -> bool:\n        ",
+        "givenJsCode": "/**\n * @param {string} s\n * @return {boolean}\n */\nvar isValid = function(s) {\n    \n};",
         "givenJavaCode": "class Solution {\n    public boolean isValid(String s) {\n        \n    }\n}"
     },
     {
@@ -2367,8 +2367,8 @@
         ],
         "url": "https://leetcode.com/problems/valid-perfect-square/",
         "difficulty": "Easy",
-        "givenPythonCode": "/**\n * @param {number} num\n * @return {boolean}\n */\nvar isPerfectSquare = function(num) {\n    \n};",
-        "givenJsCode": "class Solution:\n    def isPerfectSquare(self, num: int) -> bool:\n        ",
+        "givenPythonCode": "class Solution:\n    def isPerfectSquare(self, num: int) -> bool:\n        ",
+        "givenJsCode": "/**\n * @param {number} num\n * @return {boolean}\n */\nvar isPerfectSquare = function(num) {\n    \n};",
         "givenJavaCode": "class Solution {\n    public boolean isPerfectSquare(int num) {\n        \n    }\n}"
     },
     {
@@ -2381,8 +2381,8 @@
             "Sorting"
         ],
         "url": "https://leetcode.com/problems/valid-triangle-number/",
-        "givenPythonCode": "/**\n * @param {number[]} nums\n * @return {number}\n */\nvar triangleNumber = function(nums) {\n    \n};",
-        "givenJsCode": "class Solution:\n    def triangleNumber(self, nums: List[int]) -> int:\n        ",
+        "givenPythonCode": "class Solution:\n    def triangleNumber(self, nums: List[int]) -> int:\n        ",
+        "givenJsCode": "/**\n * @param {number[]} nums\n * @return {number}\n */\nvar triangleNumber = function(nums) {\n    \n};",
         "givenJavaCode": "class Solution {\n    public int triangleNumber(int[] nums) {\n        \n    }\n}",
         "difficulty": "Hard"
     },
@@ -2392,8 +2392,8 @@
             "String"
         ],
         "url": "https://leetcode.com/problems/validate-ip-address/",
-        "givenPythonCode": "/**\n * @param {string} queryIP\n * @return {string}\n */\nvar validIPAddress = function(queryIP) {\n    \n};",
-        "givenJsCode": "class Solution:\n    def validIPAddress(self, queryIP: str) -> str:\n        ",
+        "givenPythonCode": "class Solution:\n    def validIPAddress(self, queryIP: str) -> str:\n        ",
+        "givenJsCode": "/**\n * @param {string} queryIP\n * @return {string}\n */\nvar validIPAddress = function(queryIP) {\n    \n};",
         "givenJavaCode": "class Solution {\n    public String validIPAddress(String queryIP) {\n        \n    }\n}",
         "difficulty": "Medium"
     },
@@ -2418,8 +2418,8 @@
             "Greedy"
         ],
         "url": "https://leetcode.com/problems/wiggle-subsequence/",
-        "givenPythonCode": "/**\n * @param {number[]} nums\n * @return {number}\n */\nvar wiggleMaxLength = function(nums) {\n    \n};",
-        "givenJsCode": "class Solution:\n    def wiggleMaxLength(self, nums: List[int]) -> int:\n        ",
+        "givenPythonCode": "class Solution:\n    def wiggleMaxLength(self, nums: List[int]) -> int:\n        ",
+        "givenJsCode": "/**\n * @param {number[]} nums\n * @return {number}\n */\nvar wiggleMaxLength = function(nums) {\n    \n};",
         "givenJavaCode": "class Solution {\n    public int wiggleMaxLength(int[] nums) {\n        \n    }\n}",
         "difficulty": "Medium"
     },
@@ -2433,8 +2433,8 @@
         ],
         "url": "https://leetcode.com/problems/word-ladder-ii/",
         "givenPythonCode": "class Solution:\n    def findLadders(self, beginWord: str, endWord: str, wordList: List[str]) -> List[List[str]]:\n        ",
-        "givenJsCode": "class Solution {\n    public List<List<String>> findLadders(String beginWord, String endWord, List<String> wordList) {\n        \n    }\n}",
-        "givenJavaCode": "/**\n * @param {string} beginWord\n * @param {string} endWord\n * @param {string[]} wordList\n * @return {string[][]}\n */\nvar findLadders = function(beginWord, endWord, wordList) {\n    \n};",
+        "givenJsCode": "/**\n * @param {string} beginWord\n * @param {string} endWord\n * @param {string[]} wordList\n * @return {string[][]}\n */\nvar findLadders = function(beginWord, endWord, wordList) {\n    \n};",
+        "givenJavaCode": "class Solution {\n    public List<List<String>> findLadders(String beginWord, String endWord, List<String> wordList) {\n        \n    }\n}",
         "difficulty": "Medium"
     },
     {
@@ -2446,8 +2446,8 @@
         ],
         "url": "https://leetcode.com/problems/word-ladder/",
         "givenPythonCode": "class Solution:\n    def ladderLength(self, beginWord: str, endWord: str, wordList: List[str]) -> int:\n        ",
-        "givenJsCode": "class Solution {\n    public int ladderLength(String beginWord, String endWord, List<String> wordList) {\n        \n    }\n}",
-        "givenJavaCode": "/**\n * @param {string} beginWord\n * @param {string} endWord\n * @param {string[]} wordList\n * @return {number}\n */\nvar ladderLength = function(beginWord, endWord, wordList) {\n    \n};",
+        "givenJsCode": "/**\n * @param {string} beginWord\n * @param {string} endWord\n * @param {string[]} wordList\n * @return {number}\n */\nvar ladderLength = function(beginWord, endWord, wordList) {\n    \n};",
+        "givenJavaCode": "class Solution {\n    public int ladderLength(String beginWord, String endWord, List<String> wordList) {\n        \n    }\n}",
         "difficulty": "Hard"
     },
     {
@@ -5897,33 +5897,6 @@
         "givenJavaCode": "class Solution {\r\n    public boolean validPath(int n, int[][] edges, int source, int destination) {\r\n        \r\n    }\r\n}"
     },
     {
-        "excercise": "You are given an array nums that consists of positive integers.\nThe GCD of a sequence of numbers is defined as the greatest integer that divides all the numbers in the sequence evenly.\n\tFor example, the GCD of the sequence [4,6,16] is 2.\nA subsequence of an array is a sequence that can be formed by removing some elements (possibly none) of the array.\n\tFor example, [2,5,10] is a subsequence of [1,2,1,2,4,1,5,10].\nReturn the number of different GCDs among all non-empty subsequences of nums.\nExample 1:\nInput: nums = [6,10,3]\nOutput: 5\nExplanation: The figure shows all the non-empty subsequences and their GCDs.\nThe different GCDs are 6, 10, 3, 2, and 1.\nExample 2:\nInput: nums = [5,15,40,5,6]\nOutput: 7\nConstraints:\n\t1 <= nums.length <= 10^5\n\t1 <= nums[i] <= 2 * 10^5",
-        "topics": [
-            "undefined"
-        ],
-        "url": "https://leetcode.com/problems/number-of-different-subsequences-gcds/description/",
-        "difficulty": "Hard",
-        "givenPythonCode": "\r\n",
-        "givenJsCode": "\r\n",
-        "givenJavaCode": "\r\n"
-    },
-    {
-        "excercise": "You are given a string s. s[i] is either a lowercase English letter or '?'.\nFor a string t having length m containing only lowercase English letters, we define the function cost(i) for an index i\u00a0as the number of characters equal to t[i]\u00a0that appeared before it, i.e. in the range [0, i - 1].\nThe value of t is the sum of cost(i) for all indices i.\nFor example, for the string t = \"aab\":\n\tcost(0) = 0\n\tcost(1) = 1\n\tcost(2) = 0\n\tHence, the value of \"aab\" is 0 + 1 + 0 = 1.\nYour task is to replace all occurrences of '?' in s with any lowercase English letter so that the value of s is minimized.\nReturn a string denoting the modified string with replaced occurrences of '?'. If there are multiple strings resulting in the minimum value, return the lexicographically smallest one.\nExample 1:\nInput:   s = \"???\" \nOutput:   \"abc\" \nExplanation:  In this example, we can replace the occurrences of '?' to make s equal to \"abc\".\nFor \"abc\", cost(0) = 0, cost(1) = 0, and cost(2) = 0.\nThe value of \"abc\" is 0.\nSome other modifications of s that have a value of 0 are \"cba\", \"abz\", and, \"hey\".\nAmong all of them, we choose the lexicographically smallest.\nExample 2:\nInput:  s = \"a?a?\"\nOutput:  \"abac\"\nExplanation:  In this example, the occurrences of '?' can be replaced to make s equal to \"abac\".\nFor \"abac\", cost(0) = 0, cost(1) = 0, cost(2) = 1, and cost(3) = 0.\nThe value of \"abac\" is\u00a01.\nConstraints:\n\t1 <= s.length <= 10^5\n\ts[i] is either a lowercase English letter or '?'.",
-        "topics": [
-            "Hash Table",
-            "String",
-            "Greedy",
-            "Sorting",
-            "Heap (Priority Queue)",
-            "Counting"
-        ],
-        "url": "https://leetcode.com/problems/replace-question-marks-in-string-to-minimize-its-value/description/",
-        "difficulty": "Medium",
-        "givenPythonCode": "\r\n",
-        "givenJsCode": "\r\n",
-        "givenJavaCode": "\r\n"
-    },
-    {
         "excercise": "You are given a string s, which is known to be a concatenation of anagrams of some string t.\nReturn the minimum possible length of the string t.\nAn anagram is formed by rearranging the letters of a string. For example, \"aab\", \"aba\", and, \"baa\" are anagrams of \"aab\".\nExample 1:\nInput: s = \"abba\"\nOutput: 2\nExplanation:\nOne possible string t could be \"ba\".\nExample 2:\nInput: s = \"cdef\"\nOutput: 4\nExplanation:\nOne possible string t could be \"cdef\", notice that t can be equal to s.\nConstraints:\n\t1 <= s.length <= 10^5\n\ts consist only of lowercase English letters.",
         "topics": [
             "Hash Table",
@@ -6013,5 +5986,19 @@
         "givenPythonCode": "class Solution:\r\n    def maximumLength(self, nums: List[int]) -> int:\r\n        ",
         "givenJsCode": "/**\r\n * @param {number[]} nums\r\n * @return {number}\r\n */\r\nvar maximumLength = function(nums) {\r\n    \r\n};",
         "givenJavaCode": "class Solution {\r\n    public int maximumLength(int[] nums) {\r\n        \r\n    }\r\n}"
+    },
+    {
+        "excercise": "You are given the root of a binary tree. We install cameras on the tree nodes where each camera at a node can monitor its parent, itself, and its immediate children.\nReturn the minimum number of cameras needed to monitor all nodes of the tree.\nExample 1:\nInput: root = [0,0,null,0,0]\nOutput: 1\nExplanation: One camera is enough to monitor all nodes if placed as shown.\nExample 2:\nInput: root = [0,0,null,0,null,0,null,null,0]\nOutput: 2\nExplanation: At least two cameras are needed to monitor all nodes of the tree. The above image shows one of the valid configurations of camera placement.\nConstraints:\n\tThe number of nodes in the tree is in the range [1, 1000].\n\tNode.val == 0",
+        "topics": [
+            "Dynamic Programming",
+            "Tree",
+            "Depth-First Search",
+            "Binary Tree"
+        ],
+        "url": "https://leetcode.com/problems/binary-tree-cameras/description/",
+        "difficulty": "Hard",
+        "givenPythonCode": "# Definition for a binary tree node.\r\n# class TreeNode:\r\n#     def __init__(self, val=0, left=None, right=None):\r\n#         self.val = val\r\n#         self.left = left\r\n#         self.right = right\r\nclass Solution:\r\n    def minCameraCover(self, root: Optional[TreeNode]) -> int:\r\n        ",
+        "givenJsCode": "/**\r\n * Definition for a binary tree node.\r\n * function TreeNode(val, left, right) {\r\n *     this.val = (val===undefined ? 0 : val)\r\n *     this.left = (left===undefined ? null : left)\r\n *     this.right = (right===undefined ? null : right)\r\n * }\r\n */\r\n/**\r\n * @param {TreeNode} root\r\n * @return {number}\r\n */\r\nvar minCameraCover = function(root) {\r\n    \r\n};",
+        "givenJavaCode": "/**\r\n * Definition for a binary tree node.\r\n * public class TreeNode {\r\n *     int val;\r\n *     TreeNode left;\r\n *     TreeNode right;\r\n *     TreeNode() {}\r\n *     TreeNode(int val) { this.val = val; }\r\n *     TreeNode(int val, TreeNode left, TreeNode right) {\r\n *         this.val = val;\r\n *         this.left = left;\r\n *         this.right = right;\r\n *     }\r\n * }\r\n */\r\nclass Solution {\r\n    public int minCameraCover(TreeNode root) {\r\n        \r\n    }\r\n}"
     }
 ]
